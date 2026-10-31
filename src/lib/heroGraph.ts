@@ -19,12 +19,12 @@ const HUBS = [
   { label: "Invoices", records: 4790, x: -1.5, y: -0.85 },
 ];
 
-/** Example records shown when a point is hovered or tapped (CFX-WEB-landing AC-32). Illustrative. */
+/** Example field observations shown when a point is hovered or tapped (CFX-WEB-landing AC-32). Illustrative. */
 export const HUB_SAMPLES = [
-  ["ACME, Inc. → matched to Acme Inc.", "J. Smith → matched to John Smith", "Northwind LLC → matched to Northwind"],
-  ["SO-10432 → linked to Acme Inc.", "SO-10518 → linked to Acme Inc.", "SO-10611 → linked to Bolt & Co."],
-  ["DRL-200 → matched to Cordless drill", "BIT-SET → matched to Drill bit set", "GLS-4 → matched to Safety glasses"],
-  ["INV-2207 → linked to SO-10432", "INV-2231 → linked to SO-10518", "INV-2240 → linked to SO-10611"],
+  ["customer_id: 99.8% unique, possible identifier", "email: 7% missing", "country: 42 distinct values"],
+  ["cust_no → customers.customer_id (candidate)", "order_date: 3 date formats", "total: currency not documented"],
+  ["sku: 100% unique", "category: 12 distinct values", "weight_kg: 18% missing"],
+  ["order_ref → orders.order_id (candidate)", "due_date: no missing values", "status: 4 distinct values"],
 ];
 
 /** The hub link that stays "Suggested" until the visitor approves it: Orders–Invoices (CFX-WEB-landing AC-33). */

@@ -1,5 +1,5 @@
 schema: ai-skill-os/knowledge-facts/v1
-updated_at: '2026-10-30T16:27:57+00:00'
+updated_at: '2026-10-31T13:56:43+00:00'
 facts:
 - id: animation:motion
   status: CONFIRMED
@@ -7,73 +7,64 @@ facts:
   detail: dependency 'motion'
   sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
+- id: api:openapi
+  status: INFERRED
+  source: requirements
+  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  line: 619
+  detail: 'mentioned: | Shared types (Proposed) | Generate TypeScript types from the API''s OpenAPI schema (built
+    from Pydantic models) so UI a'
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
 - id: cloud:aws
   status: INFERRED
   source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 870
-  detail: 'mentioned: [image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwAAAAH+CAYAAAArhmnOAACAAElEQVR4Xux9B3hU1fZ9gNB7B7E923uWZ0dFQBR'
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
-- id: cloud:azure
-  status: INFERRED
-  source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 724
-  detail: 'mentioned: | **First warehouse and cloud storage** | Which ones first (e.g. BigQuery or Snowflake;
-    S3, GCS or Azure Blob)? |'
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
+  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  line: 670
+  detail: 'mentioned: | Databricks AI-generated comments | docs.databricks.com/aws/en/comments/ai-comments |'
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
 - id: database:mysql
-  status: INFERRED
+  status: UNKNOWN
   source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 118
-  detail: 'mentioned: | **1\. Connect** | Excel, CSV, Google Sheets, SQL databases (Postgres, MySQL, SQL
-    Server), REST APIs; QuickBooks later.'
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
+  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  line: 213
+  detail: 'mentioned: PostgreSQL gives the best implementation fit: DuckDB can attach it directly in read-only mode,
+    so there is no second ana'
+  note: mentioned with a negation; confirm with the client whether it is in scope
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
 - id: database:postgres
   status: INFERRED
   source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 118
-  detail: 'mentioned: | **1\. Connect** | Excel, CSV, Google Sheets, SQL databases (Postgres, MySQL, SQL
-    Server), REST APIs; QuickBooks later.'
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
+  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  line: 52
+  detail: 'mentioned: | **First database connector** | PostgreSQL, read-only, using the same DuckDB-based analysis
+    path as local files (CSV, X'
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
 - id: framework:fastapi
   status: INFERRED
   source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 843
-  detail: 'mentioned: * **Backend:** Python FastAPI; DuckDB and Polars for transformations; Splink and
-    rapidfuzz for record matching; Claude w'
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
+  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  line: 155
+  detail: 'mentioned: - Browser UI (React + TypeScript) ⇄ Local Runtime API (FastAPI) over HTTP/JSON.'
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
 - id: framework:nextjs
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'next'
   sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
-  planned_in: ../docs/archive/Velora — Product Vision v2.md:842
 - id: framework:react
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'react'
   sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
-  planned_in: ../docs/archive/Velora — Product Vision v2.md:842
+  planned_in: ../docs/Conflux_Phase1_Development_Direction.md:155
 - id: graphics:three
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'three'
   sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
-- id: infra:kubernetes
-  status: UNKNOWN
-  source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 870
-  detail: 'mentioned: [image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwAAAAH+CAYAAAArhmnOAACAAElEQVR4Xux9B3hU1fZ9gNB7B7E923uWZ0dFQBR'
-  note: mentioned with a negation; confirm with the client whether it is in scope
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: language:javascript
   status: CONFIRMED
   evidence: package.json
@@ -82,30 +73,22 @@ facts:
 - id: language:python
   status: INFERRED
   source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 843
-  detail: 'mentioned: * **Backend:** Python FastAPI; DuckDB and Polars for transformations; Splink and
-    rapidfuzz for record matching; Claude w'
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
+  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  line: 51
+  detail: 'mentioned: | **Architecture** | Local Python runtime + browser UI. Deterministic profiling and artifacts
+    stay on the user''s machine'
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
 - id: language:typescript
   status: CONFIRMED
   evidence: next-env.d.ts
   sha256: 1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b
   source: detector
-  planned_in: ../docs/archive/Velora — Product Vision v2.md:842
+  planned_in: ../docs/Conflux_Phase1_Development_Direction.md:155
 - id: pm:npm
   status: CONFIRMED
   evidence: package-lock.json
   sha256: a82016d025e6738015752c4d95346a14d619affb615838814e1e69e9db995900
   source: detector
-- id: service:stripe
-  status: INFERRED
-  source: requirements
-  evidence: ../docs/archive/Velora — Product Vision v2.md
-  line: 845
-  detail: 'mentioned: * **Later:** Celery, then Dagster or Temporal for scheduled syncs; Clerk for login;
-    Stripe for billing.'
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: styling:tailwind
   status: CONFIRMED
   evidence: package.json
@@ -124,7 +107,14 @@ facts:
   detail: dependency 'vitest'
   sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
+- id: tool:docker
+  status: INFERRED
+  source: requirements
+  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  line: 201
+  detail: 'mentioned: | Testing | pytest, Vitest, Playwright; Docker Compose PostgreSQL fixture |'
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
 requirements:
-- path: ../docs/archive/Velora — Product Vision v2.md
-  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
+- path: ../docs/Conflux_Phase1_Development_Direction.md
+  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
   readable: true

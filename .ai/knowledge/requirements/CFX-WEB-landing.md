@@ -2,13 +2,13 @@
 id: CFX-WEB-landing
 kind: feature
 title: "Landing page"
-summary: "Public company website that tells the Conflux product vision (understand, define, build, validate, publish) with a 3D hero, an interactive demo and a separate pricing page, and collects early-access sign-ups"
+summary: "Public company website that explains the Conflux Phase 1 product (connect, profile and understand, document and define) with a 3D hero, an interactive review demo and a free early-access page, and collects early-access sign-ups"
 owner: landing
 lifecycle: approved
-revision: 11
-approved_revision: 11
-approval_evidence: "user chose to rename the product to Conflux everywhere and to make the Phase 1 direction the source of truth, in chat, 2026-10-30 (revision 11)"
-updated: "2026-10-30"
+revision: 12
+approved_revision: 12
+approval_evidence: "user chose Phase 1 + coming next, data analysts and engineers, provider-neutral AI, a free early-access page instead of plans, the reworked demo, the Phase 1 markdown for the offer (no Readiness Report), Conflux as company and Trison Labs as team, and approved all proposed copy, in chat, 2026-10-31 (revision 12)"
+updated: "2026-10-31"
 related: []
 status: CONFIRMED
 ---
@@ -19,10 +19,9 @@ status: CONFIRMED
 Conflux needs a live company website on its own domain, with a same-domain contact email, to apply to Anthropic's
 Claude Startups program and to start collecting early users. The page must explain the product in seconds and turn
 visitors (small businesses, data teams, consultants) into early-access sign-ups.
-Source of truth for content: `../docs/archive/Velora — Product Vision v2.md` (since 2026-10-11; the retired "Strategy & Plan" was the
-source up to revision 5). Since 2026-10-30 the product is named Conflux and its source of truth is
-`../docs/Conflux_Phase1_Development_Direction.md`; v2 is archived and the copy below still follows it until the rewrite
-(see Open Questions). Since revision 7 the page follows v2: §1 vision and first wedge, §5 executive understanding,
+Source of truth for content: `../docs/Conflux_Phase1_Development_Direction.md` (approved; since revision 12 the copy
+follows it). Up to revision 11 the copy followed `../docs/archive/Velora — Product Vision v2.md`, and up to revision 5 the
+retired "Strategy & Plan". Conflux is the company; Trison Labs is the team building it. Since revision 7 the page follows v2: §1 vision and first wedge, §5 executive understanding,
 §6 trust model, §7 AI, §10 living data products, §11 data processing, §13 packaging, §14–16 website brief. Revision 8
 closes the remaining gaps: §15 hero visual and supporting line, §9 trusted data product, §13 wording on /pricing, and
 §18's first user in "Who it's for".
@@ -40,19 +39,22 @@ comparison table and a FAQ, in the pattern of claude.com/pricing (studied for la
 card and v2's supporting line, a Trusted Data Product checklist, v2-only pricing wording and First/Next audiences, and
 removes the "Why not just use ChatGPT?" FAQ. Revision 9 makes the site orange, black and white:
 orange Join buttons and highlights, mono controls, grey/graphite cards. Revision 10
-adds a fill-sweep hover and a press + ripple click to every button-style control.
+adds a fill-sweep hover and a press + ripple click to every button-style control. Revision 12 rewrites the content to
+the Phase 1 direction: three stages (Connect, Profile & understand, Document & define) plus a "Coming next" strip, four
+trust states, a review-and-export demo, Phase 1 §7's claims only, no lifecycle section, provider-neutral AI wording, and
+`/pricing` becomes a free early-access page.
 
 ## Assumptions
 - ASSUMPTION: English only.
 - ASSUMPTION: no legal entity yet; the privacy page names the operator from site config ("Conflux, company registration in progress") until one exists.
 - ASSUMPTION: hosting on Vercel; form processor is Formspree (free tier).
-- ASSUMPTION: demo data (4,812 orders, 312 unmatched, 94% confidence) is illustrative and labelled as a demo.
+- ASSUMPTION: demo and overview figures (4,812 orders, 1,204 customers, 94% match, 99.8% unique, 12 tables, 184 columns, 2.4M rows) are illustrative and labelled as a demo or an example.
 
 ## User Stories
 ### US-01 — Understand Conflux in seconds
 ### US-02 — Join early access
 ### US-03 — Try the graph demo
-### US-04 — Learn how it works, what it costs and whether to trust it
+### US-04 — Learn how it works, that early access is free, and whether to trust it
 ### US-05 — Read the privacy policy
 ### US-06 — Founders change brand details in one place and never launch with placeholders
 ### US-07 — Shared links look right
@@ -61,21 +63,21 @@ adds a fill-sweep hover and a press + ripple click to every button-style control
 ### US-10 — Scan the page quickly through icons and shorter text
 ### US-11 — Read the page in a light or dark theme with a distinctive Conflux palette
 ### US-12 — Play with the hero graph: rotate it, inspect records, approve the last suggested link
-### US-13 — Follow Connect → See → Send step by step while scrolling
-### US-14 — Fix a realistic mess in the demo: a missing link, a duplicate and a date format, then run a dry run
+### US-13 — Follow Connect → Profile & understand → Document & define step by step while scrolling
+### US-14 — Review what profiling inferred in the demo: confirm a relationship and an identifier, define a rule, then export the contract
 ### US-15 — Feel that controls respond: press, hover, open and success feedback
 ### US-16 — See the hero graph react to the cursor
 ### US-17 — Feel a calm, premium page: full-bleed hero, smooth scrolling, headings that reveal, cards that respond
-### US-18 — See at a glance which systems Conflux connects
-### US-19 — Compare plans on a dedicated pricing page
-### US-20 — Follow the product story from the vision: understand, define, build, validate, publish, keep current
-### US-21 — See in the hero what Conflux tells me about my data: documentation, contract coverage, validation and the next action
+### US-18 — See at a glance which sources Conflux reads now and which come next
+### US-19 — See on its own page that early access is free, what it includes and what comes next
+### US-20 — Follow the Phase 1 story, and see that transformation, validation, publishing and monitoring come later
+### US-21 — See in the hero what Conflux tells me about my data: sources, findings, identifiers, contract coverage and the next action
 ### US-22 — Recognise Conflux by its orange, black and white, without confusing orange with the trust colours
 ### US-23 — Feel buttons respond: a fill sweeps in on hover and the button presses in with a ripple when clicked
 
 ## Decisions and Contracts
 Decided with the user in chat, 2026-10-10:
-- Readiness Report: sign-up option only, **no file uploads** on the site.
+- Readiness Report: sign-up option only, **no file uploads** on the site. (Revision 12: removed.)
 - Form: POST to `NEXT_PUBLIC_WAITLIST_ENDPOINT` (Formspree); `mailto:` fallback when unset.
 - About: founder **roles, no names** yet.
 - Look: **light & calm**; trust colours on the graph (grey observed, amber suggested, green approved).
@@ -183,8 +185,32 @@ Added for revision 10, decided with the user in chat, 2026-10-11:
 - **Reduced motion:** the fill appears instantly, no press, no ripple (as AC-37).
 - The header's "Join early access" becomes black (light) / white (dark), recorded under revision 9's colours.
 
+Added for revision 12, decided with the user in chat, 2026-10-31 (source: the approved Conflux Phase 1 direction):
+- Scope: **Phase 1 plus a "Coming next" strip**. The story is Connect → Profile & understand → Document & define;
+  Transform, Validate, Publish & serve and Monitor & improve are named only as "Coming next". The lifecycle section and
+  v2's Trusted Data Product checklist are removed.
+- Audience: **data analysts and engineers** ("Built for"), **data consultants** second ("Also for"). Form segments:
+  data analyst or engineer, data consultant, something else.
+- AI: **provider-neutral** wording (cloud model or local Ollama); no vendor is named while the Phase 1 provider ADR is
+  open. AI & privacy states only Phase 1 §7's safe claims: runs locally, read-only on sources, AI off by default, a
+  context preview before any cloud request, a local model option, credentials in the OS keychain. No "encrypted",
+  "deleted on request", cloud or "never leaves" wording.
+- Offer: **the Phase 1 markdown has no Readiness Report**, so the checkbox, its FAQ and its privacy text are removed.
+- `/pricing` becomes **"Early access is free"**: two cards (Early access: Free, what exists today; Coming next: Later,
+  what comes after), a note that pricing for later follows real usage, and a short FAQ. The header and footer link is
+  "Early access". No plans, no comparison table.
+- Demo: **review and define**. Three items: accept (or draw) the inferred relationship `cust_no → customer_id`, confirm
+  `customer_id` as the identifier, then add "customer_id must be non-null and unique" to the contract (only after the
+  identifier is confirmed); "Export contract" then shows a short YAML preview. No dry run, no destinations.
+- Company and team: **Conflux is the company** (operator stays "Conflux (company registration in progress)");
+  **Trison Labs is the team**, named in About from site config.
+- Hero: the status card shows the Phase 1 overview example; the hero graph's samples are field observations, not
+  record matches; the supporting line says it runs locally and AI is optional.
+- "Connects to": CSV, Excel (XLSX), Parquet and PostgreSQL (read-only), then "Coming next": MySQL, SQL Server.
+
 Form contract: `POST <endpoint>`, headers `Content-Type: application/json`, `Accept: application/json`, body
-`{ "email": string, "segment": "business" | "data-team" | "consultant", "readinessReport": boolean, "source": "landing" }`.
+`{ "email": string, "segment": "data-team" | "consultant" | "other", "source": "landing" }`. (Revision 12: no
+`readinessReport`.)
 
 ## High-Level Design
 Next.js 16 (App Router, TypeScript), Tailwind CSS 4, React Flow 12 (`@xyflow/react`) for the demo only. The page is
@@ -197,19 +223,19 @@ Decided in planning.
 
 ## Acceptance Criteria
 - AC-01 (US-01): Given a visitor opens `/` at 1440×900 or 375×812, when the page loads, then the H1 "Understand your data before you use it.", the subhead and a "Join early access" button are visible without scrolling. (Revision 7: v2 headline.)
-- AC-02 (US-02): Given the endpoint is set, when a visitor submits a valid email, a segment and the Readiness Report choice, then exactly one request matching the form contract is sent, the button shows "Joining…" and is disabled while pending, and on a 2xx response "You're on the list" is shown.
+- AC-02 (US-02): Given the endpoint is set, when a visitor submits a valid email and a segment, then exactly one request matching the form contract is sent, the button shows "Joining…" and is disabled while pending, and on a 2xx response "You're on the list" is shown. (Revision 12: no Readiness Report choice.)
 - AC-03 (US-02): Given an invalid or empty email, when the visitor submits, then no request is sent and an inline error linked to the field (`aria-describedby`) is shown.
 - AC-04 (US-02): Given the endpoint returns a non-2xx status or the network fails, when the visitor submits, then an error message with a mailto link to the site email is shown and the entered values are kept.
-- AC-05 (US-02): Given the endpoint is not set, when the visitor submits a valid form, then no network request is sent and the browser is pointed to a `mailto:` link to the site email whose body contains the email, segment and Readiness Report choice.
-- AC-06 (US-03): Given the demo loads, then it shows an Orders source and a Customers source, the warning "312 orders have no matching customer", and an amber suggested link "cust_no → customer_id (94%)".
-- AC-07 (US-03): Given the initial demo, when the visitor presses "Accept suggestion", then the link turns green (approved), the warning is replaced by "All 4,812 orders matched to a customer", and the Send destinations (Odoo, Files, Cloud storage, Warehouse) become enabled.
+- AC-05 (US-02): Given the endpoint is not set, when the visitor submits a valid form, then no network request is sent and the browser is pointed to a `mailto:` link to the site email whose body contains the email and segment. (Revision 12.)
+- AC-06 (US-03): Given the demo loads, then it shows an orders.xlsx source and a customers source, the status "Profile ready: 2 inferred facts need your review", and an amber inferred link "cust_no → customer_id (94%)". (Revision 12.)
+- AC-07 (US-03): Given the initial demo, when the visitor presses "Accept suggestion", then the link turns green and is labelled "Confirmed", and the status reads "Relationship confirmed: orders.cust_no → customers.customer_id". (Revision 12.)
 - AC-08 (US-03): Given the initial demo on a pointer device, when the visitor drags from Orders `cust_no` to Customers `customer_id`, then the same resolved state as AC-07 appears; when they connect any other pair, then a hint to try `cust_no → customer_id` is shown and the state stays unresolved.
 - AC-09 (US-03): Given the demo is resolved, when the visitor presses "Reset demo", then the initial state returns.
 - AC-10 (US-03): Given a keyboard-only visitor, when they Tab to the demo, then "Accept suggestion" and "Reset demo" are reachable and operable, and each state change is announced through a polite live region.
-- AC-11 (US-04, US-20): Given `/`, then these sections exist in order with these ids: `connects`, `problem`, `how-it-works`, `demo`, `trust`, `lifecycle`, `ai-privacy`, `who`, `about`, `faq`, `early-access`; the header links to How it works, Pricing (`/pricing`), AI & privacy, FAQ and the early-access form. (Revision 7.)
-- AC-12 (US-04, US-19): Given `/`, then it has no pricing section and no dollar amounts; pricing lives on `/pricing`, linked from the header and the footer. (Revision 7: was early-access prices on the home page.)
-- AC-13 (US-04): Given the `ai-privacy` section, then it states that Claude assists by default and everything works with AI switched off, metadata-only AI mode, "local engine on request", encryption in transit and at rest, deletion on request, and that consequential AI changes need the user's review; the site never claims that data never leaves the visitor's environment. (Revision 7: was the security section.)
-- AC-14 (US-04): Given the FAQ, then it includes "Does my data leave my environment?" as an expandable item that works without JavaScript, and it has no "Why not just use ChatGPT?" item. (Revision 8: the ChatGPT item is removed.)
+- AC-11 (US-04, US-20): Given `/`, then these sections exist in order with these ids: `connects`, `problem`, `how-it-works`, `demo`, `trust`, `ai-privacy`, `who`, `about`, `faq`, `early-access`; the header links to How it works, Early access (`/pricing`), AI & privacy, FAQ and the early-access form. (Revision 12: no `lifecycle`; "Pricing" becomes "Early access".)
+- AC-12 (US-04, US-19): Given `/`, then it has no pricing section and no dollar amounts; the early-access terms live on `/pricing`, linked as "Early access" from the header and the footer. (Revision 12.)
+- AC-13 (US-04): Given the `ai-privacy` section, then it states that the product runs on the user's machine, is read-only on sources, keeps AI off until it is turned on (everything works without it and suggestions stay Inferred until confirmed), shows the provider, model and exact context before any cloud AI request, offers a local model (Ollama), and keeps credentials in the OS keychain; the site never says "never leaves", "zero retention", "enterprise-grade", "fully secure" or "encrypted", and names no AI vendor. (Revision 12: Phase 1 §7.)
+- AC-14 (US-04): Given the FAQ, then it includes "Does my data leave my machine?" as an expandable item that works without JavaScript, and it has no "Why not just use ChatGPT?" item. (Revision 12: question reworded for the local product.)
 - AC-15 (US-05): Given `/privacy`, then it lists what the form collects, the processor (Formspree), retention, how to request deletion (site email), and states there is no analytics or tracking cookies; it is linked from the footer and from the form.
 - AC-16 (US-06): Given the source, then the brand name, domain, contact email and company details are defined only in `src/config/site.ts`, and no component hard-codes them.
 - AC-17 (US-06): Given `site.ts` still contains a `.example` domain or email, when `npm run check:launch` runs, then it exits non-zero and names each placeholder; with real values it exits zero.
@@ -221,33 +247,33 @@ Decided in planning.
 - AC-23 (US-08): Given a phone-sized viewport (under 768 px) or a coarse pointer, then the scene uses the light tier: at most 24 points, device pixel ratio at most 1.5, and no pointer response.
 - AC-24 (US-08): Given the 3D scene is running, when it scrolls out of view, then it stops rendering, and it resumes when visible again.
 - AC-25 (US-09): Given motion is allowed, when the trust states and the executive-summary numbers in `how-it-works` first scroll into view, then the trust states light up in order and the numbers count up to their final values, each once; on phones the how-it-works steps also appear in sequence; with reduced motion, all of them show their final state immediately. (Revision 7: the dashboard preview is gone.)
-- AC-26 (US-10): Given `/` and `/pricing`, then each problem item, how-it-works step, trust state, lifecycle dimension, audience, AI & privacy point and pricing plan shows a Lucide icon that is hidden from screen readers (`aria-hidden`); systems use generic icons, never brand logos. (Revision 7.)
-- AC-27 (US-10): Given `/`, then the visible words in `problem`, `how-it-works`, `trust`, `lifecycle`, `ai-privacy`, `who`, `about` and `early-access` total at most 850. (Revision 7: new sections; was 680 over the old ones.)
+- AC-26 (US-10): Given `/` and `/pricing`, then each problem item, how-it-works step, trust state, audience, AI & privacy point and early-access card shows a Lucide icon that is hidden from screen readers (`aria-hidden`); systems use generic icons, never brand logos. (Revision 12.)
+- AC-27 (US-10): Given `/`, then the visible words in `problem`, `how-it-works`, `trust`, `ai-privacy`, `who`, `about` and `early-access` total at most 850. (Revision 12: no lifecycle.)
 - AC-28 (US-11): Given a first-time visitor (no stored choice), whatever their system setting, when `/` or `/privacy` first paints, then the dark theme is applied before any content is shown (no flash), also without JavaScript, and form controls and scrollbars follow it (`color-scheme`). (Revision 4: was "follows the system".)
 - AC-29 (US-11): Given the header theme toggle (a real button whose label names the theme it switches to), when the visitor presses it, then the theme switches, the choice is remembered on that device across reloads, and the 3D hero and demo pick up the new colours.
 - AC-30 (US-11): Given the colour tokens (pure mono since revision 4; the revision 9 palette since then), then every text/background pair used on the page meets WCAG AA (4.5:1 text, 3:1 large text and UI) in both themes, and text selection, focus rings, scrollbars and link underlines are themed from the tokens. (Revision 9: accent-strong text on paper and surface is checked too.)
 - AC-31 (US-12): Given the 3D hero on a pointer or touch device, when the visitor drags across it, then the graph rotates with the drag (limited range) and eases back when released; page scrolling on phones still works with vertical swipes.
-- AC-32 (US-12): Given the settled 3D hero, when the visitor hovers or taps a hub, then a label shows its name and record count (e.g. "Customers, 1,204 records"); when they hover or tap a record point, then a sample shows (e.g. "ACME, Inc. → matched to Acme Inc.").
+- AC-32 (US-12): Given the settled 3D hero, when the visitor hovers or taps a hub, then a label shows its table and row count (e.g. "Customers, 1,204 records"); when they hover or tap a field point, then an observation shows (e.g. "customer_id: 99.8% unique, possible identifier"). (Revision 12: observations, not record matches.)
 - AC-33 (US-12): Given the settled 3D hero, then one hub link stays amber as "Suggested"; when the visitor clicks it, or presses the "Approve suggested link" button below the scene, then it turns green and the caption confirms it; Replay resets it.
-- AC-34 (US-13, US-20): Given a desktop visitor (1024 px or wider) with motion allowed, when they scroll through `how-it-works`, then the section stays pinned while Understand, Document & define, Build, Validate and Publish & serve become active in order, each with its own illustration (executive summary; Profile → Dictionary → Contract; a fix saved as a rule; validation results; the four destinations plus v2 §9's Trusted Data Product checklist: documented meaning, explicit expectations, traceable transformation logic, passed validation checks, known provenance, stated limitations, a defined downstream purpose), and releases after the last; on smaller screens or with reduced motion, all five steps show stacked with their illustrations, without pinning. (Revision 7: five v2 stages instead of Connect, See, Send. Revision 8: the §9 checklist.)
-- AC-35 (US-14): Given the demo, then it lists three issues (312 orders without a customer, a duplicate customer "Acme Inc." / "ACME, Inc.", dates in mixed formats) with a progress count; each is fixed by its own action (accept or draw the link, Merge, Convert dates), and the count updates.
-- AC-36 (US-14): Given all three issues are fixed, when the visitor presses "Run dry run", then a short report animates in (records checked, issues fixed, 0 violations) and only then do the Send destinations become enabled; "Reset demo" restores every issue. (Supersedes the destination part of AC-07.)
+- AC-34 (US-13, US-20): Given a desktop visitor (1024 px or wider) with motion allowed, when they scroll through `how-it-works`, then the section stays pinned while Connect, Profile & understand and Document & define become active in order, each with its own illustration (sources read in place or read-only; the executive overview; Profile → Dictionary → Contract with export), and releases after the last; on smaller screens or with reduced motion, all three steps show stacked with their illustrations, without pinning. Below the story, a "Coming next" strip names Transform, Validate, Publish & serve and Monitor & improve. (Revision 12: three Phase 1 stages instead of five.)
+- AC-35 (US-14): Given the demo, then it lists three review items with a progress count ("0 of 3 reviewed"): the inferred relationship (Accept suggestion, or draw the link), the possible identifier (Confirm identifier), and the rule "customer_id must be non-null and unique" (Add to contract), which stays disabled with "Confirm the identifier first" until the identifier is confirmed; the count updates after each. (Revision 12.)
+- AC-36 (US-14): Given all three items are reviewed, when the visitor presses "Export contract" (disabled until then), then the status reads "Contract exported: customers.contract.yaml" and a short YAML preview of the customers contract appears (the customer_id rule, state defined, evidence: profile run 42); "Reset demo" restores every item and removes the preview. (Revision 12: replaces the dry run and the destinations.)
 - AC-37 (US-15): Given motion is allowed, then buttons give press feedback, links and cards give hover feedback, FAQ answers open and close with a short height transition, and a successful sign-up shows an animated check; with reduced motion all of these change instantly.
 - AC-38 (US-16): Given a desktop visitor with a fine pointer and motion allowed, when the cursor moves over the settled hero graph, then nearby points ease slightly away from it and return when it leaves; there is no effect on touch devices or with reduced motion.
 - AC-39 (US-17): Given `/` at 640 px or wider, then the hero spans the full width and at least the viewport height below the header, with the 3D graph (or its still image) behind a centred H1, the subhead, the "Join early access" and "See how it works" CTAs and a "Scroll to explore" link to `#connects`; text stays legible over the scene (a scrim behind the text block), and drag, hover and approve still work on desktop outside the text and buttons. Under 640 px, the text, subhead and CTAs come first and the graph sits full-width in its own block below them with its controls, then "Scroll to explore"; nothing overlaps. (Revisions 5 and 7.)
 - AC-40 (US-17): Given a desktop visitor with a fine pointer and motion allowed, then scrolling (wheel and anchor links) is smooth and inertial, anchor links land below the sticky header, and keyboard scrolling still works; on touch devices or with reduced motion, native scrolling is used.
 - AC-41 (US-17): Given motion is allowed, when a section heading first scrolls into view, then its lines slide up out of a mask one after another, once; headings already on screen, and all headings with reduced motion, show immediately; the heading text stays whole for screen readers and search.
-- AC-42 (US-17): Given motion is allowed, when the visitor hovers a pricing plan or a lifecycle card, then its surface responds (lightens, border strengthens) within about 300 ms, easing out; with reduced motion there is no movement. (Revision 7: the view previews are gone.)
-- AC-43 (US-18): Given `/`, then a "Connects to" strip after the hero scrolls an endless row of sources (Excel, CSV, Google Sheets, Postgres, MySQL, SQL Server, REST APIs) and destinations (Odoo, CSV/XLSX/Parquet, cloud storage, cloud warehouse) with generic icons; it pauses on hover or keyboard focus, duplicate items are hidden from screen readers, and with reduced motion it shows as a still, wrapped list.
+- AC-42 (US-17): Given motion is allowed, when the visitor hovers an early-access card on `/pricing`, then its surface responds (lightens, border strengthens) within about 300 ms, easing out; with reduced motion there is no movement. (Revision 12: the lifecycle cards are gone.)
+- AC-43 (US-18): Given `/`, then a "Connects to" strip after the hero scrolls an endless row of the Phase 1 sources (CSV, Excel (XLSX), Parquet, PostgreSQL read-only), then "Coming next" with MySQL and SQL Server, with generic icons; it pauses on hover or keyboard focus, duplicate items are hidden from screen readers, and with reduced motion it shows as a still, wrapped list. (Revision 12.)
 - AC-44 (US-17): Given any page, then text uses Geist and data labels use Geist Mono, self-hosted (no requests to font services from the visitor's browser).
-- AC-45 (US-19): Given `/pricing`, then it shows four plan cards in order — Free / Local ("Free"), Pro ("Early access"), Team ("Early access"), Enterprise ("Contact us") — each with a one-line tagline and a price note taken from v2 §13's values (the exact strings under revision 8's decisions; no "set with early customers" wording), a CTA ("Join early access" → `/#early-access`; Enterprise "Talk to us" → mailto the site email) and what it includes ("Everything in <previous plan>, plus:" from Pro on), plus a note that exact pricing and limits follow real usage; no dollar amounts appear anywhere on the site. (Revision 8: taglines and price notes from v2.)
-- AC-46 (US-19): Given `/pricing`, then a "Compare features across plans" table lists v2 §13's twelve capabilities grouped as Data products, Understanding, Building, Trust & control, and Collaboration & governance, with exactly v2's values per plan (✓ shown as "Included" to screen readers, — as "Not included"); it uses table headers with scope, and on phones only the table container scrolls sideways (no page scroll).
-- AC-47 (US-19): Given `/pricing`, then a FAQ includes "Why are there no prices yet?", "What is a managed data product?", "What is the free Readiness Report?" and "Can I run Conflux on my own infrastructure?" as expandable items that work without JavaScript; answers follow v2 (§5, §11, §12), and the "no prices yet" answer says only that exact pricing and limits will follow real usage. (Revision 8.)
-- AC-48 (US-20): Given `/`, then the `lifecycle` section shows "Changes → Impact → Rebuild → Revalidate → Republish" and the four impact dimensions (knowledge, contract, pipeline, output), and says the first form is scheduled sync with drift alerts; the `trust` section shows v2's states Observed, Inferred, Confirmed, Defined and Validated with v2's customer_id examples.
-- AC-49 (US-19): Given `/pricing`, then its title is "Pricing" with the site name from config, it shares the header, footer, theme and fonts of `/`, and it has no horizontal page scroll at 320 px.
-- AC-50 (US-21): Given `/` (server HTML, still image, 3D scene, reduced motion or no WebGL alike), then the hero contains a status card labelled "Example" with five rows: sources connected, documentation ("58% documented, 11 to confirm"), contract coverage ("9 of 12 rules defined"), validation ("Dry run waiting on 1 approval") and the next action ("Confirm the customer identifier"); it is HTML text readable by screen readers, not part of the canvas. From 640 px it sits over the scene without covering the H1, subhead, CTAs, Replay or the "Approve suggested link" button; under 640 px it sits directly below the graph block. (Revision 8.)
-- AC-51 (US-01, US-21): Given `/`, then v2's supporting line "Profiling, documentation, contracts, transformation, and validation in one workspace — with Claude assistance you can switch off." is shown under the subhead; at 375×812 AC-01 still holds, and if the line would push "Join early access" below the fold, it moves below the CTAs on phones instead. (Revision 8.)
-- AC-52 (US-04): Given the `who` section, then businesses moving onto an ERP come first, labelled "Starting with", and data analysts and engineers second, labelled "Growing into". (Revision 8.)
+- AC-45 (US-19): Given `/pricing`, then its H1 is "Early access is free" and it shows two cards in order: "Early access" ("Free", what exists today, "Join early access" → `/#early-access`) and "Coming next" ("Later", transformation, validation, publishing, monitoring and more databases, "Talk to us" → mailto the site email), plus a note that pricing for later will follow real usage; no dollar amounts appear anywhere on the site. (Revision 12: replaces the four plans.)
+- AC-46 (US-19): Given `/pricing`, then there are no plans and no comparison table, and no Readiness Report is mentioned. (Revision 12: the comparison table is removed.)
+- AC-47 (US-19): Given `/pricing`, then a FAQ includes "Why is it free?", "What happens after early access?", "Where does it run?" and "Which AI does it use?" as expandable items that work without JavaScript; the "after early access" answer says only that pricing will follow real usage. (Revision 12.)
+- AC-48 (US-20): Given `/`, then the `trust` section shows the four Phase 1 states Observed, Inferred, Confirmed and Defined (no Validated) with the customer_id examples, and there is no `lifecycle` section. (Revision 12.)
+- AC-49 (US-19): Given `/pricing`, then its title is "Early access" with the site name from config, it shares the header, footer, theme and fonts of `/`, and it has no horizontal page scroll at 320 px. (Revision 12.)
+- AC-50 (US-21): Given `/` (server HTML, still image, 3D scene, reduced motion or no WebGL alike), then the hero contains a status card labelled "Example" with five rows: sources ("12 tables, 2.4M rows"), findings ("14 undocumented fields"), identifiers ("3 possible, 1 to confirm", in the amber inferred colour), contract ("9 of 12 rules defined") and the next action ("Confirm customer_id"); it is HTML text readable by screen readers, not part of the canvas. From 640 px it sits over the scene without covering the H1, subhead, CTAs, Replay or the "Approve suggested link" button; under 640 px it sits directly below the graph block. (Revision 12.)
+- AC-51 (US-01, US-21): Given `/`, then the supporting line "Runs on your machine. AI suggestions are optional, and you see what is sent before anything leaves." is shown under the subhead; at 375×812 AC-01 still holds. (Revision 12.)
+- AC-52 (US-04): Given the `who` section, then data analysts and engineers come first, labelled "Built for", and data consultants second, labelled "Also for"; the `about` section names the team (Trison Labs) from site config. (Revision 12.)
 - AC-53 (US-22): Given the colour tokens, then accent, accent-strong and on-accent keep revision 4's mono values (light #0a0a0a, #2a2a2a, #ffffff; dark #ffffff, #e0e0e0, #000000); surface is #F4F4F5 (light) and #18181B (dark); brand is #E77123 (light) and #FE7F2D (dark) with #000000 text, and brand-ink is #C2500A (light) and #FE7F2D (dark); sections have no background of their own; the hero's, pricing's and form's "Join early access" buttons are orange and the header's is black/white; orange also appears on the wordmark's dot, the favicon, the share image's bar, the active how-it-works step, the audience labels, link underlines, the FAQ "+" and focus rings, and on no other button or link; no indigo or other hue is used; the 3D hero's colours and the demo graph's edges never use orange. (Revision 9.)
 - AC-54 (US-23): Given motion is allowed and a fine pointer, when the visitor hovers (or keyboard-focuses) a button-style control (every Join button, See how it works, Talk to us, the demo's buttons, the hero's Approve and Replay), then a fill sweeps across it from the left within about 350 ms (orange buttons to brand-strong, keeping black text); with reduced motion the fill appears instantly. (Revision 10.)
 - AC-55 (US-23): Given motion is allowed, when the visitor presses one of those controls, then it scales in (0.96) and a ripple centred on the press point spreads and fades, and is removed afterwards; disabled controls get neither; with reduced motion there is no press and no ripple. (Revision 10.)
@@ -272,7 +298,7 @@ Formspree form (founders create it); domain + mailbox; Vercel project.
 File uploads, accounts, analytics, dark mode, translations, blog/SEO guides, founder names and photos, real legal entity details.
 
 ## Open Questions
-- Rewrite the site copy to follow the Conflux Phase 1 direction (local profiling: Connect → Profile & Understand → Document & Define) instead of the archived v2 (ERP migration, publish into the ERP). Not blocking; needs the user's answers before any criteria change.
+None blocking.
 
 ## Revision History
 - Revision 1: Initial draft from strategy §19 and the user's answers on 2026-10-10; approved by the user in chat, 2026-10-10.
@@ -286,3 +312,4 @@ File uploads, accounts, analytics, dark mode, translations, blog/SEO guides, fou
 - Revision 9: Orange, black and white: orange #FE7F2D (from Color Hunt palette 000000-233d4d-fe7f2d-eaecf0; a little dimmer and darker #E77123 in light) with black text on every Join button and the highlights, mono controls, neutral grey/graphite cards on untinted sections (US-22, AC-53 added; AC-30 extended); graphs neutral, dark by default unchanged. A sky accent, the palette's slate and an indigo accent were tried and reviewed the same day but never shipped. From the user's answers on 2026-10-11; approved by the user in chat, 2026-10-11.
 - Revision 10: Fill-sweep hover and press + ripple click on every button-style control (US-23, AC-54, AC-55 added); the header's Join button becomes black/white (AC-53 adjusted). From the user's answers on 2026-10-11; approved by the user in chat, 2026-10-11.
 - Revision 11: Reference-only change: the product is renamed Conflux (id VEL-WEB-landing → CFX-WEB-landing, `velora.example` → `conflux.example`), v2 moves to `../docs/archive/`, and the source of truth becomes `../docs/Conflux_Phase1_Development_Direction.md`; no criteria changed, the copy rewrite is an open question. Approved by the user's "Everywhere" and "Phase 1 doc replaces v2" choices in chat, 2026-10-30.
+- Revision 12: Content follows the approved Conflux Phase 1 direction (US-04, US-13, US-14, US-18..US-21 reworded; AC-02, AC-05..AC-07, AC-11..AC-14, AC-26, AC-27, AC-32, AC-34..AC-36, AC-42, AC-43, AC-45..AC-52 changed): three stages plus "Coming next", four trust states, a review-and-export demo, Phase 1 §7 claims only, provider-neutral AI, no lifecycle, no Readiness Report, and a free early-access page instead of plans; Trison Labs named as the team. From the user's answers on 2026-10-31; approved by the user in chat, 2026-10-31.

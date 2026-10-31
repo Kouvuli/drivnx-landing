@@ -1,15 +1,15 @@
 schema: ai-skill-os/knowledge-graph/v1
 generated_by: ai-skills knowledge discover
-updated_at: '2026-10-30T16:27:57+00:00'
+updated_at: '2026-10-31T13:56:43+00:00'
 note: Index for retrieval only. Source files are the truth; follow the evidence.
 sources:
-  .ai/knowledge/requirements/CFX-WEB-landing.md: 334a9625e54bffaf199ec4030fba849c762f054d2186487aaef16440d1f013b9
+  .ai/knowledge/requirements/CFX-WEB-landing.md: 678a16467d129b8cda63493291456acb321c500f4e59d90e0f45f7a40da29e90
   .next/types/root-params.d.ts: f3387dd7800eec3c34273f7a8efad13e864598c7e8f788d321e407390989bb59
   .next/types/routes.d.ts: b1c8b4d0432d67eba94d575514fb637f260cd12f098bb3a5770522b90c044638
-  e2e/landing.spec.ts: 0fd438703bee99de7b2e071d30069ac3b5b037fc8bd322c3b072d2cc32c028bf
-  e2e/motion.spec.ts: d8f8ec16965862a3855fd59cda71205d4cffa6b1004c45f4c94ffaa001a07b3d
-  e2e/pricing.spec.ts: aee468c76172dca3ad2dadf3bb6e7510a9108f85c6d503dee236d6e5184d13cc
-  e2e/theme.spec.ts: 77b512a04b31a6e6c1e0ef3f5e308e0d567edc75b0466ac02925a13af2df20ae
+  e2e/landing.spec.ts: 828e6443d5f892c4c7f0f582f197cc015c14aea7a2168604a2b642ddedcd5a1d
+  e2e/motion.spec.ts: 55714b7015de1dd2616b71c527795b0f16422bb72d4dfd0ef551b1ce36d42dcb
+  e2e/pricing.spec.ts: 13c0f365b8cd03d0fc449ce307676ad5b983db6025e51529eefc2dd0a084d28b
+  e2e/theme.spec.ts: e555ceaac6082e1eb9c515404d5b6aa99bca2b17814e296c95b7f0464bffc97e
   next-env.d.ts: 1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b
   package-lock.json: a82016d025e6738015752c4d95346a14d619affb615838814e1e69e9db995900
   package.json: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
@@ -18,39 +18,37 @@ sources:
   src/app/globals.css: 8810a81ebde7a81ebfda5c097b4689c3df202b42312b0fc010d79b751ff0743a
   src/app/layout.tsx: a2a1a614d7a200201fa2e292f773366aaac8d64de79695c8d8a88525b63a7fe3
   src/app/opengraph-image.tsx: a1b31381f42b89a4d7adb91da546ddb6a189b07c80ceb0beebdbb1ba89c590b9
-  src/app/page.tsx: 597332d763956ed286a543855ffb707fac17ac8ea720aff0303bf932b64a04e0
-  src/app/pricing/page.tsx: dd94047a9514483bdd1f22626e743d7e94ded6794be988a01ec24dc1f497a032
-  src/app/privacy/page.tsx: aed59a523a734cca16123348b6b07e7d6ab0d5c423c8565b9182e02cd3ad4280
+  src/app/page.tsx: c2db69c1bd953b247369e6ce304a945a6c7ff68b2b1a530125e4906cffeb7369
+  src/app/pricing/page.tsx: ffcaf9fae77e5fde005f9738be35ca4c9148fcbe6eaa2d5522e8013f38f428e4
+  src/app/privacy/page.tsx: ee1847361ab0207057413b45acee72dcacaba3f0334d55b123aa0d4e0df80c99
   src/app/theme.test.ts: 093073baf2c032b3952b071cbd78651152a78e9af24e86ac96662ab551948e14
   src/components/ButtonRipple.tsx: e68f11fbb4da21ee639038939c2a1a0ddd269d479f7bcc29a0bcd1b9257ace15
-  src/components/ConnectsMarquee.tsx: 6d56f047f52438b13c15956d06341aabc1d65056fa601062674daed9578f6ebc
-  src/components/GraphDemo.tsx: 475a91b769f3d6713e3722416e80f04038208917f766bbfff38b875345d02905
-  src/components/HowItWorks.tsx: 9ffd9f022f430569cf5cb5587551243b054b16960797838f6b9d83378626197a
+  src/components/ConnectsMarquee.tsx: cd83c4efa81bb89ee13aa5c981ee1f60729f03484ac99814f71dd00cd0dc6930
+  src/components/GraphDemo.tsx: 8c2cd405925d6cd173cc66e7b241cc4dbc6313e5fe4e45655c2ca012b0211a8e
+  src/components/HowItWorks.tsx: 68fac7c05c2f22ec68cf1dc7afb03cc123a72e9b02717de433dc097f32929c44
   src/components/RevealHeading.tsx: 6f6ed2babd9f7f2f85929c93f62612546453c9388efcc76d5b358a877a0a220f
   src/components/Section.tsx: 1085990e9c4e09e5230f80a17859ff4948e10ddbc3cb5883eabdf3a311453f96
-  src/components/SiteChrome.tsx: bb89183c45b09a5da8f44f16c5eaee9a33a93efdd9ef4147bbab67a4c0392946
+  src/components/SiteChrome.tsx: ff995227017c04cc4d003f0a2b4d6ed6964cd9219b0a767a154100700dfe81d8
   src/components/SmoothScroll.tsx: ab768a7ad9392ca6543ae5fff99cf7a2ca51206458aa57f4cc257328a134c367
   src/components/StoryMotion.tsx: 27d5100f86de8409ddcce19570fb7907514cb816f90d0a80383dbd06e9e225e4
   src/components/ThemeToggle.tsx: d2923c187baec50e783b96a87946ca8462dde0afb5baa8bd96c008a58193e516
-  src/components/WaitlistForm.test.tsx: a83a280d37dd16920e86b3a28a9ee85b94ceb03a27a456501a1a5a491b22d578
-  src/components/WaitlistForm.tsx: 7ea8c1afa7521d432d3b1e9dc1e173315c33116aaec0d634eb9c710feaae5b7e
+  src/components/WaitlistForm.test.tsx: 70ab4db6ce036e5312567ec889615d3c1208dc7324423666dae32efac3964121
+  src/components/WaitlistForm.tsx: 729421969bfc2da8ac8ab4d8353159c77b4532576d51b7a88bdfd19a55d48d4e
   src/components/hero/HeroCanvas.tsx: 7f876c0eb89c7eedeb315d155dffec17529845f4c3b0186ec730a9612ee1a4bc
   src/components/hero/HeroGraphStill.tsx: 11a859f995bf05a26dabd22bfcc87002750fe19aafbfaf23ded6b13ee775f35f
-  src/components/hero/HeroScene.tsx: ec2ebdc56c8a3eb4ef04e4d587cdc6ded222896981cb2422f227195b8e2bc185
-  src/components/hero/HeroStatus.tsx: 70b951619ba1ec0c0aae124a48c2af040d7c60a9830c49d39beba6b4591c2f06
+  src/components/hero/HeroScene.tsx: 4221a3d5c78f7d38643cd572a349d5821152215b44ed54c369dee7a8b5569350
+  src/components/hero/HeroStatus.tsx: 1899638b24514ea4fe7310cfed7b29e1ea68db16a0d8afd2771f4b3ae43beb5b
   src/config/site.test.ts: 4eb8b6645e15481ac6e4c43f90cec7d8b14409e49a7ce6479f5101aaaf272f91
-  src/config/site.ts: 1db0532c93678668952cd083442af8a5d1c1b8212ea080e1eae39445f63a6b4b
-  src/lib/demo.test.ts: dfe45da3cab99c8477c9c60c1c23dd22495b72a63715cd4e229e1a75dfd043d6
-  src/lib/demo.ts: 6219b8b9dcfa92b24673e0dcd5624103fdbfee5cc95f3e60b54e663533e9eb62
+  src/config/site.ts: 4c758cd64094a30bb405ca569923a29271cc57025c51f66a396ede380ea9191d
+  src/lib/demo.test.ts: ea55b86e276a7c481c96bce20a998dd5d13075b771aab20d93d7d6a53bee1509
+  src/lib/demo.ts: d0ae3bbd65f0fa6cd05b023fe53e8db8634063ca28914b8ffc5d83bff95e0917
   src/lib/format.test.ts: 2503e27bb0d6551b8108ccbc0c972ed706ea1d804d2cca0589a77cadaab6e987
   src/lib/format.ts: 782f34cccadf945136272edfd38bc3f5ba2f895e3b42d30c54b1939927cb4fbb
-  src/lib/heroGraph.test.ts: 53964822d99b6781d75971a0437939faedb09a658133cc80a8c2fb8e5b051634
-  src/lib/heroGraph.ts: d5ef5935c84d926c6bfad651e7ceca5f88eb8d652008f50893ba436efc495eac
-  src/lib/pricing.test.ts: e45a8bdbcd256d995d295629d66184f235f64a8771be53b90c965c9d6ad9e5b2
-  src/lib/pricing.ts: 48e4eed450e39d2092ad39be0c1abc5735420dc3e1e2a69898faea492ddd42a6
+  src/lib/heroGraph.test.ts: a380ac4571b3c9596ed062956d158f5fbb6cd97becc509f98f2c585143ea718b
+  src/lib/heroGraph.ts: 2d2b0d7d3f917dc7f3cb59ea5ebc67a9ac1d45b676c99e6850acb2f0963ff8b3
   src/lib/theme.ts: 583467944cca4721eee53a78687e4077505fd0e448d02ff449179a1c254ffc56
-  src/lib/waitlist.test.ts: b28e428046d90ebd6b34942f4d7c7acd68e5ebae9d2e256f25d362ae68906ddc
-  src/lib/waitlist.ts: 60660d141ba6513c6ec543acf2fdd2c13176035fa937661dd36b079da8790fef
+  src/lib/waitlist.test.ts: a27a5823bf4dbfa9e961afb28604590fbb14eac9c7ac72eb4a406fa407263b83
+  src/lib/waitlist.ts: 6c8548d381047ded2e1732d0768cd7a8436d1e972026c1b4c877cdefc067ba12
 nodes:
 - id: criterion:CFX-WEB-landing/AC-01
   kind: criterion
@@ -62,8 +60,9 @@ nodes:
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given the endpoint is set, when a visitor submits a valid email, a segment and the Readiness Report
-    choice, then exactly one request matching the form contract is sent, the button shows "Joining…" and
+  text: Given the endpoint is set, when a visitor submits a valid email and a segment, then exactly one
+    request matching the form contract is sent, the button shows "Joining…" and is disabled while pending,
+    a
 - id: criterion:CFX-WEB-landing/AC-03
   kind: criterion
   evidence:
@@ -81,20 +80,21 @@ nodes:
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the endpoint is not set, when the visitor submits a valid form, then no network request
-    is sent and the browser is pointed to a `mailto:` link to the site email whose body contains the email,
-    se
+    is sent and the browser is pointed to a `mailto:` link to the site email whose body contains the email
+    and
 - id: criterion:CFX-WEB-landing/AC-06
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given the demo loads, then it shows an Orders source and a Customers source, the warning "312
-    orders have no matching customer", and an amber suggested link "cust_no → customer_id (94%)".
+  text: 'Given the demo loads, then it shows an orders.xlsx source and a customers source, the status
+    "Profile ready: 2 inferred facts need your review", and an amber inferred link "cust_no → customer_id
+    (94%)'
 - id: criterion:CFX-WEB-landing/AC-07
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given the initial demo, when the visitor presses "Accept suggestion", then the link turns green
-    (approved), the warning is replaced by "All 4,812 orders matched to a customer", and the Send destinatio
+  text: 'Given the initial demo, when the visitor presses "Accept suggestion", then the link turns green
+    and is labelled "Confirmed", and the status reads "Relationship confirmed: orders.cust_no → customers.cu'
 - id: criterion:CFX-WEB-landing/AC-08
   kind: criterion
   evidence:
@@ -116,16 +116,16 @@ nodes:
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: 'Given the `ai-privacy` section, then it states that Claude assists by default and everything
-    works with AI switched off, metadata-only AI mode, "local engine on request", encryption in transit
-    and at '
+  text: Given the `ai-privacy` section, then it states that the product runs on the user's machine, is
+    read-only on sources, keeps AI off until it is turned on (everything works without it and suggestions
+    sta
 - id: criterion:CFX-WEB-landing/AC-14
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: 'Given the FAQ, then it includes "Does my data leave my environment?" as an expandable item that
-    works without JavaScript, and it has no "Why not just use ChatGPT?" item. (Revision 8: the ChatGPT
-    item '
+  text: 'Given the FAQ, then it includes "Does my data leave my machine?" as an expandable item that works
+    without JavaScript, and it has no "Why not just use ChatGPT?" item. (Revision 12: question reworded
+    fo'
 - id: criterion:CFX-WEB-landing/AC-15
   kind: criterion
   evidence:
@@ -200,14 +200,14 @@ nodes:
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given `/` and `/pricing`, then each problem item, how-it-works step, trust state, lifecycle dimension,
-    audience, AI & privacy point and pricing plan shows a Lucide icon that is hidden from screen read
+  text: Given `/` and `/pricing`, then each problem item, how-it-works step, trust state, audience, AI
+    & privacy point and early-access card shows a Lucide icon that is hidden from screen readers (`aria-hidde
 - id: criterion:CFX-WEB-landing/AC-27
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: 'Given `/`, then the visible words in `problem`, `how-it-works`, `trust`, `lifecycle`, `ai-privacy`,
-    `who`, `about` and `early-access` total at most 850. (Revision 7: new sections; was 680 over the old'
+  text: 'Given `/`, then the visible words in `problem`, `how-it-works`, `trust`, `ai-privacy`, `who`,
+    `about` and `early-access` total at most 850. (Revision 12: no lifecycle.)'
 - id: criterion:CFX-WEB-landing/AC-28
   kind: criterion
   evidence:
@@ -239,9 +239,8 @@ nodes:
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given the settled 3D hero, when the visitor hovers or taps a hub, then a label shows its name
-    and record count (e.g. "Customers, 1,204 records"); when they hover or tap a record point, then a
-    sample s
+  text: Given the settled 3D hero, when the visitor hovers or taps a hub, then a label shows its table
+    and row count (e.g. "Customers, 1,204 records"); when they hover or tap a field point, then an observatio
 - id: criterion:CFX-WEB-landing/AC-33
   kind: criterion
   evidence:
@@ -252,16 +251,15 @@ nodes:
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given the demo, then it lists three issues (312 orders without a customer, a duplicate customer
-    "Acme Inc." / "ACME, Inc.", dates in mixed formats) with a progress count; each is fixed by its own
-    acti
+  text: 'Given the demo, then it lists three review items with a progress count ("0 of 3 reviewed"): the
+    inferred relationship (Accept suggestion, or draw the link), the possible identifier (Confirm identifier'
 - id: criterion:CFX-WEB-landing/AC-36
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given all three issues are fixed, when the visitor presses "Run dry run", then a short report
-    animates in (records checked, issues fixed, 0 violations) and only then do the Send destinations become
-    en
+  text: 'Given all three items are reviewed, when the visitor presses "Export contract" (disabled until
+    then), then the status reads "Contract exported: customers.contract.yaml" and a short YAML preview
+    of the'
 - id: criterion:CFX-WEB-landing/AC-37
   kind: criterion
   evidence:
@@ -300,16 +298,16 @@ nodes:
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given motion is allowed, when the visitor hovers a pricing plan or a lifecycle card, then its
+  text: Given motion is allowed, when the visitor hovers an early-access card on `/pricing`, then its
     surface responds (lightens, border strengthens) within about 300 ms, easing out; with reduced motion
     there
 - id: criterion:CFX-WEB-landing/AC-43
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given `/`, then a "Connects to" strip after the hero scrolls an endless row of sources (Excel,
-    CSV, Google Sheets, Postgres, MySQL, SQL Server, REST APIs) and destinations (Odoo, CSV/XLSX/Parquet,
-    clo
+  text: Given `/`, then a "Connects to" strip after the hero scrolls an endless row of the Phase 1 sources
+    (CSV, Excel (XLSX), Parquet, PostgreSQL read-only), then "Coming next" with MySQL and SQL Server,
+    wit
 - id: criterion:CFX-WEB-landing/AC-44
   kind: criterion
   evidence:
@@ -320,48 +318,47 @@ nodes:
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given `/pricing`, then it shows four plan cards in order — Free / Local ("Free"), Pro ("Early
-    access"), Team ("Early access"), Enterprise ("Contact us") — each with a one-line tagline and a price
-    note
+  text: 'Given `/pricing`, then its H1 is "Early access is free" and it shows two cards in order: "Early
+    access" ("Free", what exists today, "Join early access" → `/#early-access`) and "Coming next" ("Later", '
 - id: criterion:CFX-WEB-landing/AC-46
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given `/pricing`, then a "Compare features across plans" table lists v2 §13's twelve capabilities
-    grouped as Data products, Understanding, Building, Trust & control, and Collaboration & governance,
-    wi
+  text: 'Given `/pricing`, then there are no plans and no comparison table, and no Readiness Report is
+    mentioned. (Revision 12: the comparison table is removed.)'
 - id: criterion:CFX-WEB-landing/AC-47
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given `/pricing`, then a FAQ includes "Why are there no prices yet?", "What is a managed data
-    product?", "What is the free Readiness Report?" and "Can I run Conflux on my own infrastructure?"
-    as expan
+  text: Given `/pricing`, then a FAQ includes "Why is it free?", "What happens after early access?", "Where
+    does it run?" and "Which AI does it use?" as expandable items that work without JavaScript; the "aft
 - id: criterion:CFX-WEB-landing/AC-48
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given `/`, then the `lifecycle` section shows "Changes → Impact → Rebuild → Revalidate → Republish"
-    and the four impact dimensions (knowledge, contract, pipeline, output), and says the first form is
-    s
+  text: Given `/`, then the `trust` section shows the four Phase 1 states Observed, Inferred, Confirmed
+    and Defined (no Validated) with the customer_id examples, and there is no `lifecycle` section. (Revision
 - id: criterion:CFX-WEB-landing/AC-49
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given `/pricing`, then its title is "Pricing" with the site name from config, it shares the header,
-    footer, theme and fonts of `/`, and it has no horizontal page scroll at 320 px.
+  text: Given `/pricing`, then its title is "Early access" with the site name from config, it shares the
+    header, footer, theme and fonts of `/`, and it has no horizontal page scroll at 320 px. (Revision
+    12.)
 - id: criterion:CFX-WEB-landing/AC-50
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given `/` (server HTML, still image, 3D scene, reduced motion or no WebGL alike), then the hero
-    contains a status card labelled "Example" with five rows: sources connected, documentation ("58% documen'
+    contains a status card labelled "Example" with five rows: sources ("12 tables, 2.4M rows"), findings
+    ("1'
 - id: criterion:CFX-WEB-landing/AC-52
   kind: criterion
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  text: Given the `who` section, then businesses moving onto an ERP come first, labelled "Starting with",
-    and data analysts and engineers second, labelled "Growing into". (Revision 8.)
+  text: Given the `who` section, then data analysts and engineers come first, labelled "Built for", and
+    data consultants second, labelled "Also for"; the `about` section names the team (Trison Labs) from
+    site
 - id: criterion:CFX-WEB-landing/AC-53
   kind: criterion
   evidence:
@@ -549,14 +546,6 @@ nodes:
   kind: module
   evidence:
   - src/lib/heroGraph.ts:1
-- id: module:src/lib/pricing.test.ts
-  kind: module
-  evidence:
-  - src/lib/pricing.test.ts:1
-- id: module:src/lib/pricing.ts
-  kind: module
-  evidence:
-  - src/lib/pricing.ts:1
 - id: module:src/lib/theme.ts
   kind: module
   evidence:
@@ -591,7 +580,7 @@ nodes:
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: Learn how it works, what it costs and whether to trust it
+  title: Learn how it works, that early access is free, and whether to trust it
 - id: story:CFX-WEB-landing/US-05
   kind: story
   evidence:
@@ -636,13 +625,13 @@ nodes:
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: Follow Connect → See → Send step by step while scrolling
+  title: Follow Connect → Profile & understand → Document & define step by step while scrolling
 - id: story:CFX-WEB-landing/US-14
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: 'Fix a realistic mess in the demo: a missing link, a duplicate and a date format, then run a
-    dry run'
+  title: 'Review what profiling inferred in the demo: confirm a relationship and an identifier, define
+    a rule, then export the contract'
 - id: story:CFX-WEB-landing/US-15
   kind: story
   evidence:
@@ -663,24 +652,24 @@ nodes:
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: See at a glance which systems Conflux connects
+  title: See at a glance which sources Conflux reads now and which come next
 - id: story:CFX-WEB-landing/US-19
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: Compare plans on a dedicated pricing page
+  title: See on its own page that early access is free, what it includes and what comes next
 - id: story:CFX-WEB-landing/US-20
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: 'Follow the product story from the vision: understand, define, build, validate, publish, keep
-    current'
+  title: Follow the Phase 1 story, and see that transformation, validation, publishing and monitoring
+    come later
 - id: story:CFX-WEB-landing/US-21
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: 'See in the hero what Conflux tells me about my data: documentation, contract coverage, validation
-    and the next action'
+  title: 'See in the hero what Conflux tells me about my data: sources, findings, identifiers, contract
+    coverage and the next action'
 - id: story:CFX-WEB-landing/US-22
   kind: story
   evidence:
@@ -1201,13 +1190,13 @@ edges:
   to: criterion:CFX-WEB-landing/AC-06
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:58
+  - e2e/landing.spec.ts:59
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-07
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:58
+  - e2e/landing.spec.ts:59
   - e2e/landing.spec.ts:130
 - from: module:e2e/landing.spec.ts
   rel: verifies
@@ -1220,13 +1209,13 @@ edges:
   to: criterion:CFX-WEB-landing/AC-09
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:58
+  - e2e/landing.spec.ts:59
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-10
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:58
+  - e2e/landing.spec.ts:59
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-13
@@ -1244,31 +1233,31 @@ edges:
   to: criterion:CFX-WEB-landing/AC-15
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:236
+  - e2e/landing.spec.ts:235
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-18
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:247
+  - e2e/landing.spec.ts:246
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-35
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:80
+  - e2e/landing.spec.ts:81
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-36
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:80
+  - e2e/landing.spec.ts:81
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-48
   status: CONFIRMED
   evidence:
-  - e2e/landing.spec.ts:44
+  - e2e/landing.spec.ts:48
 - from: module:e2e/landing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-50
@@ -1362,61 +1351,61 @@ edges:
   to: criterion:CFX-WEB-landing/AC-37
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:261
-  - e2e/motion.spec.ts:279
+  - e2e/motion.spec.ts:254
+  - e2e/motion.spec.ts:272
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-38
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:357
+  - e2e/motion.spec.ts:350
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-39
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:364
+  - e2e/motion.spec.ts:357
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-40
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:389
-  - e2e/motion.spec.ts:409
+  - e2e/motion.spec.ts:382
+  - e2e/motion.spec.ts:402
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-41
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:409
-  - e2e/motion.spec.ts:420
+  - e2e/motion.spec.ts:402
+  - e2e/motion.spec.ts:413
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-42
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:433
+  - e2e/motion.spec.ts:426
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-43
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:409
-  - e2e/motion.spec.ts:445
+  - e2e/motion.spec.ts:402
+  - e2e/motion.spec.ts:438
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-54
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:296
-  - e2e/motion.spec.ts:341
+  - e2e/motion.spec.ts:289
+  - e2e/motion.spec.ts:334
 - from: module:e2e/motion.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-55
   status: CONFIRMED
   evidence:
-  - e2e/motion.spec.ts:320
-  - e2e/motion.spec.ts:341
+  - e2e/motion.spec.ts:313
+  - e2e/motion.spec.ts:334
 - from: module:e2e/pricing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-26
@@ -1434,21 +1423,19 @@ edges:
   to: criterion:CFX-WEB-landing/AC-46
   status: CONFIRMED
   evidence:
-  - e2e/pricing.spec.ts:30
-  - e2e/pricing.spec.ts:45
+  - e2e/pricing.spec.ts:29
 - from: module:e2e/pricing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-47
   status: CONFIRMED
   evidence:
-  - e2e/pricing.spec.ts:54
+  - e2e/pricing.spec.ts:36
 - from: module:e2e/pricing.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-49
   status: CONFIRMED
   evidence:
-  - e2e/pricing.spec.ts:45
-  - e2e/pricing.spec.ts:70
+  - e2e/pricing.spec.ts:50
 - from: module:e2e/theme.spec.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-28
@@ -1546,7 +1533,7 @@ edges:
   to: criterion:CFX-WEB-landing/AC-26
   status: INFERRED
   evidence:
-  - src/app/page.tsx:1
+  - src/app/page.tsx:2
   note: bare AC-26; the file names only CFX-WEB-landing
 - from: module:src/app/page.tsx
   rel: implements
@@ -1560,13 +1547,13 @@ edges:
   to: criterion:CFX-WEB-landing/AC-39
   status: CONFIRMED
   evidence:
-  - src/app/page.tsx:109
+  - src/app/page.tsx:95
 - from: module:src/app/page.tsx
   rel: implements
   to: criterion:CFX-WEB-landing/AC-50
   status: INFERRED
   evidence:
-  - src/app/page.tsx:109
+  - src/app/page.tsx:95
   note: bare AC-50; the file names only CFX-WEB-landing
 - from: module:src/app/pricing/page.tsx
   rel: implements
@@ -1619,18 +1606,11 @@ edges:
   evidence:
   - src/components/HowItWorks.tsx:3
 - from: module:src/components/HowItWorks.tsx
-  rel: implements
-  to: criterion:CFX-WEB-landing/AC-26
-  status: INFERRED
-  evidence:
-  - src/components/HowItWorks.tsx:3
-  note: bare AC-26; the file names only CFX-WEB-landing
-- from: module:src/components/HowItWorks.tsx
   rel: imports
   to: module:src/components/StoryMotion.tsx
   status: CONFIRMED
   evidence:
-  - src/components/HowItWorks.tsx:28
+  - src/components/HowItWorks.tsx:25
 - from: module:src/components/RevealHeading.tsx
   rel: implements
   to: criterion:CFX-WEB-landing/AC-41
@@ -1690,25 +1670,25 @@ edges:
   to: criterion:CFX-WEB-landing/AC-02
   status: CONFIRMED
   evidence:
-  - src/components/WaitlistForm.test.tsx:19
+  - src/components/WaitlistForm.test.tsx:18
 - from: module:src/components/WaitlistForm.test.tsx
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-03
   status: CONFIRMED
   evidence:
-  - src/components/WaitlistForm.test.tsx:41
+  - src/components/WaitlistForm.test.tsx:39
 - from: module:src/components/WaitlistForm.test.tsx
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-04
   status: CONFIRMED
   evidence:
-  - src/components/WaitlistForm.test.tsx:55
+  - src/components/WaitlistForm.test.tsx:53
 - from: module:src/components/WaitlistForm.test.tsx
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-05
   status: CONFIRMED
   evidence:
-  - src/components/WaitlistForm.test.tsx:68
+  - src/components/WaitlistForm.test.tsx:66
 - from: module:src/components/hero/HeroCanvas.tsx
   rel: implements
   to: criterion:CFX-WEB-landing/AC-20
@@ -1806,7 +1786,7 @@ edges:
   to: criterion:CFX-WEB-landing/AC-09
   status: CONFIRMED
   evidence:
-  - src/lib/demo.test.ts:60
+  - src/lib/demo.test.ts:54
 - from: module:src/lib/demo.test.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-35
@@ -1818,7 +1798,7 @@ edges:
   to: criterion:CFX-WEB-landing/AC-36
   status: CONFIRMED
   evidence:
-  - src/lib/demo.test.ts:38
+  - src/lib/demo.test.ts:41
 - from: module:src/lib/demo.ts
   rel: implements
   to: criterion:CFX-WEB-landing/AC-06
@@ -1892,32 +1872,6 @@ edges:
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.ts:116
-- from: module:src/lib/pricing.test.ts
-  rel: imports
-  to: module:src/lib/pricing.ts
-  status: CONFIRMED
-  evidence:
-  - src/lib/pricing.test.ts:2
-- from: module:src/lib/pricing.test.ts
-  rel: verifies
-  to: criterion:CFX-WEB-landing/AC-45
-  status: CONFIRMED
-  evidence:
-  - src/lib/pricing.test.ts:4
-  - src/lib/pricing.test.ts:20
-  - src/lib/pricing.test.ts:40
-- from: module:src/lib/pricing.test.ts
-  rel: verifies
-  to: criterion:CFX-WEB-landing/AC-46
-  status: CONFIRMED
-  evidence:
-  - src/lib/pricing.test.ts:20
-- from: module:src/lib/pricing.ts
-  rel: implements
-  to: criterion:CFX-WEB-landing/AC-45
-  status: CONFIRMED
-  evidence:
-  - src/lib/pricing.ts:1
 - from: module:src/lib/theme.ts
   rel: implements
   to: criterion:CFX-WEB-landing/AC-28
@@ -1936,7 +1890,7 @@ edges:
   status: CONFIRMED
   evidence:
   - src/lib/waitlist.test.ts:15
-  - src/lib/waitlist.test.ts:26
+  - src/lib/waitlist.test.ts:25
 - from: module:src/lib/waitlist.test.ts
   rel: verifies
   to: criterion:CFX-WEB-landing/AC-03
@@ -1948,7 +1902,7 @@ edges:
   to: criterion:CFX-WEB-landing/AC-05
   status: CONFIRMED
   evidence:
-  - src/lib/waitlist.test.ts:49
+  - src/lib/waitlist.test.ts:48
 - from: module:src/lib/waitlist.ts
   rel: implements
   to: criterion:CFX-WEB-landing/AC-02

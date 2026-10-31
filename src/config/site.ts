@@ -7,7 +7,8 @@ export const site = {
   url: "https://conflux.example",
   email: "hello@conflux.example",
   operator: "Conflux (company registration in progress)",
+  team: "Trison Labs",
   title: "Conflux: understand your data before you use it",
   description:
-    "Connect spreadsheets, databases and APIs. See what you have and how your records connect, fix the gaps with Claude's help, then publish validated data into your ERP, cloud or warehouse.",
+    "Connect spreadsheets, files and Postgres. See what's there, what it means and what should be true, with evidence for every finding.",
 };

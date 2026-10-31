@@ -1,50 +1,31 @@
 "use client";
 
-// "Connects to" strip (CFX-WEB-landing AC-43): an endless row of the systems the product connects, with generic icons
-// (no brand logos). Pauses on hover, keyboard focus or the Pause button; still and wrapped with reduced motion.
+// "Connects to" strip (CFX-WEB-landing AC-43): an endless row of the Phase 1 sources, then the next candidates, with
+// generic icons (no brand logos). Pauses on hover, keyboard focus or the Pause button; still and wrapped with reduced
+// motion.
 
-import {
-  ArrowRight,
-  Building2,
-  Cloud,
-  Database,
-  FileSpreadsheet,
-  FileText,
-  Files,
-  Globe,
-  Pause,
-  Play,
-  Server,
-  Sheet,
-  Warehouse,
-  type LucideIcon,
-} from "lucide-react";
+import { Database, FileSpreadsheet, FileText, Files, Pause, Play, Server, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import { site } from "@/config/site";
 
-const items: [LucideIcon, string][] = [
-  [FileSpreadsheet, "Excel"],
+const NEXT = "Coming next";
+const items: [LucideIcon | null, string][] = [
   [FileText, "CSV"],
-  [Sheet, "Google Sheets"],
-  [Database, "Postgres"],
+  [FileSpreadsheet, "Excel (XLSX)"],
+  [Files, "Parquet"],
+  [Database, "PostgreSQL, read-only"],
+  [null, NEXT],
   [Database, "MySQL"],
   [Server, "SQL Server"],
-  [Globe, "REST APIs"],
-  [ArrowRight, "into"],
-  [Building2, "Odoo"],
-  [Files, "CSV, XLSX, Parquet"],
-  [Cloud, "Cloud storage"],
-  [Warehouse, "Cloud warehouse"],
 ];
 
 function Row({ hidden = false }: { hidden?: boolean }) {
   return (
     <ul className="flex shrink-0 items-center gap-3 pr-3 motion-reduce:flex-wrap motion-reduce:justify-center" aria-hidden={hidden || undefined}>
       {items.map(([Icon, label]) =>
-        label === "into" ? (
-          <li key={label} className="px-2 text-muted">
-            <Icon aria-hidden="true" className="size-5" />
-            <span className="sr-only">into</span>
+        Icon === null ? (
+          <li key={label} className="px-2 font-mono text-xs tracking-wide whitespace-nowrap text-muted uppercase">
+            {label}
           </li>
         ) : (
           <li
@@ -92,8 +73,11 @@ export function ConnectsMarquee() {
             paused ? "[animation-play-state:paused]" : ""
           }`}
         >
+          {/* Four copies so the short list still fills wide screens; the loop moves by half (two copies). */}
           <Row />
-          <div className="motion-reduce:hidden">
+          <div className="flex motion-reduce:hidden">
+            <Row hidden />
+            <Row hidden />
             <Row hidden />
           </div>
         </div>

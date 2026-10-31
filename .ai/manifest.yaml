@@ -100,7 +100,7 @@ commands:
     evidence: package.json scripts.test
 requirements:
   paths:
-  - ../docs/archive/Velora — Product Vision v2.md
+  - ../docs/Conflux_Phase1_Development_Direction.md
 checks:
   'on':
   - pre-delivery

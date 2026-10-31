@@ -1,7 +1,7 @@
 "use client";
 
-// Hero demo (CFX-WEB-landing AC-06..AC-10): fix "312 orders have no matching customer"
-// by accepting Claude's suggested link or drawing it between the two columns.
+// Demo (CFX-WEB-landing AC-06..AC-10, AC-35, AC-36): review what profiling inferred. Confirm the suggested relationship
+// (accept it or draw it between the two columns), confirm the identifier, promote it to a contract rule, then export.
 
 import {
   Handle,
@@ -13,17 +13,18 @@ import {
   type NodeProps,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { Check, CircleDashed, Copy, Link2, CalendarCog, RotateCcw, ShieldCheck } from "lucide-react";
-import { useEffect, useMemo, useReducer, useRef, useState } from "react";
-import { DEMO, SUGGESTED_LINK, canRunDryRun, canSend, demoReducer, fixedCount, initialDemoState, type DemoState } from "@/lib/demo";
+import { Check, Download, FileCheck2, KeyRound, Link2, RotateCcw } from "lucide-react";
+import { useMemo, useReducer } from "react";
+import { DEMO, SUGGESTED_LINK, canDefineRule, canExport, demoReducer, initialDemoState, reviewedCount, type DemoState } from "@/lib/demo";
 
 type TableData = {
   title: string;
   detail: string;
   columns: string[];
   side: "source" | "target";
+  /** The column under review and whether it is still Inferred (amber) or Confirmed (green). */
   linkColumn: string;
-  resolved: boolean;
+  confirmed: boolean;
 };
 type TableNode = Node<TableData, "table">;
 
@@ -39,7 +40,7 @@ function TableNodeView({ data }: NodeProps<TableNode>) {
       <ul className="py-1">
         {data.columns.map((col) => {
           const isLink = col === data.linkColumn;
-          const tone = !isLink ? "text-muted" : data.resolved ? "bg-approved-soft text-approved" : "bg-suggested-soft text-suggested-ink";
+          const tone = !isLink ? "text-muted" : data.confirmed ? "bg-approved-soft text-approved" : "bg-suggested-soft text-suggested-ink";
           return (
             <li key={col} className={`relative px-3 py-1 font-mono text-xs ${tone}`}>
               {col}
@@ -60,34 +61,44 @@ function TableNodeView({ data }: NodeProps<TableNode>) {
 
 const nodeTypes = { table: TableNodeView };
 
-const destinations = ["Odoo", "Files", "Cloud storage", "Warehouse"];
-const DRY_RUN_MS = 1200;
-
 function statusMessage(s: DemoState) {
   if (s.hint) return s.hint;
   switch (s.last) {
     case "start":
-      return `${fmt(DEMO.unmatchedOrders)} orders have no matching customer`;
-    case "linked":
-      return `Link approved. All ${fmt(DEMO.totalOrders)} orders matched to a customer`;
-    case "merged":
-      return `Merged “ACME, Inc.” into “Acme Inc.”: ${fmt(DEMO.customers - 1)} customers`;
-    case "converted":
-      return `Converted ${fmt(DEMO.totalOrders)} dates to one format`;
-    case "running":
-      return "Running a dry run…";
-    case "passed":
-      return "Dry run passed: 0 violations. Ready to send.";
+      return "Profile ready: 2 inferred facts need your review";
+    case "relationship":
+      return "Relationship confirmed: orders.cust_no → customers.customer_id";
+    case "identifier":
+      return "Confirmed: customer_id is the customer identifier";
+    case "rule":
+      return "Defined: customer_id must be non-null and unique";
+    case "exported":
+      return "Contract exported: customers.contract.yaml";
   }
 }
 
-type Issue = { id: string; icon: typeof Link2; text: React.ReactNode; fixed: boolean; done: string; action: string; onFix: () => void };
+const CONTRACT_YAML = `contract: customers
+rules:
+  - field: customer_id
+    required: true
+    unique: true
+    state: defined
+    evidence: profile run ${DEMO.profileRun}`;
+
+type Item = {
+  id: string;
+  icon: typeof Link2;
+  text: React.ReactNode;
+  done: boolean;
+  doneText: string;
+  action: string;
+  /** Why the action is not available yet, if it isn't. */
+  blocked: string | null;
+  onReview: () => void;
+};
 
 export function GraphDemo() {
   const [state, dispatch] = useReducer(demoReducer, initialDemoState);
-  const [sentTo, setSentTo] = useState<string | null>(null);
-  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
-  useEffect(() => () => clearTimeout(timer.current), []);
 
   const nodes = useMemo<TableNode[]>(
     () => [
@@ -101,7 +112,7 @@ export function GraphDemo() {
           columns: ["order_id", SUGGESTED_LINK.sourceHandle, "order_date", "total"],
           side: "source",
           linkColumn: SUGGESTED_LINK.sourceHandle,
-          resolved: state.linked,
+          confirmed: state.relationship,
         },
       },
       {
@@ -114,11 +125,11 @@ export function GraphDemo() {
           columns: [SUGGESTED_LINK.targetHandle, "name", "email"],
           side: "target",
           linkColumn: SUGGESTED_LINK.targetHandle,
-          resolved: state.linked,
+          confirmed: state.identifier,
         },
       },
     ],
-    [state.linked],
+    [state.relationship, state.identifier],
   );
 
   const edges = useMemo<Edge[]>(
@@ -129,68 +140,68 @@ export function GraphDemo() {
         sourceHandle: SUGGESTED_LINK.sourceHandle,
         target: "customers",
         targetHandle: SUGGESTED_LINK.targetHandle,
-        label: state.linked ? "Approved" : `${DEMO.confidence}%`,
+        label: state.relationship ? "Confirmed" : `${DEMO.confidence}%`,
         style: {
-          stroke: state.linked ? "var(--color-approved)" : "var(--color-suggested)",
+          stroke: state.relationship ? "var(--color-approved)" : "var(--color-suggested)",
           strokeWidth: 2,
-          strokeDasharray: state.linked ? undefined : "6 4",
+          strokeDasharray: state.relationship ? undefined : "6 4",
         },
-        labelStyle: { fill: state.linked ? "var(--color-approved)" : "var(--color-suggested-ink)", fontWeight: 600 },
-        labelBgStyle: { fill: state.linked ? "var(--color-approved-soft)" : "var(--color-suggested-soft)" },
+        labelStyle: { fill: state.relationship ? "var(--color-approved)" : "var(--color-suggested-ink)", fontWeight: 600 },
+        labelBgStyle: { fill: state.relationship ? "var(--color-approved-soft)" : "var(--color-suggested-soft)" },
         labelBgPadding: [6, 3],
       },
     ],
-    [state.linked],
+    [state.relationship],
   );
 
   function onConnect(c: Connection) {
     dispatch({ type: "connect", sourceHandle: c.sourceHandle, targetHandle: c.targetHandle });
   }
 
-  function runDryRun() {
-    dispatch({ type: "startDryRun" });
-    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    timer.current = setTimeout(() => dispatch({ type: "finishDryRun" }), reduce ? 0 : DRY_RUN_MS);
-  }
-
-  function reset() {
-    clearTimeout(timer.current);
-    setSentTo(null);
-    dispatch({ type: "reset" });
-  }
-
-  const fixed = fixedCount(state);
-  const issues: Issue[] = [
+  const reviewed = reviewedCount(state);
+  const items: Item[] = [
     {
-      id: "link",
+      id: "relationship",
       icon: Link2,
-      text: `${fmt(DEMO.unmatchedOrders)} orders have no matching customer`,
-      fixed: state.linked,
-      done: "Linked by cust_no → customer_id",
-      action: "Accept suggestion",
-      onFix: () => dispatch({ type: "accept" }),
-    },
-    {
-      id: "duplicate",
-      icon: Copy,
-      text: `“Acme Inc.” and “ACME, Inc.” look like one customer (${DEMO.duplicateMatch}%)`,
-      fixed: state.merged,
-      done: "Merged into “Acme Inc.”",
-      action: "Merge",
-      onFix: () => dispatch({ type: "merge" }),
-    },
-    {
-      id: "dates",
-      icon: CalendarCog,
       text: (
         <>
-          <span className="font-mono">order_date</span> mixes 3 formats
+          <span className="font-mono">orders.cust_no</span> may reference <span className="font-mono">customers.customer_id</span> (
+          {DEMO.confidence}% of values match)
         </>
       ),
-      fixed: state.converted,
-      done: "All dates as 2026-03-12",
-      action: "Convert dates",
-      onFix: () => dispatch({ type: "convert" }),
+      done: state.relationship,
+      doneText: "Confirmed relationship",
+      action: "Accept suggestion",
+      blocked: null,
+      onReview: () => dispatch({ type: "accept" }),
+    },
+    {
+      id: "identifier",
+      icon: KeyRound,
+      text: (
+        <>
+          <span className="font-mono">customer_id</span> is {DEMO.uniqueness}% unique: a possible customer identifier
+        </>
+      ),
+      done: state.identifier,
+      doneText: "Confirmed: the customer identifier",
+      action: "Confirm identifier",
+      blocked: null,
+      onReview: () => dispatch({ type: "confirmIdentifier" }),
+    },
+    {
+      id: "rule",
+      icon: FileCheck2,
+      text: (
+        <>
+          Add to the contract: <span className="font-mono">customer_id</span> must be non-null and unique
+        </>
+      ),
+      done: state.rule,
+      doneText: "Defined in the customers contract",
+      action: "Add to contract",
+      blocked: canDefineRule(state) ? null : "Confirm the identifier first: only confirmed facts become rules.",
+      onReview: () => dispatch({ type: "defineRule" }),
     },
   ];
   const good = state.last !== "start" && !state.hint;
@@ -200,104 +211,70 @@ export function GraphDemo() {
       <div className="order-2 grid gap-5 lg:order-1">
         <div>
           <div className="flex items-baseline justify-between gap-3">
-            <h3 className="font-semibold">Issues found</h3>
+            <h3 className="font-semibold">To review</h3>
             <p className="text-sm text-muted" data-demo-progress>
-              {fixed} of 3 fixed
+              {reviewed} of 3 reviewed
             </p>
           </div>
           <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-line" aria-hidden="true">
             <div
               className="h-full rounded-full bg-approved transition-[width] duration-500 ease-out motion-reduce:transition-none"
-              style={{ width: `${(fixed / 3) * 100}%` }}
+              style={{ width: `${(reviewed / 3) * 100}%` }}
             />
           </div>
         </div>
 
         <ul className="grid gap-3">
-          {issues.map((issue) => (
+          {items.map((item) => (
             <li
-              key={issue.id}
-              data-issue={issue.id}
-              data-fixed={issue.fixed}
+              key={item.id}
+              data-review={item.id}
+              data-done={item.done}
               className={`rounded-lg border p-4 transition-colors duration-300 ${
-                issue.fixed ? "border-approved/40 bg-approved-soft" : "border-line bg-surface"
+                item.done ? "border-approved/40 bg-approved-soft" : "border-line bg-surface"
               }`}
             >
               <p className="flex items-start gap-3">
-                <issue.icon aria-hidden="true" strokeWidth={1.75} className={`mt-0.5 size-5 shrink-0 ${issue.fixed ? "text-approved" : "text-suggested"}`} />
+                <item.icon aria-hidden="true" strokeWidth={1.75} className={`mt-0.5 size-5 shrink-0 ${item.done ? "text-approved" : "text-suggested"}`} />
                 <span>
-                  <span className={issue.fixed ? "text-muted line-through decoration-1" : ""}>{issue.text}</span>
-                  {issue.fixed && (
+                  <span className={item.done ? "text-muted" : ""}>{item.text}</span>
+                  {item.done && (
                     <span className="mt-1 flex items-center gap-1.5 text-sm font-medium text-approved">
                       <Check aria-hidden="true" className="size-4" />
-                      {issue.done}
+                      {item.doneText}
                     </span>
                   )}
                 </span>
               </p>
-              {!issue.fixed && (
-                <button
-                  type="button"
-                  onClick={issue.onFix}
-                  className="fx mt-3 min-h-11 rounded-md bg-accent px-4 text-sm font-semibold text-on-accent [--fx-fill:var(--color-accent-strong)]"
-                >
-                  {issue.action}
-                </button>
+              {!item.done && (
+                <>
+                  <button
+                    type="button"
+                    onClick={item.onReview}
+                    disabled={item.blocked !== null}
+                    className="fx mt-3 min-h-11 rounded-md bg-accent px-4 text-sm font-semibold text-on-accent [--fx-fill:var(--color-accent-strong)] disabled:cursor-not-allowed disabled:bg-line disabled:text-muted"
+                  >
+                    {item.action}
+                  </button>
+                  {item.blocked && <p className="mt-2 text-sm text-muted">{item.blocked}</p>}
+                </>
               )}
             </li>
           ))}
         </ul>
 
-        <div className="grid gap-3">
-          <div className="flex flex-wrap gap-2">
+        {(reviewed > 0 || state.hint) && (
+          <div>
             <button
               type="button"
-              onClick={runDryRun}
-              disabled={!canRunDryRun(state)}
-              className="fx inline-flex min-h-11 items-center gap-2 rounded-md border border-accent px-4 font-semibold text-accent [--fx-fill:var(--color-accent)] enabled:hover:text-on-accent disabled:cursor-not-allowed disabled:border-line disabled:text-observed"
+              onClick={() => dispatch({ type: "reset" })}
+              className="fx inline-flex min-h-11 items-center gap-2 rounded-md px-4 font-medium text-muted [--fx-fill:var(--color-paper)] hover:text-ink"
             >
-              <ShieldCheck aria-hidden="true" className="size-4" />
-              Run dry run
+              <RotateCcw aria-hidden="true" className="size-4" />
+              Reset demo
             </button>
-            {(fixed > 0 || state.hint) && (
-              <button
-                type="button"
-                onClick={reset}
-                className="fx inline-flex min-h-11 items-center gap-2 rounded-md px-4 font-medium text-muted [--fx-fill:var(--color-paper)] hover:text-ink"
-              >
-                <RotateCcw aria-hidden="true" className="size-4" />
-                Reset demo
-              </button>
-            )}
           </div>
-          {state.dryRun !== "idle" && (
-            <div className="rounded-lg border border-line bg-surface p-4" data-dry-run={state.dryRun}>
-              {state.dryRun === "running" ? (
-                <div className="h-1.5 overflow-hidden rounded-full bg-line" aria-hidden="true">
-                  <div className="h-full w-1/3 animate-[dryrun_1.2s_ease-in-out_infinite] rounded-full bg-accent motion-reduce:animate-none" />
-                </div>
-              ) : (
-                <ul className="grid gap-1.5 text-sm">
-                  {[
-                    `${fmt(DEMO.totalOrders)} orders checked`,
-                    `${fmt(DEMO.customers - 1)} customers, 1 merged`,
-                    "3 issues fixed",
-                    "0 violations",
-                  ].map((line, i) => (
-                    <li
-                      key={line}
-                      className="flex items-center gap-2 motion-safe:animate-[rise_300ms_ease-out_both]"
-                      style={{ animationDelay: `${i * 90}ms` }}
-                    >
-                      <Check aria-hidden="true" className="size-4 text-approved" />
-                      {line}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          )}
-        </div>
+        )}
       </div>
 
       <div className="order-1 rounded-xl border border-line bg-surface p-4 sm:p-5 lg:order-2">
@@ -311,7 +288,7 @@ export function GraphDemo() {
         <div
           className="mt-3 h-52 rounded-md border border-line bg-paper sm:h-64"
           role="group"
-          aria-label="Graph of orders.xlsx and customers. Drag from cust_no to customer_id to link them, or use Accept suggestion."
+          aria-label="Graph of orders.xlsx and customers. Drag from cust_no to customer_id to confirm the link, or use Accept suggestion."
         >
           <ReactFlow
             nodes={nodes}
@@ -344,40 +321,27 @@ export function GraphDemo() {
           {statusMessage(state)}
           {state.last === "start" && !state.hint && (
             <span className="block font-normal">
-              Claude suggests <span className="font-mono">cust_no → customer_id</span> ({DEMO.confidence}% match).
+              Inferred link: <span className="font-mono">cust_no → customer_id</span> ({DEMO.confidence}% match).
             </span>
           )}
         </p>
 
         <div className="mt-4">
-          <p className="flex items-center gap-2 text-sm font-medium" id="send-label">
-            {canSend(state) ? (
-              <Check aria-hidden="true" className="size-4 text-approved" />
-            ) : (
-              <CircleDashed aria-hidden="true" className="size-4 text-observed" />
-            )}
-            Send clean data to
-          </p>
-          <div className="mt-2 flex flex-wrap gap-2" role="group" aria-labelledby="send-label">
-            {destinations.map((d) => (
-              <button
-                key={d}
-                type="button"
-                disabled={!canSend(state)}
-                aria-pressed={sentTo === d}
-                onClick={() => setSentTo(d)}
-                className="fx min-h-11 rounded-md border border-line bg-surface px-3 text-sm font-medium [--fx-fill:var(--color-accent)] enabled:hover:border-accent enabled:hover:text-on-accent disabled:cursor-not-allowed disabled:text-observed aria-pressed:border-accent aria-pressed:text-accent-strong"
-              >
-                {d}
-              </button>
-            ))}
-          </div>
-          {!canSend(state) && <p className="mt-2 text-sm text-muted">Fix all three issues and pass a dry run to send.</p>}
-          {sentTo && (
-            <p className="mt-2 text-sm text-muted">
-              Ready for {sentTo}: {fmt(DEMO.totalOrders)} orders, {fmt(DEMO.customers - 1)} customers. In the product you review the
-              report, then send.
-            </p>
+          <button
+            type="button"
+            onClick={() => dispatch({ type: "export" })}
+            disabled={!canExport(state) || state.exported}
+            className="fx inline-flex min-h-11 items-center gap-2 rounded-md border border-accent px-4 font-semibold text-accent [--fx-fill:var(--color-accent)] enabled:hover:text-on-accent disabled:cursor-not-allowed disabled:border-line disabled:text-observed"
+          >
+            <Download aria-hidden="true" className="size-4" />
+            Export contract
+          </button>
+          {!canExport(state) && <p className="mt-2 text-sm text-muted">Review all three items to export the contract.</p>}
+          {state.exported && (
+            <div data-export className="mt-3 motion-safe:animate-[rise_300ms_ease-out_both]">
+              <pre className="overflow-x-auto rounded-md border border-line bg-paper p-3 font-mono text-xs leading-5">{CONTRACT_YAML}</pre>
+              <p className="mt-2 text-sm text-muted">In the product, the export is saved on your machine as YAML or JSON.</p>
+            </div>
           )}
         </div>
       </div>

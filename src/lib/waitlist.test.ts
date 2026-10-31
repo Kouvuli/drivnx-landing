@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { buildMailto, buildPayload, isValidEmail, submitWaitlist, type WaitlistEntry } from "./waitlist";
 
-const entry: WaitlistEntry = { email: "sam@shop.com", segment: "business", readinessReport: true };
+const entry: WaitlistEntry = { email: "sam@shop.com", segment: "consultant" };
 
 describe("isValidEmail (CFX-WEB-landing AC-03)", () => {
   it.each(["sam@shop.com", "a.b+c@sub.example.org"])("accepts %s", (email) => {
@@ -16,8 +16,7 @@ describe("buildPayload (CFX-WEB-landing AC-02)", () => {
   it("matches the form contract", () => {
     expect(buildPayload({ ...entry, email: "  sam@shop.com " })).toEqual({
       email: "sam@shop.com",
-      segment: "business",
-      readinessReport: true,
+      segment: "consultant",
       source: "landing",
     });
   });
@@ -54,7 +53,6 @@ describe("buildMailto (CFX-WEB-landing AC-05)", () => {
     expect(params.get("subject")).toBe("Early access");
     const body = params.get("body") ?? "";
     expect(body).toContain("sam@shop.com");
-    expect(body).toContain("Growing business");
-    expect(body).toContain("Free Readiness Report: yes");
+    expect(body).toContain("Data consultant");
   });
 });

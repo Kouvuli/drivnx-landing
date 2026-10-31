@@ -10,109 +10,109 @@ test("hero headline and call to action are visible without scrolling (CFX-WEB-la
   await expect(page.getByRole("main").getByRole("link", { name: "Join early access" }).first()).toBeInViewport();
 });
 
-test("sections follow the vision's narrative, and the header links to them (CFX-WEB-landing AC-11)", async ({ page }, info) => {
+test("sections follow the Phase 1 story, and the header links to them (CFX-WEB-landing AC-11)", async ({ page }, info) => {
   await page.goto("/");
   const ids = await page.locator("main section[id]").evaluateAll((els) => els.map((e) => e.id));
-  expect(ids).toEqual(["connects", "problem", "how-it-works", "demo", "trust", "lifecycle", "ai-privacy", "who", "about", "faq", "early-access"]);
+  expect(ids).toEqual(["connects", "problem", "how-it-works", "demo", "trust", "ai-privacy", "who", "about", "faq", "early-access"]);
   if (info.project.name === "desktop") {
     const nav = page.getByRole("navigation", { name: "Main" });
-    const links = { "How it works": "/#how-it-works", Pricing: "/pricing", "AI & privacy": "/#ai-privacy", FAQ: "/#faq" };
-    for (const [name, href] of Object.entries(links)) await expect(nav.getByRole("link", { name })).toHaveAttribute("href", href);
+    const links = { "How it works": "/#how-it-works", "Early access": "/pricing", "AI & privacy": "/#ai-privacy", FAQ: "/#faq" };
+    for (const [name, href] of Object.entries(links)) await expect(nav.getByRole("link", { name, exact: true })).toHaveAttribute("href", href);
     await expect(page.getByRole("banner").getByRole("link", { name: "Join early access" })).toHaveAttribute("href", "/#early-access");
   }
 });
 
-test("pricing is not on the home page; AI & privacy says what was agreed (CFX-WEB-landing AC-12, CFX-WEB-landing AC-13)", async ({ page }) => {
+test("no prices on the home page; AI & privacy makes only the agreed claims (CFX-WEB-landing AC-12, CFX-WEB-landing AC-13)", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#pricing")).toHaveCount(0);
   await expect(page.locator("main")).not.toContainText("$");
-  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Pricing" })).toHaveAttribute("href", "/pricing");
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Early access", exact: true })).toHaveAttribute("href", "/pricing");
   const privacy = page.locator("#ai-privacy");
   for (const text of [
-    "everything still works with AI switched off",
-    "Metadata-only mode",
-    "Local engine on request",
-    "In transit and at rest",
-    "Deleted on request",
-    "You approve consequential changes",
+    "Runs on your machine",
+    "Read-only on your sources",
+    "AI is off until you turn it on",
+    "See what is sent, first",
+    "Local model option",
+    "Credentials in your OS keychain",
   ]) {
     await expect(privacy).toContainText(text);
   }
-  await expect(page.locator("body")).not.toContainText(/never leaves/i);
-});
-
-test("trust model and lifecycle follow the vision (CFX-WEB-landing AC-48)", async ({ page }) => {
-  await page.goto("/");
-  const trust = page.locator("#trust");
-  for (const state of ["Observed", "Inferred", "Confirmed", "Defined", "Validated"]) await expect(trust).toContainText(state);
-  await expect(trust).toContainText("customer_id is 99.8% unique");
-  await expect(trust).toContainText("customer_id must be non-null and unique");
-  const lifecycle = page.locator("#lifecycle");
-  await expect(lifecycle).toContainText("Changes → Impact → Rebuild → Revalidate → Republish");
-  await expect(lifecycle).toContainText("scheduled sync and drift alerts");
-  for (const dimension of ["Knowledge impact", "Contract impact", "Pipeline impact", "Output impact"]) {
-    await expect(lifecycle).toContainText(dimension);
+  // Phase 1 §7: claims to avoid, and no AI vendor named while the provider ADR is open.
+  const body = page.locator("body");
+  for (const claim of [/never leaves/i, /zero retention/i, /enterprise-grade/i, /fully secure/i, /encrypted/i, /Claude/]) {
+    await expect(body).not.toContainText(claim);
   }
 });
 
-test("accepting the suggestion links the records, and reset restores it (CFX-WEB-landing AC-06, CFX-WEB-landing AC-07, CFX-WEB-landing AC-09, CFX-WEB-landing AC-10)", async ({ page }) => {
+test("the trust model has the four Phase 1 states and no lifecycle section (CFX-WEB-landing AC-48)", async ({ page }) => {
+  await page.goto("/");
+  const trust = page.locator("#trust");
+  await expect(trust.locator('[data-item="trust"]')).toHaveCount(4);
+  for (const state of ["Observed", "Inferred", "Confirmed", "Defined"]) await expect(trust).toContainText(state);
+  await expect(trust).not.toContainText("Validated");
+  await expect(trust).toContainText("customer_id is 99.8% unique");
+  await expect(trust).toContainText("customer_id must be non-null and unique");
+  await expect(page.locator("#lifecycle")).toHaveCount(0);
+});
+
+test("accepting the suggestion confirms the relationship, and reset restores it (CFX-WEB-landing AC-06, CFX-WEB-landing AC-07, CFX-WEB-landing AC-09, CFX-WEB-landing AC-10)", async ({ page }) => {
   await page.goto("/");
   await page.locator("#demo").scrollIntoViewIfNeeded();
   const status = demoStatus(page);
   await expect(status).toHaveAttribute("aria-live", "polite");
-  await expect(status).toContainText("312 orders have no matching customer");
+  await expect(status).toContainText("Profile ready: 2 inferred facts need your review");
   await expect(status).toContainText("cust_no → customer_id (94% match)");
   await expect(page.getByTestId("rf__edge-link")).toContainText("94%");
 
   // Keyboard path: focus the button and press Enter.
   await page.getByRole("button", { name: "Accept suggestion" }).focus();
   await page.keyboard.press("Enter");
-  await expect(status).toHaveText("Link approved. All 4,812 orders matched to a customer");
-  await expect(page.getByTestId("rf__edge-link")).toContainText("Approved");
-  await expect(page.locator('[data-issue="link"]')).toHaveAttribute("data-fixed", "true");
+  await expect(status).toHaveText("Relationship confirmed: orders.cust_no → customers.customer_id");
+  await expect(page.getByTestId("rf__edge-link")).toContainText("Confirmed");
+  await expect(page.locator('[data-review="relationship"]')).toHaveAttribute("data-done", "true");
 
   await page.getByRole("button", { name: "Reset demo" }).focus();
   await page.keyboard.press("Enter");
-  await expect(status).toContainText("312 orders have no matching customer");
-  await expect(page.locator('[data-issue="link"]')).toHaveAttribute("data-fixed", "false");
+  await expect(status).toContainText("Profile ready: 2 inferred facts need your review");
+  await expect(page.locator('[data-review="relationship"]')).toHaveAttribute("data-done", "false");
 });
 
-test("three issues, a dry run, then sending (CFX-WEB-landing AC-35, CFX-WEB-landing AC-36)", async ({ page }) => {
+test("review three items, then export the contract (CFX-WEB-landing AC-35, CFX-WEB-landing AC-36)", async ({ page }) => {
   await page.goto("/");
   const demo = page.locator("#demo");
   await demo.scrollIntoViewIfNeeded();
   const progress = demo.locator("[data-demo-progress]");
-  const odoo = page.getByRole("button", { name: "Odoo", exact: true });
-  const dryRun = page.getByRole("button", { name: "Run dry run" });
+  const addRule = page.getByRole("button", { name: "Add to contract" });
+  const exportButton = page.getByRole("button", { name: "Export contract" });
 
-  await expect(demo.locator("[data-issue]")).toHaveCount(3);
-  await expect(progress).toHaveText("0 of 3 fixed");
-  await expect(dryRun).toBeDisabled();
+  await expect(demo.locator("[data-review]")).toHaveCount(3);
+  await expect(progress).toHaveText("0 of 3 reviewed");
+  await expect(exportButton).toBeDisabled();
+  // Only a confirmed fact can become a rule.
+  await expect(addRule).toBeDisabled();
+  await expect(demo).toContainText("Confirm the identifier first");
 
   await page.getByRole("button", { name: "Accept suggestion" }).click();
-  await expect(progress).toHaveText("1 of 3 fixed");
-  await expect(odoo).toBeDisabled();
-  await page.getByRole("button", { name: "Merge" }).click();
-  await expect(demoStatus(page)).toContainText("Merged “ACME, Inc.” into “Acme Inc.”");
-  await page.getByRole("button", { name: "Convert dates" }).click();
-  await expect(progress).toHaveText("3 of 3 fixed");
-  await expect(odoo).toBeDisabled();
+  await expect(progress).toHaveText("1 of 3 reviewed");
+  await page.getByRole("button", { name: "Confirm identifier" }).click();
+  await expect(demoStatus(page)).toHaveText("Confirmed: customer_id is the customer identifier");
+  await expect(exportButton).toBeDisabled();
+  await addRule.click();
+  await expect(progress).toHaveText("3 of 3 reviewed");
+  await expect(demoStatus(page)).toHaveText("Defined: customer_id must be non-null and unique");
 
-  await dryRun.click();
-  await expect(demo.locator("[data-dry-run]")).toHaveAttribute("data-dry-run", "running");
-  await expect(demo.locator("[data-dry-run]")).toHaveAttribute("data-dry-run", "passed");
-  await expect(demo.locator("[data-dry-run]")).toContainText("0 violations");
-  await expect(demoStatus(page)).toHaveText("Dry run passed: 0 violations. Ready to send.");
-  for (const name of ["Odoo", "Files", "Cloud storage", "Warehouse"]) {
-    await expect(page.getByRole("button", { name, exact: true })).toBeEnabled();
-  }
-  await odoo.click();
-  await expect(page.getByText("Ready for Odoo: 4,812 orders")).toBeVisible();
+  await exportButton.click();
+  await expect(demoStatus(page)).toHaveText("Contract exported: customers.contract.yaml");
+  const yaml = demo.locator("[data-export] pre");
+  await expect(yaml).toContainText("contract: customers");
+  await expect(yaml).toContainText("unique: true");
+  await expect(yaml).toContainText("evidence: profile run 42");
 
   await page.getByRole("button", { name: "Reset demo" }).click();
-  await expect(progress).toHaveText("0 of 3 fixed");
-  await expect(odoo).toBeDisabled();
-  await expect(demo.locator("[data-dry-run]")).toHaveCount(0);
+  await expect(progress).toHaveText("0 of 3 reviewed");
+  await expect(exportButton).toBeDisabled();
+  await expect(demo.locator("[data-export]")).toHaveCount(0);
 });
 
 async function dragHandle(page: Page, from: string, to: string) {
@@ -138,7 +138,7 @@ test("drawing the link by hand resolves the demo; a wrong link gives a hint (CFX
   await expect(status).toHaveText("Those columns don't match. Try cust_no → customer_id.");
 
   await dragHandle(page, "cust_no", "customer_id");
-  await expect(status).toHaveText("Link approved. All 4,812 orders matched to a customer");
+  await expect(status).toHaveText("Relationship confirmed: orders.cust_no → customers.customer_id");
 });
 
 test("a visitor joins early access (CFX-WEB-landing AC-02)", async ({ page }) => {
@@ -149,19 +149,19 @@ test("a visitor joins early access (CFX-WEB-landing AC-02)", async ({ page }) =>
   });
   await page.goto("/#early-access");
   await page.getByLabel("Work email").fill("sam@shop.com");
-  await page.getByLabel("Consultant or partner").check();
-  await page.getByLabel(/free Readiness Report/).check();
+  await page.getByLabel("Data consultant").check();
+  await expect(page.locator("#early-access")).not.toContainText("Readiness Report");
   await page.getByRole("button", { name: "Join early access" }).click();
 
   await expect(page.getByText("You're on the list")).toBeVisible();
-  expect(bodies).toEqual([{ email: "sam@shop.com", segment: "consultant", readinessReport: true, source: "landing" }]);
+  expect(bodies).toEqual([{ email: "sam@shop.com", segment: "consultant", source: "landing" }]);
 });
 
 test("FAQ answers open without JavaScript (CFX-WEB-landing AC-14)", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("/");
-  const q = "Does my data leave my environment?";
+  const q = "Does my data leave my machine?";
   await page.getByText(q).click();
   await expect(page.locator("details", { hasText: q })).toHaveAttribute("open", "");
   // Revision 8: the ChatGPT item came from competition notes kept out of v2.
@@ -169,19 +169,19 @@ test("FAQ answers open without JavaScript (CFX-WEB-landing AC-14)", async ({ bro
   await context.close();
 });
 
-test("who it's for starts with businesses moving onto an ERP, then data teams (CFX-WEB-landing AC-52)", async ({ page }) => {
+test("who it's for: data analysts and engineers, then data consultants (CFX-WEB-landing AC-52)", async ({ page }) => {
   await page.goto("/");
   const audiences = page.locator('#who [data-item="audience"]');
-  await expect(audiences.nth(0)).toContainText("Starting with");
-  await expect(audiences.nth(0)).toContainText("Businesses moving onto an ERP");
-  await expect(audiences.nth(1)).toContainText("Growing into");
-  await expect(audiences.nth(1)).toContainText("Data analysts and engineers");
+  await expect(audiences.nth(0)).toContainText("Built for");
+  await expect(audiences.nth(0)).toContainText("Data analysts and engineers");
+  await expect(audiences.nth(1)).toContainText("Also for");
+  await expect(audiences.nth(1)).toContainText("Data consultants");
+  await expect(page.locator("#about")).toContainText("Trison Labs");
 });
 
-const SUPPORTING_LINE =
-  "Profiling, documentation, contracts, transformation, and validation in one workspace — with Claude assistance you can switch off.";
+const SUPPORTING_LINE = "Runs on your machine. AI suggestions are optional, and you see what is sent before anything leaves.";
 
-test("the hero carries v2's supporting line under the subhead (CFX-WEB-landing AC-51, CFX-WEB-landing AC-01)", async ({ page }) => {
+test("the hero carries the supporting line under the subhead (CFX-WEB-landing AC-51, CFX-WEB-landing AC-01)", async ({ page }) => {
   await page.goto("/");
   const line = page.getByRole("main").getByText(SUPPORTING_LINE);
   await expect(line).toBeVisible();
@@ -197,7 +197,7 @@ test("the hero shows an example status card, as text, without JavaScript too (CF
   const card = page.locator("[data-hero-status]");
   await expect(card).toBeVisible();
   await expect(card).toContainText("Example");
-  for (const text of ["58% documented, 11 to confirm", "9 of 12 rules defined", "Dry run waiting on 1 approval", "Confirm the customer identifier"]) {
+  for (const text of ["12 tables, 2.4M rows", "14 undocumented fields", "3 possible, 1 to confirm", "9 of 12 rules defined", "Confirm customer_id"]) {
     await expect(card).toContainText(text);
   }
   await expect(card.locator("dt")).toHaveCount(5);
@@ -216,7 +216,6 @@ test("the status card never covers the hero's text or controls (CFX-WEB-landing 
     main.getByText(SUPPORTING_LINE),
     main.getByRole("link", { name: "Join early access" }).first(),
     main.getByRole("link", { name: "See how it works" }),
-    main.getByText("Early sign-ups get a free Readiness Report"),
     page.getByRole("button", { name: "Replay" }),
     page.getByRole("button", { name: "Approve suggested link" }),
     main.getByRole("link", { name: "Scroll to explore" }),

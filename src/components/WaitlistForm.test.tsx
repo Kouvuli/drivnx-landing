@@ -10,8 +10,7 @@ afterEach(() => vi.unstubAllGlobals());
 async function fillAndSubmit(email: string) {
   const user = userEvent.setup();
   if (email) await user.type(screen.getByLabelText("Work email"), email);
-  await user.click(screen.getByLabelText("Data team or analyst"));
-  await user.click(screen.getByLabelText(/free Readiness Report/));
+  await user.click(screen.getByLabelText("Data consultant"));
   await user.click(screen.getByRole("button", { name: "Join early access" }));
 }
 
@@ -29,8 +28,7 @@ describe("WaitlistForm", () => {
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(JSON.parse((fetchMock.mock.calls[0] as unknown as [string, RequestInit])[1].body as string)).toEqual({
       email: "sam@shop.com",
-      segment: "data-team",
-      readinessReport: true,
+      segment: "consultant",
       source: "landing",
     });
 
@@ -62,7 +60,7 @@ describe("WaitlistForm", () => {
     expect(alert).toHaveTextContent("We couldn't save your sign-up");
     expect(screen.getByRole("link", { name: contactEmail })).toHaveAttribute("href", `mailto:${contactEmail}`);
     expect(screen.getByLabelText("Work email")).toHaveValue("sam@shop.com");
-    expect(screen.getByLabelText("Data team or analyst")).toBeChecked();
+    expect(screen.getByLabelText("Data consultant")).toBeChecked();
   });
 
   it("falls back to an email draft when no endpoint is configured (CFX-WEB-landing AC-05)", async () => {
@@ -79,7 +77,7 @@ describe("WaitlistForm", () => {
     expect(href.startsWith(`mailto:${contactEmail}?`)).toBe(true);
     const body = new URLSearchParams(href.split("?")[1]).get("body");
     expect(body).toContain("sam@shop.com");
-    expect(body).toContain("Data team or analyst");
-    expect(body).toContain("Free Readiness Report: yes");
+    expect(body).toContain("Data consultant");
+    expect(body).not.toContain("Readiness Report");
   });
 });

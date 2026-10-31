@@ -133,7 +133,7 @@ export function HeroScene() {
       <div
         ref={ref}
         role="img"
-        aria-label="Records from three sources linked into one clean graph of customers, orders, products and invoices."
+        aria-label="Four profiled tables, customers, orders, products and invoices, connected by their relationships."
         className={`relative order-2 aspect-[4/3] w-full sm:absolute sm:inset-0 sm:aspect-auto ${showCanvas ? "cursor-grab touch-pan-y select-none active:cursor-grabbing" : ""}`}
         data-hero-scene
         data-state={showCanvas ? "canvas" : "still"}
@@ -194,10 +194,10 @@ export function HeroScene() {
       <div className="pointer-events-none relative order-3 z-20 mx-auto flex w-full max-w-6xl flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 text-sm text-muted sm:absolute sm:inset-x-0 sm:bottom-0 sm:justify-end sm:px-6 sm:pb-4">
         <span aria-live="polite" className="w-full text-center sm:w-auto sm:text-left">
           {!settled
-            ? "Scattered records, linked into one clean graph."
+            ? "Scattered tables, profiled into one connected graph."
             : approved
-              ? "Link approved: orders and invoices are connected."
-              : "One link is still a suggestion. Drag to rotate, hover to inspect."}
+              ? "Relationship confirmed: orders and invoices are connected."
+              : "One relationship is still inferred. Drag to rotate, hover to inspect."}
         </span>
         {showCanvas && (
           <span className="pointer-events-auto flex gap-1">

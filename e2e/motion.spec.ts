@@ -12,7 +12,7 @@ test.describe("reduced motion", () => {
   test("keeps the still graph and never loads three.js (CFX-WEB-landing AC-19, CFX-WEB-landing AC-22)", async ({ page }) => {
     await page.goto("/");
     await expect(scene(page)).toHaveAttribute("role", "img");
-    await expect(scene(page)).toHaveAttribute("aria-label", /linked into one clean graph/);
+    await expect(scene(page)).toHaveAttribute("aria-label", /connected by their relationships/);
     await expect(page.locator("[data-hero-still]")).toBeVisible();
     await page.waitForTimeout(2000);
     await expect(scene(page)).toHaveAttribute("data-state", "still");
@@ -26,7 +26,7 @@ test.describe("reduced motion", () => {
     const steps = page.locator("#how-it-works [data-reveal]");
     for (const el of await steps.all()) await expect(el).toHaveCSS("opacity", "1");
     const summary = page.locator("[data-exec-summary]").first();
-    for (const value of ["14", "186", "2.4M", "3"]) await expect(summary).toContainText(value);
+    for (const value of ["12", "184", "2.4M", "3"]) await expect(summary).toContainText(value);
   });
 });
 
@@ -107,12 +107,12 @@ test("plays the story moments once when they scroll into view (CFX-WEB-landing A
   await page.locator("#how-it-works").scrollIntoViewIfNeeded();
   const summary = page.locator("[data-exec-summary]").first();
   await summary.scrollIntoViewIfNeeded();
-  for (const value of ["14", "186", "2.4M"]) await expect(summary).toContainText(value);
+  for (const value of ["12", "184", "2.4M"]) await expect(summary).toContainText(value);
 });
 
 test("every listed item has a decorative icon (CFX-WEB-landing AC-26)", async ({ page }) => {
   await page.goto("/");
-  const expected = { problem: 3, step: 5, trust: 5, impact: 4, audience: 2, privacy: 6 };
+  const expected = { problem: 3, step: 3, trust: 4, audience: 2, privacy: 6 };
   for (const [kind, count] of Object.entries(expected)) {
     const items = page.locator(`[data-item="${kind}"]`);
     await expect(items, kind).toHaveCount(count);
@@ -125,7 +125,7 @@ test("every listed item has a decorative icon (CFX-WEB-landing AC-26)", async ({
 test("keeps the main sections within the word budget (CFX-WEB-landing AC-27)", async ({ page }) => {
   await page.goto("/");
   const words = await page.evaluate(() =>
-    ["problem", "how-it-works", "trust", "lifecycle", "ai-privacy", "who", "about", "early-access"]
+    ["problem", "how-it-works", "trust", "ai-privacy", "who", "about", "early-access"]
       .map((id) => document.getElementById(id)!.innerText.split(/\s+/).filter(Boolean).length)
       .reduce((a, b) => a + b, 0),
   );
@@ -168,7 +168,7 @@ test("hovering a hub or a record shows what it is (CFX-WEB-landing AC-32)", asyn
   await page.mouse.move(at(hub[0], hub[1]).x, at(hub[0], hub[1]).y);
   await expect(tooltip(page)).toHaveText("Customers, 1,204 records");
   await page.mouse.move(at(record[0], record[1]).x, at(record[0], record[1]).y);
-  await expect(tooltip(page)).toHaveText("ACME, Inc. → matched to Acme Inc.");
+  await expect(tooltip(page)).toHaveText("customer_id: 99.8% unique, possible identifier");
   await page.mouse.move(at(0.5, 1.2).x, at(0.5, 1.2).y);
   await expect(tooltip(page)).toHaveCount(0);
 });
@@ -191,7 +191,7 @@ test("the last suggested link is approved by clicking it or with the button; Rep
     await page.getByRole("button", { name: "Approve suggested link" }).click();
   }
   await expect(scene(page)).toHaveAttribute("data-suggested", "approved");
-  await expect(page.getByText("Link approved: orders and invoices are connected.")).toBeVisible();
+  await expect(page.getByText("Relationship confirmed: orders and invoices are connected.")).toBeVisible();
   await expect(page.getByRole("button", { name: "Approve suggested link" })).toHaveCount(0);
 
   await page.getByRole("button", { name: "Replay" }).click();
@@ -202,13 +202,13 @@ test("the last suggested link is approved by clicking it or with the button; Rep
   await expect(scene(page)).toHaveAttribute("data-suggested", "approved");
 });
 
-test("how it works pins and steps through the five stages on desktop (CFX-WEB-landing AC-34)", async ({ page }, info) => {
+test("how it works pins and steps through the three stages on desktop (CFX-WEB-landing AC-34)", async ({ page }, info) => {
   await page.goto("/");
   const story = page.locator("#how-it-works [data-pinned]");
-  const stages = ["understand", "define", "build", "validate", "publish"];
+  const stages = ["connect", "understand", "define"];
   if (info.project.name !== "desktop") {
     await expect(story).toHaveCount(0);
-    await expect(page.locator('#how-it-works [data-item="step"]')).toHaveCount(5);
+    await expect(page.locator('#how-it-works [data-item="step"]')).toHaveCount(3);
     return;
   }
   await expect(story).toHaveAttribute("data-pinned", "true");
@@ -217,10 +217,10 @@ test("how it works pins and steps through the five stages on desktop (CFX-WEB-la
       const el = document.querySelector("#how-it-works [data-pinned]") as HTMLElement;
       const top = el.getBoundingClientRect().top + window.scrollY;
       const range = el.offsetHeight - window.innerHeight;
-      window.scrollTo({ top: top + (range * (k + 0.5)) / 5, behavior: "instant" });
+      window.scrollTo({ top: top + (range * (k + 0.5)) / 3, behavior: "instant" });
     }, k);
   await scrollToStage(0);
-  await expect(story).toHaveAttribute("data-active-step", "understand");
+  await expect(story).toHaveAttribute("data-active-step", "connect");
   const pin = page.locator("#how-it-works [data-pin]");
   const pinTop = (await pin.boundingBox())!.y;
   for (let k = 1; k < stages.length; k++) {
@@ -228,33 +228,26 @@ test("how it works pins and steps through the five stages on desktop (CFX-WEB-la
     await expect(story).toHaveAttribute("data-active-step", stages[k]);
     expect(Math.abs((await pin.boundingBox())!.y - pinTop)).toBeLessThan(2);
   }
-  await expect(story.locator('[aria-current="step"]')).toContainText("Publish & serve");
-  // Revision 8: the destinations and the seven-point checklist fit inside the pinned illustration box.
+  await expect(story.locator('[aria-current="step"]')).toContainText("Document & define");
+  // Revision 12: the last illustration, with its export line, fits inside the pinned box.
   const box = (await story.locator("[data-art-box]").boundingBox())!;
-  const items = story.locator("[data-trusted-checklist] li");
-  await expect(items).toHaveCount(7);
-  for (const item of [items.first(), items.last()]) {
-    const b = (await item.boundingBox())!;
-    expect(b.y).toBeGreaterThanOrEqual(box.y);
-    expect(b.y + b.height).toBeLessThanOrEqual(box.y + box.height);
-  }
+  const exportLine = (await story.getByText("Export profile, dictionary and contract as YAML or JSON").boundingBox())!;
+  expect(exportLine.y + exportLine.height).toBeLessThanOrEqual(box.y + box.height);
 });
 
 test.describe("reduced motion: no pinning", () => {
   test.use({ reducedMotion: "reduce" });
-  test("shows all five stages with their illustrations, without pinning (CFX-WEB-landing AC-34)", async ({ page }) => {
+  test("shows all three stages with their illustrations, without pinning, then what comes next (CFX-WEB-landing AC-34)", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("#how-it-works [data-pinned]")).toHaveCount(0);
     const steps = page.locator('#how-it-works [data-item="step"]');
-    await expect(steps).toHaveCount(5);
+    await expect(steps).toHaveCount(3);
     for (const step of await steps.all()) await expect(step).toBeVisible();
     await expect(page.locator("#how-it-works [data-exec-summary]")).toBeVisible();
-    // Revision 8: v2 §9's Trusted Data Product checklist sits in "Publish & serve".
-    const trusted = page.locator("#how-it-works [data-trusted-checklist] li");
-    await expect(trusted).toHaveCount(7);
-    for (const text of ["Documented meaning", "Explicit expectations", "Traceable transformation logic", "Passed validation checks", "Known provenance", "Stated limitations", "A defined downstream purpose"]) {
-      await expect(trusted.filter({ hasText: text })).toBeVisible();
-    }
+    // Revision 12: Phase 2 is named, clearly as later.
+    const next = page.locator("#how-it-works [data-coming-next]");
+    await expect(next).toContainText("Coming next");
+    for (const text of ["Transform", "Validate", "Publish & serve", "Monitor & improve"]) await expect(next.getByText(text, { exact: true })).toBeVisible();
   });
 });
 
@@ -312,7 +305,7 @@ test("button-style controls sweep a fill across on hover (CFX-WEB-landing AC-54)
   const hero = controls[0];
   expect(await hero.evaluate((e) => getComputedStyle(e, "::before").backgroundColor)).toBe("rgb(249, 109, 16)");
   expect(await hero.evaluate((e) => getComputedStyle(e).color)).toBe("rgb(0, 0, 0)");
-  for (const name of ["Accept suggestion", "Run dry run"]) {
+  for (const name of ["Accept suggestion", "Export contract"]) {
     expect(await page.locator("#demo").getByRole("button", { name }).evaluate((e) => e.classList.contains("fx")), name).toBe(true);
   }
 });
@@ -377,7 +370,7 @@ test("the hero is full-bleed with a centred headline; on phones the graph sits b
     await expect(explore).toBeInViewport();
   } else {
     // Text first, then the graph, then its controls, then "Scroll to explore": nothing overlaps.
-    const cta = (await page.getByRole("main").getByText("Early sign-ups get a free Readiness Report").boundingBox())!;
+    const cta = (await page.getByRole("main").getByRole("link", { name: "See how it works" }).boundingBox())!;
     expect(box.y).toBeGreaterThanOrEqual(cta.y + cta.height);
     await expect(scene(page)).toHaveAttribute("data-phase", "settled", { timeout: 15_000 });
     const replay = (await page.getByRole("button", { name: "Replay" }).boundingBox())!;
@@ -409,7 +402,7 @@ test.describe("reduced motion: native scroll, still headings and marquee", () =>
   test("no smooth scroll, headings shown at once, marquee still and wrapped (CFX-WEB-landing AC-40, CFX-WEB-landing AC-41, CFX-WEB-landing AC-43)", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("html.lenis")).toHaveCount(0);
-    const heading = page.locator("#lifecycle-title");
+    const heading = page.locator("#ai-privacy-title");
     await expect(heading).not.toHaveAttribute("data-heading-reveal", "armed");
     expect(await heading.locator("[data-word] > span").first().evaluate((el) => getComputedStyle(el).transform)).toBe("none");
     expect(await page.locator("[data-marquee-track]").evaluate((el) => getComputedStyle(el).animationName)).toBe("none");
@@ -419,10 +412,10 @@ test.describe("reduced motion: native scroll, still headings and marquee", () =>
 
 test("section headings reveal line by line, once, and stay whole for screen readers (CFX-WEB-landing AC-41)", async ({ page }) => {
   await page.goto("/");
-  const heading = page.locator("#lifecycle-title");
+  const heading = page.locator("#ai-privacy-title");
   await expect(heading).toHaveAttribute("data-heading-reveal", "armed");
-  await expect(heading).toHaveText("Data changes. Your data products keep up.");
-  await expect(page.getByRole("heading", { level: 2, name: "Data changes. Your data products keep up." })).toHaveCount(1);
+  await expect(heading).toHaveText("AI assists. You approve. Boundaries stay explicit.");
+  await expect(page.getByRole("heading", { level: 2, name: "AI assists. You approve. Boundaries stay explicit." })).toHaveCount(1);
   const inner = heading.locator("[data-word] > span").first();
   expect(await inner.evaluate((el) => getComputedStyle(el).transform)).not.toBe("none");
   await heading.scrollIntoViewIfNeeded();
@@ -432,7 +425,7 @@ test("section headings reveal line by line, once, and stay whole for screen read
 
 test("cards respond to hover (CFX-WEB-landing AC-42)", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "Hover is a pointer interaction.");
-  for (const [path, selector] of [["/", "#lifecycle [data-hover-card]"], ["/pricing", '[data-item="plan"]']]) {
+  for (const [path, selector] of [["/pricing", '[data-item="offer"]']]) {
     await page.goto(path);
     const card = page.locator(selector).first();
     await card.scrollIntoViewIfNeeded();
@@ -447,10 +440,10 @@ test("the Connects to marquee moves, pauses, and hides its duplicate row (CFX-WE
   const section = page.locator("#connects");
   const track = section.locator("[data-marquee-track]");
   await expect(section.getByRole("heading", { name: "Connects to" })).toBeVisible();
-  for (const name of ["Excel", "Google Sheets", "Postgres", "SQL Server", "REST APIs", "Odoo", "Cloud storage", "Cloud warehouse"]) {
+  for (const name of ["CSV", "Excel (XLSX)", "Parquet", "PostgreSQL, read-only", "Coming next", "MySQL", "SQL Server"]) {
     await expect(section.locator("ul:not([aria-hidden])").getByText(name, { exact: true })).toHaveCount(1);
   }
-  await expect(section.locator('ul[aria-hidden="true"]')).toHaveCount(1);
+  await expect(section.locator('ul[aria-hidden="true"]')).toHaveCount(3);
   expect(await track.evaluate((el) => getComputedStyle(el).animationName)).toBe("marquee");
   expect(await track.evaluate((el) => getComputedStyle(el).animationPlayState)).toBe("running");
   await section.getByRole("button", { name: "Pause" }).click();

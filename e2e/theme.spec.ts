@@ -111,7 +111,7 @@ test("orange marks the main Join buttons and the highlights; nothing else is ora
   expect(edgeColours).not.toContain(orange);
 });
 
-test("light theme: orange hero and pricing Join buttons, black header button (CFX-WEB-landing AC-53)", async ({ page }) => {
+test("light theme: orange hero and early-access Join buttons, black header button (CFX-WEB-landing AC-53)", async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem("theme", "light"));
   await page.goto("/");
   const style = (name: string, el: import("@playwright/test").Locator) => el.evaluate((e, n) => getComputedStyle(e).getPropertyValue(n), name);
@@ -123,6 +123,6 @@ test("light theme: orange hero and pricing Join buttons, black header button (CF
   expect(await style("background-color", headerJoin)).toBe("rgb(10, 10, 10)");
   expect(await style("color", headerJoin)).toBe("rgb(255, 255, 255)");
   await page.goto("/pricing");
-  const join = page.locator('[data-item="plan"]').first().getByRole("link", { name: "Join early access" });
+  const join = page.locator('[data-item="offer"]').first().getByRole("link", { name: "Join early access" });
   expect(await style("background-color", join)).toBe("rgb(231, 113, 35)");
 });

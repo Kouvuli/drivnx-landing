@@ -16,8 +16,7 @@ type Props = {
 export function WaitlistForm({ endpoint, contactEmail, openMailto = (href) => window.location.assign(href) }: Props) {
   const id = useId();
   const [email, setEmail] = useState("");
-  const [segment, setSegment] = useState<Segment>("business");
-  const [readinessReport, setReadinessReport] = useState(false);
+  const [segment, setSegment] = useState<Segment>("data-team");
   const [emailError, setEmailError] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
 
@@ -29,7 +28,7 @@ export function WaitlistForm({ endpoint, contactEmail, openMailto = (href) => wi
       return;
     }
     setEmailError(false);
-    const entry = { email, segment, readinessReport };
+    const entry = { email, segment };
     if (!endpoint) {
       openMailto(buildMailto(contactEmail, entry));
       return;
@@ -58,8 +57,7 @@ export function WaitlistForm({ endpoint, contactEmail, openMailto = (href) => wi
           You&apos;re on the list
         </p>
         <p className="mt-1 text-muted">
-          We&apos;ll email {email.trim()} when early access opens
-          {readinessReport ? ", with details on your free Readiness Report" : ""}.
+          We&apos;ll email {email.trim()} when early access opens.
         </p>
       </div>
     );
@@ -118,19 +116,6 @@ export function WaitlistForm({ endpoint, contactEmail, openMailto = (href) => wi
           ))}
         </div>
       </fieldset>
-
-      <label className="flex cursor-pointer items-start gap-3">
-        <input
-          type="checkbox"
-          checked={readinessReport}
-          onChange={(e) => setReadinessReport(e.target.checked)}
-          className="mt-1 size-4 accent-accent"
-        />
-        <span>
-          I&apos;d like a free Readiness Report on my data
-          <span className="block text-sm text-muted">We&apos;ll agree a secure way to share files with you first.</span>
-        </span>
-      </label>
 
       {status === "error" && (
         <p role="alert" className="rounded-md border border-danger/30 bg-danger/5 p-4 text-sm">

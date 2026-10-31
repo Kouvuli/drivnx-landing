@@ -2,9 +2,9 @@
 
 The public company website: explains the product, runs an interactive graph demo and collects early-access sign-ups.
 
-- **Requirements:** [.ai/knowledge/requirements/CFX-WEB-landing.md](.ai/knowledge/requirements/CFX-WEB-landing.md) (approved, revision 10)
-- **Product source of truth:** `../docs/Conflux_Phase1_Development_Direction.md` (since 2026-10-30). The site copy still follows the archived `../docs/archive/Velora — Product Vision v2.md` (§14–16 website brief, §13 packaging) until it is rewritten
-- **Pages:** `/` (vision narrative), `/pricing` (plans, comparison, FAQ), `/privacy`
+- **Requirements:** [.ai/knowledge/requirements/CFX-WEB-landing.md](.ai/knowledge/requirements/CFX-WEB-landing.md) (approved, revision 12)
+- **Product source of truth:** `../docs/Conflux_Phase1_Development_Direction.md` (approved); the copy follows it since revision 12
+- **Pages:** `/` (Phase 1 story), `/pricing` ("Early access is free": now, coming next, FAQ), `/privacy`
 - **Stack:** Next.js 16.4 (App Router), React 19.3, Tailwind CSS 4, React Flow 12 (demo), React Three Fiber 9 + three.js
   (hero, lazy-loaded), Motion 14 (story moments), Lucide icons
 - **Motion rules:** the `web-motion-3d` skill (`.claude/skills/web-motion-3d/`): still fallback first, 3D only after load
@@ -54,15 +54,15 @@ Playwright needs Chromium once: `npx playwright install chromium`. To use a brow
 
 ```text
 src/app/            page.tsx (home), pricing/, privacy/, opengraph-image.tsx, icon.svg, layout.tsx, globals.css (tokens)
-src/components/     GraphDemo (3 issues + dry run), HowItWorks (pinned scroll story), WaitlistForm, Section,
+src/components/     GraphDemo (review 3 items + export contract), HowItWorks (pinned scroll story), WaitlistForm, Section,
                     SiteChrome (header/footer), ThemeToggle, StoryMotion,
-                    ConnectsMarquee, RevealHeading, SmoothScroll, HowItWorks (five-stage story)
+                    ConnectsMarquee, RevealHeading, SmoothScroll, HowItWorks (three-stage story + Coming next)
 src/components/hero HeroScene (still vs 3D), HeroCanvas (three.js, own chunk), HeroGraphStill (SVG fallback),
                     HeroStatus (example status card); src/components/ButtonRipple (click ripple for `fx` buttons)
-src/lib/            demo.ts, waitlist.ts, heroGraph.ts, format.ts, theme.ts, pricing.ts: pure logic, unit-tested
+src/lib/            demo.ts, waitlist.ts, heroGraph.ts, format.ts, theme.ts: pure logic, unit-tested
 src/config/site.ts  brand and company details
 e2e/                Playwright: landing.spec.ts (journey, demo, narrative), motion.spec.ts (3D, interaction, motion,
-                    icons, word budget), theme.spec.ts (theme, fonts), pricing.spec.ts (plans, comparison, FAQ)
+                    icons, word budget), theme.spec.ts (theme, fonts), pricing.spec.ts (early access, FAQ)
 scripts/            check-launch.mjs
 .ai/                AI Skill OS: manifest, lock, knowledge (requirements live here)
 ```

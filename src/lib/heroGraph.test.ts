@@ -68,7 +68,7 @@ describe("hero interaction data (CFX-WEB-landing AC-32, CFX-WEB-landing AC-33)",
     for (const [record, hub] of g.recordLinks) {
       expect(HUB_SAMPLES[hub]).toContain(recordSample(g, record));
     }
-    expect(recordSample(g, 4)).toBe("ACME, Inc. → matched to Acme Inc.");
+    expect(recordSample(g, 4)).toBe("customer_id: 99.8% unique, possible identifier");
   });
 
   it("keeps the Orders–Invoices link as the suggested one", () => {

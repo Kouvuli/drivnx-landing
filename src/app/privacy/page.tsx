@@ -27,10 +27,9 @@ export default function Privacy() {
         <p>When you sign up for early access, we collect only what you type into the form:</p>
         <ul>
           <li>your email address;</li>
-          <li>which description fits you (growing business, data team or analyst, consultant or partner);</li>
-          <li>whether you&apos;d like a free Readiness Report.</li>
+          <li>which description fits you (data analyst or engineer, data consultant, or something else).</li>
         </ul>
-        <p>We use this only to contact you about early access and, if you asked, the Readiness Report. We don&apos;t sell it or use it for advertising.</p>
+        <p>We use this only to contact you about early access. We don&apos;t sell it or use it for advertising.</p>
 
         <h2>Who processes it</h2>
         <p>
@@ -55,8 +54,8 @@ export default function Privacy() {
 
         <h2>Your business data</h2>
         <p>
-          Don&apos;t upload or email business data through this website. If you asked for a Readiness Report, we&apos;ll agree a
-          secure way to share files with you first, and explain what is processed where.
+          Don&apos;t upload or email business data through this website. The product itself runs on your own machine; this
+          policy covers only the website.
         </p>
 
         <p className="mt-12">
