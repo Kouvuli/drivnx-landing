@@ -1,6 +1,6 @@
 "use client";
 
-// Story moments (VEL-WEB-landing AC-25). The server renders the final state, so the page reads fine without
+// Story moments (CFX-WEB-landing AC-25). The server renders the final state, so the page reads fine without
 // JavaScript or with reduced motion. Only blocks that start below the fold are hidden on mount and then
 // played once when they scroll into view.
 

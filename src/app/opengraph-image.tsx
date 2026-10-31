@@ -1,4 +1,4 @@
-// VEL-WEB-landing AC-18: 1200×630 share image with the headline.
+// CFX-WEB-landing AC-18: 1200×630 share image with the headline.
 import { ImageResponse } from "next/og";
 import { site } from "@/config/site";
 

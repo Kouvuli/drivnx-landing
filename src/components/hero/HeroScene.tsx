@@ -1,6 +1,6 @@
 "use client";
 
-// Decides between the still image and the 3D canvas (VEL-WEB-landing AC-19..AC-24):
+// Decides between the still image and the 3D canvas (CFX-WEB-landing AC-19..AC-24):
 // - server and first paint: the still image (no three.js in the initial scripts);
 // - after the page has loaded and the scene is visible: the canvas, unless reduced motion or no WebGL;
 // - phone-sized screens or coarse pointers: the light tier; rendering stops when off-screen or the tab is hidden.
@@ -127,7 +127,7 @@ export function HeroScene() {
   const settled = showCanvas && phase === "settled";
   const pending = settled && !approved;
 
-  // Full-bleed background of the hero (VEL-WEB-landing AC-39); the hero's text sits on top with pointer-events off.
+  // Full-bleed background of the hero (CFX-WEB-landing AC-39); the hero's text sits on top with pointer-events off.
   return (
     <>
       <div

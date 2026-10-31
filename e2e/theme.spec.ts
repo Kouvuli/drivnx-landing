@@ -1,11 +1,11 @@
 import { expect, test, type Page } from "@playwright/test";
 
-// Pure mono theme, dark by default (VEL-WEB-landing revision 4).
+// Pure mono theme, dark by default (CFX-WEB-landing revision 4).
 const bg = (page: Page) => page.evaluate(() => getComputedStyle(document.body).backgroundColor);
 const LIGHT_PAPER = "rgb(255, 255, 255)";
 const DARK_PAPER = "rgb(0, 0, 0)";
 
-test("is dark for first-time visitors whatever their system setting, even without JavaScript (VEL-WEB-landing AC-28)", async ({ browser }) => {
+test("is dark for first-time visitors whatever their system setting, even without JavaScript (CFX-WEB-landing AC-28)", async ({ browser }) => {
   for (const colorScheme of ["light", "dark"] as const) {
     for (const javaScriptEnabled of [true, false]) {
       const context = await browser.newContext({ colorScheme, javaScriptEnabled });
@@ -20,7 +20,7 @@ test("is dark for first-time visitors whatever their system setting, even withou
   }
 });
 
-test("a stored light choice is applied before first paint, without a flash (VEL-WEB-landing AC-28)", async ({ browser }) => {
+test("a stored light choice is applied before first paint, without a flash (CFX-WEB-landing AC-28)", async ({ browser }) => {
   const context = await browser.newContext({ colorScheme: "dark" });
   await context.addInitScript(() => {
     localStorage.setItem("theme", "light");
@@ -34,7 +34,7 @@ test("a stored light choice is applied before first paint, without a flash (VEL-
   await context.close();
 });
 
-test("the toggle switches theme, is remembered, and recolours the 3D hero (VEL-WEB-landing AC-29)", async ({ page }) => {
+test("the toggle switches theme, is remembered, and recolours the 3D hero (CFX-WEB-landing AC-29)", async ({ page }) => {
   await page.goto("/");
   const scene = page.locator("[data-hero-scene]");
   await expect(scene).toHaveAttribute("data-state", "canvas", { timeout: 10_000 });
@@ -51,7 +51,7 @@ test("the toggle switches theme, is remembered, and recolours the 3D hero (VEL-W
   expect(await bg(page)).toBe(DARK_PAPER);
 });
 
-test("text uses Geist, labels Geist Mono, both self-hosted (VEL-WEB-landing AC-44)", async ({ page }) => {
+test("text uses Geist, labels Geist Mono, both self-hosted (CFX-WEB-landing AC-44)", async ({ page }) => {
   const fontHosts: string[] = [];
   page.on("request", (r) => {
     if (/fonts\.(googleapis|gstatic)\.com/.test(r.url())) fontHosts.push(r.url());
@@ -66,7 +66,7 @@ test("text uses Geist, labels Geist Mono, both self-hosted (VEL-WEB-landing AC-4
   expect(fontHosts).toEqual([]);
 });
 
-test("orange marks the main Join buttons and the highlights; nothing else is orange or indigo (VEL-WEB-landing AC-53)", async ({ page }, info) => {
+test("orange marks the main Join buttons and the highlights; nothing else is orange or indigo (CFX-WEB-landing AC-53)", async ({ page }, info) => {
   const orange = "rgb(254, 127, 45)"; // #FE7F2D (dark is the default)
   const card = "rgb(24, 24, 27)"; // dark cards, graphite #18181B
   await page.goto("/");
@@ -111,7 +111,7 @@ test("orange marks the main Join buttons and the highlights; nothing else is ora
   expect(edgeColours).not.toContain(orange);
 });
 
-test("light theme: orange hero and pricing Join buttons, black header button (VEL-WEB-landing AC-53)", async ({ page }) => {
+test("light theme: orange hero and pricing Join buttons, black header button (CFX-WEB-landing AC-53)", async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem("theme", "light"));
   await page.goto("/");
   const style = (name: string, el: import("@playwright/test").Locator) => el.evaluate((e, n) => getComputedStyle(e).getPropertyValue(n), name);

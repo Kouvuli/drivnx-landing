@@ -8,6 +8,7 @@ stages:
   - next-step
   - knowledge-first
   - search-first
+  - research
 - id: shape
   title: 2 · Shape
   summary: Turn an idea into an approved spec (requirements items in .ai/knowledge/requirements).
@@ -30,6 +31,7 @@ stages:
   skills:
   - planning
   - subagent-development
+  - work-branch
 - id: build
   title: 4 · Build
   summary: One ticket at a time, test-first.
@@ -39,11 +41,13 @@ stages:
   - testing
   - frontend-testing
   - debugging
+  - refactoring
   - performance
   - security
   - accessibility
   - nextjs
   - react
+  - ci-cd
 - id: check
   title: 5 · Check
   summary: Prove it is done before saying so.
@@ -56,6 +60,8 @@ stages:
   summary: Deliver, keep docs and knowledge true, learn from rework.
   skills:
   - delivery
+  - finish-branch
+  - resolving-merge-conflicts
   - documentation
   - knowledge-update
   - retrospective
@@ -92,12 +98,17 @@ situations:
   after: verification with before/after numbers
 - need: The code is hard to change
   skills:
+  - refactoring
   - architecture
   after: code-review
 - need: A term or business rule is unclear
   skills:
   - domain-modeling
   after: record the term; propose an ADR only for a real trade-off
+- need: Which library / API / vendor behaves how?
+  skills:
+  - research
+  after: brainstorm or requirements with the findings
 - need: Design a screen or polish the UI
   skills:
   - frontend-design
@@ -116,6 +127,10 @@ situations:
   skills:
   - delivery
   after: knowledge-update
+- need: Merge or rebase conflict
+  skills:
+  - resolving-merge-conflicts
+  after: verification
 - need: That went badly; what should change?
   skills:
   - retrospective
@@ -149,6 +164,9 @@ next:
   - requirements
   search-first:
   - implementation
+  research:
+  - brainstorm
+  - requirements
   brainstorm:
   - requirements
   requirements:
@@ -161,6 +179,7 @@ next:
   - architecture
   architecture:
   - requirements
+  - refactoring
   simplicity-guard:
   - planning
   frontend-design:
@@ -184,11 +203,16 @@ next:
   debugging:
   - tdd
   - verification
+  refactoring:
+  - verification
+  - code-review
   performance:
   - verification
   security:
   - code-review
   accessibility:
+  - verification
+  ci-cd:
   - verification
   verification:
   - code-review
@@ -198,6 +222,10 @@ next:
   - code-review
   delivery:
   - knowledge-update
+  finish-branch:
+  - knowledge-update
+  resolving-merge-conflicts:
+  - verification
   documentation:
   - delivery
   knowledge-update:

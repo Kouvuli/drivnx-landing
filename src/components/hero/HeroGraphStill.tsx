@@ -1,4 +1,4 @@
-// Still image of the assembled hero graph (VEL-WEB-landing AC-19, AC-22): the server always sends it; it stays for
+// Still image of the assembled hero graph (CFX-WEB-landing AC-19, AC-22): the server always sends it; it stays for
 // reduced motion and browsers without WebGL. Drawn from the same layout as the 3D scene.
 import { buildHeroGraph } from "@/lib/heroGraph";
 

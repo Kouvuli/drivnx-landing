@@ -1,0 +1,33 @@
+scenarios:
+- id: pos-extract
+  type: trigger
+  prompt: Please refactor the VAT logic out of the invoices module into its own module so the export code can reuse it. Nothing should behave differently.
+  expect_trigger: true
+- id: pos-upgrade
+  type: trigger
+  prompt: We need to move this service from Spring Boot 2.7 to 3.3 without changing any behaviour. How do we do it safely?
+  expect_trigger: true
+- id: pos-cleanup
+  type: trigger
+  prompt: This orders package is a tangle of tiny helper files and duplicated validation. Clean it up so it is easier to work in.
+  expect_trigger: true
+- id: neg-feature
+  type: trigger
+  prompt: Add a new endpoint that lets customers cancel an order before it ships.
+  expect_trigger: false
+- id: neg-bug
+  type: trigger
+  prompt: Invoice totals are off by one cent for some orders. Find the cause and fix it.
+  expect_trigger: false
+- id: extract-tax
+  type: behavior
+  prompt: Move the VAT calculation in shop/invoices.py into a new module shop/tax.py so other modules can reuse it. Behaviour must not change.
+  must:
+  - runs the existing tests before changing the code and reports that they pass
+  - creates shop/tax.py and makes shop/invoices.py use it
+  - keeps every computed total identical, including the existing rounding behaviour
+  - runs the tests again after the change and reports the result
+  must_not:
+  - changes the rounding or the VAT rate while refactoring (a suspected rounding bug may be reported, not fixed)
+  - adds new dependencies, configuration or unrelated features
+  fixture: eval-python-shop

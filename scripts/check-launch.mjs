@@ -1,4 +1,4 @@
-// VEL-WEB-landing AC-17: refuse to launch while src/config/site.ts still holds placeholder values.
+// CFX-WEB-landing AC-17: refuse to launch while src/config/site.ts still holds placeholder values.
 import { readFileSync } from "node:fs";
 
 const file = process.argv[2] ?? new URL("../src/config/site.ts", import.meta.url);

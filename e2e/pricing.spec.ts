@@ -1,8 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-// /pricing (VEL-WEB-landing revision 7): plans, comparison table and FAQ; no dollar amounts.
+// /pricing (CFX-WEB-landing revision 7): plans, comparison table and FAQ; no dollar amounts.
 
-test("four plans with price lines, CTAs and what each includes (VEL-WEB-landing AC-45, VEL-WEB-landing AC-26)", async ({ page }) => {
+test("four plans with price lines, CTAs and what each includes (CFX-WEB-landing AC-45, CFX-WEB-landing AC-26)", async ({ page }) => {
   await page.goto("/pricing");
   const plans = page.locator('[data-item="plan"]');
   await expect(plans).toHaveCount(4);
@@ -27,7 +27,7 @@ test("four plans with price lines, CTAs and what each includes (VEL-WEB-landing 
   }
 });
 
-test("compare features across plans: twelve capabilities in five groups (VEL-WEB-landing AC-46)", async ({ page }) => {
+test("compare features across plans: twelve capabilities in five groups (CFX-WEB-landing AC-46)", async ({ page }) => {
   await page.goto("/pricing");
   const table = page.locator("[data-compare] table");
   await expect(page.getByRole("heading", { name: "Compare features across plans" })).toBeVisible();
@@ -42,7 +42,7 @@ test("compare features across plans: twelve capabilities in five groups (VEL-WEB
   await expect(row("Deployment controls").locator("td").first()).toHaveText("Not included");
 });
 
-test("the comparison scrolls inside its box on phones, never the page (VEL-WEB-landing AC-46, VEL-WEB-landing AC-49)", async ({ page }) => {
+test("the comparison scrolls inside its box on phones, never the page (CFX-WEB-landing AC-46, CFX-WEB-landing AC-49)", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 700 });
   await page.goto("/pricing");
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
@@ -51,7 +51,7 @@ test("the comparison scrolls inside its box on phones, never the page (VEL-WEB-l
   expect(await box.evaluate((el) => el.scrollWidth > el.clientWidth)).toBe(true);
 });
 
-test("pricing FAQ answers open without JavaScript (VEL-WEB-landing AC-47)", async ({ browser }) => {
+test("pricing FAQ answers open without JavaScript (CFX-WEB-landing AC-47)", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("/pricing");
@@ -67,7 +67,7 @@ test("pricing FAQ answers open without JavaScript (VEL-WEB-landing AC-47)", asyn
   await context.close();
 });
 
-test("the pricing page shares the site's chrome and is reachable from the header and footer (VEL-WEB-landing AC-49)", async ({ page }, info) => {
+test("the pricing page shares the site's chrome and is reachable from the header and footer (CFX-WEB-landing AC-49)", async ({ page }, info) => {
   await page.goto("/");
   if (info.project.name === "desktop") {
     await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Pricing" }).click();

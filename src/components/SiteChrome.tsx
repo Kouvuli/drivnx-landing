@@ -15,7 +15,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link href="/" className="inline-flex items-center gap-1 text-lg font-bold tracking-tight">
           {site.name}
-          {/* Brand mark (VEL-WEB-landing AC-53): the only place orange appears on the page. */}
+          {/* Brand mark (CFX-WEB-landing AC-53): the only place orange appears on the page. */}
           <span aria-hidden="true" data-brand-dot className="size-1.5 translate-y-1 rounded-full bg-brand" />
         </Link>
         <nav aria-label="Main" className="hidden md:block">

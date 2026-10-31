@@ -1,6 +1,6 @@
 "use client";
 
-// Hero demo (VEL-WEB-landing AC-06..AC-10): fix "312 orders have no matching customer"
+// Hero demo (CFX-WEB-landing AC-06..AC-10): fix "312 orders have no matching customer"
 // by accepting Claude's suggested link or drawing it between the two columns.
 
 import {

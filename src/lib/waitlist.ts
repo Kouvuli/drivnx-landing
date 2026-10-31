@@ -1,4 +1,4 @@
-// Early-access form logic (VEL-WEB-landing AC-02..AC-05). Contract: POST JSON to a form processor such as Formspree.
+// Early-access form logic (CFX-WEB-landing AC-02..AC-05). Contract: POST JSON to a form processor such as Formspree.
 
 export type Segment = "business" | "data-team" | "consultant";
 

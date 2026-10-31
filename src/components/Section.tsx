@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-// Sections are never tinted (VEL-WEB-landing AC-53): cards carry the palette colour on the plain page, so they stand out.
+// Sections are never tinted (CFX-WEB-landing AC-53): cards carry the palette colour on the plain page, so they stand out.
 export function Section({ id, title, intro, children }: Props) {
   return (
     <section

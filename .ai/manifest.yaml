@@ -1,6 +1,6 @@
 schema: ai-skill-os/manifest/v1
 project:
-  name: landing
+  name: conflux-landing
 mode: portable
 adapters:
 - agents
@@ -68,6 +68,18 @@ skills:
   reason: requested
 - name: web-motion-3d
   reason: added by user
+- name: work-branch
+  reason: added by user
+- name: finish-branch
+  reason: added by user
+- name: resolving-merge-conflicts
+  reason: added by user
+- name: research
+  reason: added by user
+- name: refactoring
+  reason: added by user
+- name: ci-cd
+  reason: added by user
 excluded: []
 hooks:
 - config-protection
@@ -88,7 +100,7 @@ commands:
     evidence: package.json scripts.test
 requirements:
   paths:
-  - ../Velora — Product Vision v2.md
+  - ../docs/archive/Velora — Product Vision v2.md
 checks:
   'on':
   - pre-delivery

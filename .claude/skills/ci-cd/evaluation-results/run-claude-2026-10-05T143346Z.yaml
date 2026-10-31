@@ -1,0 +1,12 @@
+evaluator: runner:claude
+model: tool default
+skill: ci-cd
+version: 1.0.0
+types:
+- behavior
+results:
+- id: pr-workflow
+  pass: false
+  checks: []
+  error: |
+    claude exited 1: You've hit your session limit · resets 6pm (UTC)

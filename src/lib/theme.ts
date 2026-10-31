@@ -1,4 +1,4 @@
-// Theme choice (VEL-WEB-landing AC-28, AC-29). No stored choice means dark (revision 4: dark for every first-time visitor).
+// Theme choice (CFX-WEB-landing AC-28, AC-29). No stored choice means dark (revision 4: dark for every first-time visitor).
 
 export type Theme = "light" | "dark";
 

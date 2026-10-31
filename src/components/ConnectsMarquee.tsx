@@ -1,6 +1,6 @@
 "use client";
 
-// "Connects to" strip (VEL-WEB-landing AC-43): an endless row of the systems the product connects, with generic icons
+// "Connects to" strip (CFX-WEB-landing AC-43): an endless row of the systems the product connects, with generic icons
 // (no brand logos). Pauses on hover, keyboard focus or the Pause button; still and wrapped with reduced motion.
 
 import {

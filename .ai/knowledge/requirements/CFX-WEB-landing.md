@@ -1,14 +1,14 @@
 ---
-id: VEL-WEB-landing
+id: CFX-WEB-landing
 kind: feature
 title: "Landing page"
-summary: "Public company website that tells the Velora product vision (understand, define, build, validate, publish) with a 3D hero, an interactive demo and a separate pricing page, and collects early-access sign-ups"
+summary: "Public company website that tells the Conflux product vision (understand, define, build, validate, publish) with a 3D hero, an interactive demo and a separate pricing page, and collects early-access sign-ups"
 owner: landing
 lifecycle: approved
-revision: 10
-approved_revision: 10
-approval_evidence: "user chose fill-sweep hover, press + ripple click on all button-style controls, and a black/white header Join button in chat, 2026-10-11 (revision 10)"
-updated: "2026-10-11"
+revision: 11
+approved_revision: 11
+approval_evidence: "user chose to rename the product to Conflux everywhere and to make the Phase 1 direction the source of truth, in chat, 2026-10-30 (revision 11)"
+updated: "2026-10-30"
 related: []
 status: CONFIRMED
 ---
@@ -16,11 +16,13 @@ status: CONFIRMED
 # Landing page
 
 ## Problem
-Velora needs a live company website on its own domain, with a same-domain contact email, to apply to Anthropic's
+Conflux needs a live company website on its own domain, with a same-domain contact email, to apply to Anthropic's
 Claude Startups program and to start collecting early users. The page must explain the product in seconds and turn
 visitors (small businesses, data teams, consultants) into early-access sign-ups.
-Source of truth for content: `../Velora — Product Vision v2.md` (since 2026-10-11; the retired "Strategy & Plan" was the
-source up to revision 5). Since revision 7 the page follows v2: §1 vision and first wedge, §5 executive understanding,
+Source of truth for content: `../docs/archive/Velora — Product Vision v2.md` (since 2026-10-11; the retired "Strategy & Plan" was the
+source up to revision 5). Since 2026-10-30 the product is named Conflux and its source of truth is
+`../docs/Conflux_Phase1_Development_Direction.md`; v2 is archived and the copy below still follows it until the rewrite
+(see Open Questions). Since revision 7 the page follows v2: §1 vision and first wedge, §5 executive understanding,
 §6 trust model, §7 AI, §10 living data products, §11 data processing, §13 packaging, §14–16 website brief. Revision 8
 closes the remaining gaps: §15 hero visual and supporting line, §9 trusted data product, §13 wording on /pricing, and
 §18's first user in "Who it's for".
@@ -42,12 +44,12 @@ adds a fill-sweep hover and a press + ripple click to every button-style control
 
 ## Assumptions
 - ASSUMPTION: English only.
-- ASSUMPTION: no legal entity yet; the privacy page names the operator from site config ("Velora, company registration in progress") until one exists.
+- ASSUMPTION: no legal entity yet; the privacy page names the operator from site config ("Conflux, company registration in progress") until one exists.
 - ASSUMPTION: hosting on Vercel; form processor is Formspree (free tier).
 - ASSUMPTION: demo data (4,812 orders, 312 unmatched, 94% confidence) is illustrative and labelled as a demo.
 
 ## User Stories
-### US-01 — Understand Velora in seconds
+### US-01 — Understand Conflux in seconds
 ### US-02 — Join early access
 ### US-03 — Try the graph demo
 ### US-04 — Learn how it works, what it costs and whether to trust it
@@ -57,18 +59,18 @@ adds a fill-sweep hover and a press + ripple click to every button-style control
 ### US-08 — See the product story in the hero: messy records pulling together into a clean graph
 ### US-09 — Sections that show a sequence or a change animate once, so the story is easier to follow
 ### US-10 — Scan the page quickly through icons and shorter text
-### US-11 — Read the page in a light or dark theme with a distinctive Velora palette
+### US-11 — Read the page in a light or dark theme with a distinctive Conflux palette
 ### US-12 — Play with the hero graph: rotate it, inspect records, approve the last suggested link
 ### US-13 — Follow Connect → See → Send step by step while scrolling
 ### US-14 — Fix a realistic mess in the demo: a missing link, a duplicate and a date format, then run a dry run
 ### US-15 — Feel that controls respond: press, hover, open and success feedback
 ### US-16 — See the hero graph react to the cursor
 ### US-17 — Feel a calm, premium page: full-bleed hero, smooth scrolling, headings that reveal, cards that respond
-### US-18 — See at a glance which systems Velora connects
+### US-18 — See at a glance which systems Conflux connects
 ### US-19 — Compare plans on a dedicated pricing page
 ### US-20 — Follow the product story from the vision: understand, define, build, validate, publish, keep current
-### US-21 — See in the hero what Velora tells me about my data: documentation, contract coverage, validation and the next action
-### US-22 — Recognise Velora by its orange, black and white, without confusing orange with the trust colours
+### US-21 — See in the hero what Conflux tells me about my data: documentation, contract coverage, validation and the next action
+### US-22 — Recognise Conflux by its orange, black and white, without confusing orange with the trust colours
 ### US-23 — Feel buttons respond: a fill sweeps in on hover and the button presses in with a ripple when clicked
 
 ## Decisions and Contracts
@@ -77,7 +79,7 @@ Decided with the user in chat, 2026-10-10:
 - Form: POST to `NEXT_PUBLIC_WAITLIST_ENDPOINT` (Formspree); `mailto:` fallback when unset.
 - About: founder **roles, no names** yet.
 - Look: **light & calm**; trust colours on the graph (grey observed, amber suggested, green approved).
-- Domain and email: **placeholders** (`velora.example`, `hello@velora.example`) until real ones exist.
+- Domain and email: **placeholders** (`conflux.example`, `hello@conflux.example`) until real ones exist.
 - Pricing: **"from" prices**, labelled early-access.
 - Demo on phones: **tap to accept**; dragging optional.
 - **No analytics**, no cookies. Tests: Vitest + Testing Library, plus one Playwright journey.
@@ -95,7 +97,7 @@ Added for revision 2, decided with the user in chat, 2026-10-10:
 - Workflow: built with the `web-motion-3d` skill created in ai-skills-os for this.
 
 Added for revision 3, decided with the user in chat, 2026-10-10:
-- Palette **A: Petrol** (chosen from three mocked directions in `../design-mocks/`), light and dark, all pairs WCAG AA:
+- Palette **A: Petrol** (chosen from three mocked directions (mocks removed 2026-10-30)), light and dark, all pairs WCAG AA:
   light paper #f2f5f5, surface #ffffff, ink #0f1f22, muted #4c5f63, line #d3dde0, accent #0d5f73, accent-strong #094a5a,
   on-accent #ffffff; dark paper #0b1517, surface #112024, ink #e4eef0, muted #9fb4b8, line #23383d, accent #5cc3d6,
   accent-strong #8ad6e4, on-accent #062027. Trust colours: light observed #6e7a76, suggested #b26b00 / ink #7f4d00 / soft
@@ -110,7 +112,7 @@ Added for revision 3, decided with the user in chat, 2026-10-10:
 Added for revision 4, decided with the user in chat, 2026-10-11 (reference: scale.com, studied for patterns only — Lenis
 smooth scroll, full-bleed dark hero, line-masked heading reveals, hover zoom inside frames, quiet button hovers, an
 infinite marquee; no code, copy or assets are taken from it):
-- Palette **1: Pure mono** (chosen from three mocks in `../design-mocks/v2-palette-*.png`), replacing petrol:
+- Palette **1: Pure mono** (chosen from three mocks (mocks removed 2026-10-30)), replacing petrol:
   dark paper #000000, surface #111111, ink #ffffff, muted #a3a3a3, line #262626, accent #ffffff, accent-strong #e0e0e0,
   on-accent #000000; light paper #ffffff, surface #f5f5f5, ink #0a0a0a, muted #5c5c5c, line #e5e5e5, accent #0a0a0a,
   accent-strong #2a2a2a, on-accent #ffffff. Trust colours stay (dark observed becomes #8a8f8d, suggested-soft #2e2410,
@@ -156,7 +158,7 @@ Added for revision 8, decided with the user in chat, 2026-10-11 (closing the gap
 
 Added for revision 9, decided with the user in chat, 2026-10-11 (orange from colorhunt.co/palette/000000233d4dfe7f2deaecf0;
 earlier the same day a sky-blue accent, the palette's slate and an indigo accent were built and reviewed but never
-shipped, see `../design-mocks/rev9-*.png`):
+shipped, see `../docs/design-mocks/rev9-orange-*.png`):
 - **Orange, black and white only.** Orange with black text is the hero's, pricing's and form's "Join early access"
   buttons (the header's is black/white so it does not compete with the hero): #FE7F2D in dark (8.3:1) and, a little dimmer and darker at the user's request, #E77123 in light
   (6.8:1). Orange also marks the dot after the wordmark, the favicon's V, the share image's bar, the active how-it-works
@@ -240,7 +242,7 @@ Decided in planning.
 - AC-44 (US-17): Given any page, then text uses Geist and data labels use Geist Mono, self-hosted (no requests to font services from the visitor's browser).
 - AC-45 (US-19): Given `/pricing`, then it shows four plan cards in order — Free / Local ("Free"), Pro ("Early access"), Team ("Early access"), Enterprise ("Contact us") — each with a one-line tagline and a price note taken from v2 §13's values (the exact strings under revision 8's decisions; no "set with early customers" wording), a CTA ("Join early access" → `/#early-access`; Enterprise "Talk to us" → mailto the site email) and what it includes ("Everything in <previous plan>, plus:" from Pro on), plus a note that exact pricing and limits follow real usage; no dollar amounts appear anywhere on the site. (Revision 8: taglines and price notes from v2.)
 - AC-46 (US-19): Given `/pricing`, then a "Compare features across plans" table lists v2 §13's twelve capabilities grouped as Data products, Understanding, Building, Trust & control, and Collaboration & governance, with exactly v2's values per plan (✓ shown as "Included" to screen readers, — as "Not included"); it uses table headers with scope, and on phones only the table container scrolls sideways (no page scroll).
-- AC-47 (US-19): Given `/pricing`, then a FAQ includes "Why are there no prices yet?", "What is a managed data product?", "What is the free Readiness Report?" and "Can I run Velora on my own infrastructure?" as expandable items that work without JavaScript; answers follow v2 (§5, §11, §12), and the "no prices yet" answer says only that exact pricing and limits will follow real usage. (Revision 8.)
+- AC-47 (US-19): Given `/pricing`, then a FAQ includes "Why are there no prices yet?", "What is a managed data product?", "What is the free Readiness Report?" and "Can I run Conflux on my own infrastructure?" as expandable items that work without JavaScript; answers follow v2 (§5, §11, §12), and the "no prices yet" answer says only that exact pricing and limits will follow real usage. (Revision 8.)
 - AC-48 (US-20): Given `/`, then the `lifecycle` section shows "Changes → Impact → Rebuild → Revalidate → Republish" and the four impact dimensions (knowledge, contract, pipeline, output), and says the first form is scheduled sync with drift alerts; the `trust` section shows v2's states Observed, Inferred, Confirmed, Defined and Validated with v2's customer_id examples.
 - AC-49 (US-19): Given `/pricing`, then its title is "Pricing" with the site name from config, it shares the header, footer, theme and fonts of `/`, and it has no horizontal page scroll at 320 px.
 - AC-50 (US-21): Given `/` (server HTML, still image, 3D scene, reduced motion or no WebGL alike), then the hero contains a status card labelled "Example" with five rows: sources connected, documentation ("58% documented, 11 to confirm"), contract coverage ("9 of 12 rules defined"), validation ("Dry run waiting on 1 approval") and the next action ("Confirm the customer identifier"); it is HTML text readable by screen readers, not part of the canvas. From 640 px it sits over the scene without covering the H1, subhead, CTAs, Replay or the "Approve suggested link" button; under 640 px it sits directly below the graph block. (Revision 8.)
@@ -270,7 +272,7 @@ Formspree form (founders create it); domain + mailbox; Vercel project.
 File uploads, accounts, analytics, dark mode, translations, blog/SEO guides, founder names and photos, real legal entity details.
 
 ## Open Questions
-None blocking.
+- Rewrite the site copy to follow the Conflux Phase 1 direction (local profiling: Connect → Profile & Understand → Document & Define) instead of the archived v2 (ERP migration, publish into the ERP). Not blocking; needs the user's answers before any criteria change.
 
 ## Revision History
 - Revision 1: Initial draft from strategy §19 and the user's answers on 2026-10-10; approved by the user in chat, 2026-10-10.
@@ -283,3 +285,4 @@ None blocking.
 - Revision 8: Closes the gaps between the site and v2 (AC-14, AC-34, AC-45, AC-47 changed; US-21, AC-50..AC-52 added): hero status card and supporting line, ChatGPT FAQ removed, v2-only pricing wording, Trusted Data Product checklist, First/Next audiences. From the user's answers on 2026-10-11; approved by the user in chat, 2026-10-11.
 - Revision 9: Orange, black and white: orange #FE7F2D (from Color Hunt palette 000000-233d4d-fe7f2d-eaecf0; a little dimmer and darker #E77123 in light) with black text on every Join button and the highlights, mono controls, neutral grey/graphite cards on untinted sections (US-22, AC-53 added; AC-30 extended); graphs neutral, dark by default unchanged. A sky accent, the palette's slate and an indigo accent were tried and reviewed the same day but never shipped. From the user's answers on 2026-10-11; approved by the user in chat, 2026-10-11.
 - Revision 10: Fill-sweep hover and press + ripple click on every button-style control (US-23, AC-54, AC-55 added); the header's Join button becomes black/white (AC-53 adjusted). From the user's answers on 2026-10-11; approved by the user in chat, 2026-10-11.
+- Revision 11: Reference-only change: the product is renamed Conflux (id VEL-WEB-landing → CFX-WEB-landing, `velora.example` → `conflux.example`), v2 moves to `../docs/archive/`, and the source of truth becomes `../docs/Conflux_Phase1_Development_Direction.md`; no criteria changed, the copy rewrite is an open question. Approved by the user's "Everywhere" and "Phase 1 doc replaces v2" choices in chat, 2026-10-30.

@@ -1,6 +1,6 @@
 "use client";
 
-// The 3D hero (VEL-WEB-landing AC-20, AC-21, AC-23, AC-24, AC-31..AC-33, AC-38). Loaded only in the browser, in its
+// The 3D hero (CFX-WEB-landing AC-20, AC-21, AC-23, AC-24, AC-31..AC-33, AC-38). Loaded only in the browser, in its
 // own chunk. Minimal by design: flat points and thin lines, trust colours as the only accents, no post-processing.
 
 import { Canvas, useFrame, type ThreeEvent } from "@react-three/fiber";

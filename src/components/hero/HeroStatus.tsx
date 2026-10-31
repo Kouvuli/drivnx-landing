@@ -1,4 +1,4 @@
-// Example status on the hero (VEL-WEB-landing AC-50, v2 §15): what the product tells you about your data, as plain HTML so
+// Example status on the hero (CFX-WEB-landing AC-50, v2 §15): what the product tells you about your data, as plain HTML so
 // it shows with the still image, reduced motion and no WebGL alike. Phones: a card below the graph and its controls; from
 // 640 px: a strip under the hero text, centred with it over the scene.
 

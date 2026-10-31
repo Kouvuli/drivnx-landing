@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-// VEL-WEB-landing AC-30: every text/background pair meets WCAG AA in both themes, read from the real tokens.
+// CFX-WEB-landing AC-30: every text/background pair meets WCAG AA in both themes, read from the real tokens.
 const css = readFileSync(join(__dirname, "globals.css"), "utf8");
 const tokens: Record<"light" | "dark", Record<string, string>> = { light: {}, dark: {} };
 for (const [, name, light, dark] of css.matchAll(/--color-([\w-]+):\s*light-dark\((#[0-9a-f]{6}),\s*(#[0-9a-f]{6})\)/gi)) {
@@ -46,7 +46,7 @@ const pairs: [string, string, number][] = [
   ["suggested", "surface", 3],
 ];
 
-describe("colour tokens (VEL-WEB-landing AC-30)", () => {
+describe("colour tokens (CFX-WEB-landing AC-30)", () => {
   it("defines every token for light and dark", () => {
     const names = new Set(pairs.flat().filter((x): x is string => typeof x === "string"));
     for (const name of names) {
@@ -62,10 +62,10 @@ describe("colour tokens (VEL-WEB-landing AC-30)", () => {
   }
 });
 
-// VEL-WEB-landing AC-53 (revision 9): orange, black and white. Orange #FE7F2D (Color Hunt palette 000000-233d4d-fe7f2d-
+// CFX-WEB-landing AC-53 (revision 9): orange, black and white. Orange #FE7F2D (Color Hunt palette 000000-233d4d-fe7f2d-
 // eaecf0) is every "Join early access" button and the highlights; all other controls are black/white on neutral cards.
 // Orange never goes on the graphs (amber = suggested).
-describe("revision 9 palette (VEL-WEB-landing AC-53)", () => {
+describe("revision 9 palette (CFX-WEB-landing AC-53)", () => {
   const pick = (theme: "light" | "dark", names: string[]) => names.map((n) => tokens[theme][n]?.toLowerCase());
 
   it("uses only orange, black and white: mono controls, orange brand, neutral cards", () => {

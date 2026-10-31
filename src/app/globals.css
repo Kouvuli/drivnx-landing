@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Orange, black and white (VEL-WEB-landing AC-28..AC-30, revision 4; AC-53, revision 9):
+ * Orange, black and white (CFX-WEB-landing AC-28..AC-30, revision 4; AC-53, revision 9):
  * - brand: orange with black text (#FE7F2D in dark; a little dimmer and darker #E77123 in light) on the hero's,
  *   pricing's and form's "Join early access" buttons (brand-strong is their hover sweep), the wordmark dot, the active story step, link underlines and the FAQ "+";
  * - brand-ink: orange for small text and focus rings (deeper #C2500A in light to pass AA on white);
@@ -99,7 +99,7 @@ a {
   }
 }
 
-/* Demo: dry-run progress and report lines (VEL-WEB-landing AC-36). Used only through motion-safe utilities. */
+/* Demo: dry-run progress and report lines (CFX-WEB-landing AC-36). Used only through motion-safe utilities. */
 @keyframes dryrun {
   from {
     transform: translateX(-100%);
@@ -115,7 +115,7 @@ a {
   }
 }
 
-/* Micro-interactions (VEL-WEB-landing AC-37): quiet, short, and off for reduced motion. */
+/* Micro-interactions (CFX-WEB-landing AC-37): quiet, short, and off for reduced motion. */
 :root {
   interpolate-size: allow-keywords;
 }
@@ -138,7 +138,7 @@ a {
 }
 
 /*
- * Button feedback (VEL-WEB-landing AC-54, AC-55): a fill sweeps across from the left on hover (set --fx-fill to the
+ * Button feedback (CFX-WEB-landing AC-54, AC-55): a fill sweeps across from the left on hover (set --fx-fill to the
  * hover colour), and the button presses in on click; ButtonRipple.tsx adds a ripple at the click point. Reduced
  * motion: the fill appears instantly, no press, no ripple.
  */
@@ -225,7 +225,7 @@ details[open]::details-content {
   }
 }
 
-/* "Connects to" marquee (VEL-WEB-landing AC-43): two identical rows, shifted by one row's width. */
+/* "Connects to" marquee (CFX-WEB-landing AC-43): two identical rows, shifted by one row's width. */
 @keyframes marquee {
   to {
     transform: translateX(-50%);

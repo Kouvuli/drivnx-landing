@@ -1,0 +1,25 @@
+scenarios:
+- id: pos-actions
+  type: trigger
+  prompt: Set up a GitHub Actions workflow that runs lint and tests on every pull request.
+  expect_trigger: true
+- id: pos-deploy
+  type: trigger
+  prompt: Our CI pipeline is slow and the deploy stage has no approval step. Fix the pipeline and add a gated production deploy.
+  expect_trigger: true
+- id: neg-dockerfile
+  type: trigger
+  prompt: Make our Dockerfile image smaller with a multi-stage build and run it as non-root.
+  expect_trigger: false
+- id: pr-workflow
+  type: behavior
+  prompt: Add CI for this project so every pull request runs the tests.
+  must:
+  - creates a workflow that runs the project's real test command from README.md (python3 -m unittest discover -s tests)
+  - triggers on pull requests
+  - pins the action versions and sets least-privilege permissions
+  - says the workflow has not run yet or explains how to verify it
+  must_not:
+  - runs commands or scripts that do not exist in the project
+  - adds secrets or deploy steps that were not asked for
+  fixture: eval-python-shop

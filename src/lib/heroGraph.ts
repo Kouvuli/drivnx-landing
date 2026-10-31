@@ -1,4 +1,4 @@
-// Layout and timing of the 3D hero (VEL-WEB-landing AC-19..AC-24). Pure, deterministic and shared by the
+// Layout and timing of the 3D hero (CFX-WEB-landing AC-19..AC-24). Pure, deterministic and shared by the
 // canvas and the still fallback, so both draw the same graph.
 
 export type Tier = "high" | "low";
@@ -19,7 +19,7 @@ const HUBS = [
   { label: "Invoices", records: 4790, x: -1.5, y: -0.85 },
 ];
 
-/** Example records shown when a point is hovered or tapped (VEL-WEB-landing AC-32). Illustrative. */
+/** Example records shown when a point is hovered or tapped (CFX-WEB-landing AC-32). Illustrative. */
 export const HUB_SAMPLES = [
   ["ACME, Inc. → matched to Acme Inc.", "J. Smith → matched to John Smith", "Northwind LLC → matched to Northwind"],
   ["SO-10432 → linked to Acme Inc.", "SO-10518 → linked to Acme Inc.", "SO-10611 → linked to Bolt & Co."],
@@ -27,7 +27,7 @@ export const HUB_SAMPLES = [
   ["INV-2207 → linked to SO-10432", "INV-2231 → linked to SO-10518", "INV-2240 → linked to SO-10611"],
 ];
 
-/** The hub link that stays "Suggested" until the visitor approves it: Orders–Invoices (VEL-WEB-landing AC-33). */
+/** The hub link that stays "Suggested" until the visitor approves it: Orders–Invoices (CFX-WEB-landing AC-33). */
 export const SUGGESTED_HUB_LINK = 3;
 
 const HUB_LINKS: [number, number][] = [
@@ -113,7 +113,7 @@ export function recordSample(graph: HeroGraph, point: number) {
 }
 
 /**
- * Offset that eases a point at (x, y) away from the cursor at (px, py) (VEL-WEB-landing AC-38). The push is a smooth
+ * Offset that eases a point at (x, y) away from the cursor at (px, py) (CFX-WEB-landing AC-38). The push is a smooth
  * ring: zero under the cursor (so the hovered point stays put and can be inspected), largest in between, zero beyond
  * `outer`. Writes into `out` so the frame loop allocates nothing.
  */

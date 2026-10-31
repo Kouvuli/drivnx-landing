@@ -1,130 +1,130 @@
 schema: ai-skill-os/knowledge-facts/v1
-updated_at: '2026-10-11T16:09:53+00:00'
+updated_at: '2026-10-30T16:27:57+00:00'
 facts:
 - id: animation:motion
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'motion'
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
 - id: cloud:aws
   status: INFERRED
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 868
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 870
   detail: 'mentioned: [image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwAAAAH+CAYAAAArhmnOAACAAElEQVR4Xux9B3hU1fZ9gNB7B7E923uWZ0dFQBR'
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: cloud:azure
   status: INFERRED
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 722
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 724
   detail: 'mentioned: | **First warehouse and cloud storage** | Which ones first (e.g. BigQuery or Snowflake;
     S3, GCS or Azure Blob)? |'
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: database:mysql
   status: INFERRED
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 116
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 118
   detail: 'mentioned: | **1\. Connect** | Excel, CSV, Google Sheets, SQL databases (Postgres, MySQL, SQL
     Server), REST APIs; QuickBooks later.'
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: database:postgres
   status: INFERRED
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 116
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 118
   detail: 'mentioned: | **1\. Connect** | Excel, CSV, Google Sheets, SQL databases (Postgres, MySQL, SQL
     Server), REST APIs; QuickBooks later.'
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: framework:fastapi
   status: INFERRED
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 841
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 843
   detail: 'mentioned: * **Backend:** Python FastAPI; DuckDB and Polars for transformations; Splink and
     rapidfuzz for record matching; Claude w'
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: framework:nextjs
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'next'
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
-  planned_in: ../Velora — Product Vision v2.md:840
+  planned_in: ../docs/archive/Velora — Product Vision v2.md:842
 - id: framework:react
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'react'
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
-  planned_in: ../Velora — Product Vision v2.md:840
+  planned_in: ../docs/archive/Velora — Product Vision v2.md:842
 - id: graphics:three
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'three'
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
 - id: infra:kubernetes
   status: UNKNOWN
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 868
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 870
   detail: 'mentioned: [image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwAAAAH+CAYAAAArhmnOAACAAElEQVR4Xux9B3hU1fZ9gNB7B7E923uWZ0dFQBR'
   note: mentioned with a negation; confirm with the client whether it is in scope
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: language:javascript
   status: CONFIRMED
   evidence: package.json
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
 - id: language:python
   status: INFERRED
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 841
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 843
   detail: 'mentioned: * **Backend:** Python FastAPI; DuckDB and Polars for transformations; Splink and
     rapidfuzz for record matching; Claude w'
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: language:typescript
   status: CONFIRMED
   evidence: next-env.d.ts
   sha256: 1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b
   source: detector
-  planned_in: ../Velora — Product Vision v2.md:840
+  planned_in: ../docs/archive/Velora — Product Vision v2.md:842
 - id: pm:npm
   status: CONFIRMED
   evidence: package-lock.json
-  sha256: b99083878f5f9942ed34922978a8ffbfd4150e2ba70645b370c6eddafd1d1774
+  sha256: a82016d025e6738015752c4d95346a14d619affb615838814e1e69e9db995900
   source: detector
 - id: service:stripe
   status: INFERRED
   source: requirements
-  evidence: ../Velora — Product Vision v2.md
-  line: 843
+  evidence: ../docs/archive/Velora — Product Vision v2.md
+  line: 845
   detail: 'mentioned: * **Later:** Celery, then Dagster or Temporal for scheduled syncs; Clerk for login;
     Stripe for billing.'
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
 - id: styling:tailwind
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'tailwindcss'
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
 - id: testing:playwright
   status: CONFIRMED
   evidence: package.json
   detail: dependency '@playwright/test'
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
 - id: testing:vitest
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'vitest'
-  sha256: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   source: detector
 requirements:
-- path: ../Velora — Product Vision v2.md
-  sha256: bea05bb50a367055152210879e52c4f744b4792189c8f264f0681ee9889b0002
+- path: ../docs/archive/Velora — Product Vision v2.md
+  sha256: f6809091ffaedb3d256f10034d2dc26481dd6149246b838e311cdfa46b955b68
   readable: true

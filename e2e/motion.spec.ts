@@ -1,6 +1,6 @@
 import { expect, test, type Page } from "@playwright/test";
 
-// 3D hero, story moments, icons and copy budget (VEL-WEB-landing revision 2).
+// 3D hero, story moments, icons and copy budget (CFX-WEB-landing revision 2).
 // Assertions use DOM state exposed by the hero (data-*), never GPU pixels.
 
 const scene = (page: Page) => page.locator("[data-hero-scene]");
@@ -9,7 +9,7 @@ const threeLoaded = (page: Page) => page.evaluate(() => "__THREE__" in window);
 test.describe("reduced motion", () => {
   test.use({ reducedMotion: "reduce" });
 
-  test("keeps the still graph and never loads three.js (VEL-WEB-landing AC-19, VEL-WEB-landing AC-22)", async ({ page }) => {
+  test("keeps the still graph and never loads three.js (CFX-WEB-landing AC-19, CFX-WEB-landing AC-22)", async ({ page }) => {
     await page.goto("/");
     await expect(scene(page)).toHaveAttribute("role", "img");
     await expect(scene(page)).toHaveAttribute("aria-label", /linked into one clean graph/);
@@ -21,7 +21,7 @@ test.describe("reduced motion", () => {
     expect(await threeLoaded(page)).toBe(false);
   });
 
-  test("shows story sections in their final state at once (VEL-WEB-landing AC-25)", async ({ page }) => {
+  test("shows story sections in their final state at once (CFX-WEB-landing AC-25)", async ({ page }) => {
     await page.goto("/");
     const steps = page.locator("#how-it-works [data-reveal]");
     for (const el of await steps.all()) await expect(el).toHaveCSS("opacity", "1");
@@ -30,7 +30,7 @@ test.describe("reduced motion", () => {
   });
 });
 
-test("falls back to the still graph without WebGL (VEL-WEB-landing AC-22)", async ({ page }) => {
+test("falls back to the still graph without WebGL (CFX-WEB-landing AC-22)", async ({ page }) => {
   await page.addInitScript(() => {
     const original = HTMLCanvasElement.prototype.getContext;
     // @ts-expect-error -- simulate a browser without WebGL for this test
@@ -45,7 +45,7 @@ test("falls back to the still graph without WebGL (VEL-WEB-landing AC-22)", asyn
   expect(await threeLoaded(page)).toBe(false);
 });
 
-test("assembles the 3D graph without shifting the layout, then replays (VEL-WEB-landing AC-20, VEL-WEB-landing AC-21)", async ({ page }) => {
+test("assembles the 3D graph without shifting the layout, then replays (CFX-WEB-landing AC-20, CFX-WEB-landing AC-21)", async ({ page }) => {
   await page.goto("/");
   const before = await scene(page).boundingBox();
   await expect(scene(page)).toHaveAttribute("data-state", "canvas", { timeout: 10_000 });
@@ -64,7 +64,7 @@ test("assembles the 3D graph without shifting the layout, then replays (VEL-WEB-
   await expect(scene(page)).toHaveAttribute("data-phase", "settled", { timeout: 6_000 });
 });
 
-test("uses the light tier on phones (VEL-WEB-landing AC-23)", async ({ page }, info) => {
+test("uses the light tier on phones (CFX-WEB-landing AC-23)", async ({ page }, info) => {
   await page.goto("/");
   await expect(scene(page)).toHaveAttribute("data-state", "canvas", { timeout: 10_000 });
   const s = scene(page);
@@ -79,7 +79,7 @@ test("uses the light tier on phones (VEL-WEB-landing AC-23)", async ({ page }, i
   }
 });
 
-test("stops rendering off-screen and resumes when visible (VEL-WEB-landing AC-24)", async ({ page }) => {
+test("stops rendering off-screen and resumes when visible (CFX-WEB-landing AC-24)", async ({ page }) => {
   await page.goto("/");
   await expect(scene(page)).toHaveAttribute("data-active", "true", { timeout: 10_000 });
   await page.locator("#faq").scrollIntoViewIfNeeded();
@@ -88,10 +88,10 @@ test("stops rendering off-screen and resumes when visible (VEL-WEB-landing AC-24
   await expect(scene(page)).toHaveAttribute("data-active", "true");
 });
 
-test("plays the story moments once when they scroll into view (VEL-WEB-landing AC-25)", async ({ page }, info) => {
+test("plays the story moments once when they scroll into view (CFX-WEB-landing AC-25)", async ({ page }, info) => {
   await page.goto("/");
   if (info.project.name === "mobile") {
-    // On desktop, how-it-works is the pinned scroll story instead (VEL-WEB-landing AC-34).
+    // On desktop, how-it-works is the pinned scroll story instead (CFX-WEB-landing AC-34).
     const steps = page.locator("#how-it-works [data-reveal]");
     await expect(steps.first()).toHaveCSS("opacity", "0");
     await page.locator("#how-it-works").scrollIntoViewIfNeeded();
@@ -110,7 +110,7 @@ test("plays the story moments once when they scroll into view (VEL-WEB-landing A
   for (const value of ["14", "186", "2.4M"]) await expect(summary).toContainText(value);
 });
 
-test("every listed item has a decorative icon (VEL-WEB-landing AC-26)", async ({ page }) => {
+test("every listed item has a decorative icon (CFX-WEB-landing AC-26)", async ({ page }) => {
   await page.goto("/");
   const expected = { problem: 3, step: 5, trust: 5, impact: 4, audience: 2, privacy: 6 };
   for (const [kind, count] of Object.entries(expected)) {
@@ -122,7 +122,7 @@ test("every listed item has a decorative icon (VEL-WEB-landing AC-26)", async ({
   }
 });
 
-test("keeps the main sections within the word budget (VEL-WEB-landing AC-27)", async ({ page }) => {
+test("keeps the main sections within the word budget (CFX-WEB-landing AC-27)", async ({ page }) => {
   await page.goto("/");
   const words = await page.evaluate(() =>
     ["problem", "how-it-works", "trust", "lifecycle", "ai-privacy", "who", "about", "early-access"]
@@ -148,7 +148,7 @@ async function probe(page: Page) {
 }
 const tooltip = (page: Page) => page.locator("[data-hero-tooltip]");
 
-test("dragging rotates the hero graph; vertical swipes still scroll on phones (VEL-WEB-landing AC-31)", async ({ page }, info) => {
+test("dragging rotates the hero graph; vertical swipes still scroll on phones (CFX-WEB-landing AC-31)", async ({ page }, info) => {
   const at = await settledHero(page);
   await expect(scene(page)).toHaveCSS("touch-action", "pan-y");
   if (info.project.name !== "desktop") return;
@@ -161,7 +161,7 @@ test("dragging rotates the hero graph; vertical swipes still scroll on phones (V
   await expect(scene(page)).toHaveAttribute("data-rotated", "true");
 });
 
-test("hovering a hub or a record shows what it is (VEL-WEB-landing AC-32)", async ({ page }, info) => {
+test("hovering a hub or a record shows what it is (CFX-WEB-landing AC-32)", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "Hover is the pointer path; the tap path is covered below.");
   const at = await settledHero(page);
   const { hub, record } = await probe(page);
@@ -173,7 +173,7 @@ test("hovering a hub or a record shows what it is (VEL-WEB-landing AC-32)", asyn
   await expect(tooltip(page)).toHaveCount(0);
 });
 
-test("tapping a hub on a phone shows what it is (VEL-WEB-landing AC-32)", async ({ page }, info) => {
+test("tapping a hub on a phone shows what it is (CFX-WEB-landing AC-32)", async ({ page }, info) => {
   test.skip(info.project.name !== "mobile", "Tap path.");
   await settledHero(page);
   const { hub } = await probe(page);
@@ -182,7 +182,7 @@ test("tapping a hub on a phone shows what it is (VEL-WEB-landing AC-32)", async 
   await expect(tooltip(page)).toHaveText("Customers, 1,204 records");
 });
 
-test("the last suggested link is approved by clicking it or with the button; Replay resets it (VEL-WEB-landing AC-33)", async ({ page }, info) => {
+test("the last suggested link is approved by clicking it or with the button; Replay resets it (CFX-WEB-landing AC-33)", async ({ page }, info) => {
   const at = await settledHero(page);
   await expect(scene(page)).toHaveAttribute("data-suggested", "pending");
   if (info.project.name === "desktop") {
@@ -202,7 +202,7 @@ test("the last suggested link is approved by clicking it or with the button; Rep
   await expect(scene(page)).toHaveAttribute("data-suggested", "approved");
 });
 
-test("how it works pins and steps through the five stages on desktop (VEL-WEB-landing AC-34)", async ({ page }, info) => {
+test("how it works pins and steps through the five stages on desktop (CFX-WEB-landing AC-34)", async ({ page }, info) => {
   await page.goto("/");
   const story = page.locator("#how-it-works [data-pinned]");
   const stages = ["understand", "define", "build", "validate", "publish"];
@@ -242,7 +242,7 @@ test("how it works pins and steps through the five stages on desktop (VEL-WEB-la
 
 test.describe("reduced motion: no pinning", () => {
   test.use({ reducedMotion: "reduce" });
-  test("shows all five stages with their illustrations, without pinning (VEL-WEB-landing AC-34)", async ({ page }) => {
+  test("shows all five stages with their illustrations, without pinning (CFX-WEB-landing AC-34)", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("#how-it-works [data-pinned]")).toHaveCount(0);
     const steps = page.locator('#how-it-works [data-item="step"]');
@@ -258,7 +258,7 @@ test.describe("reduced motion: no pinning", () => {
   });
 });
 
-test("controls give quiet press, hover, open and success feedback (VEL-WEB-landing AC-37)", async ({ page }) => {
+test("controls give quiet press, hover, open and success feedback (CFX-WEB-landing AC-37)", async ({ page }) => {
   await page.goto("/");
   const cta = page.getByRole("main").getByRole("link", { name: "Join early access" });
   expect(await cta.evaluate((el) => getComputedStyle(el).transitionProperty)).toContain("transform");
@@ -276,7 +276,7 @@ test("controls give quiet press, hover, open and success feedback (VEL-WEB-landi
 
 test.describe("reduced motion: instant feedback", () => {
   test.use({ reducedMotion: "reduce" });
-  test("press and open feedback are instant (VEL-WEB-landing AC-37)", async ({ page }) => {
+  test("press and open feedback are instant (CFX-WEB-landing AC-37)", async ({ page }) => {
     await page.goto("/");
     const cta = page.getByRole("main").getByRole("link", { name: "Join early access" });
     expect(await cta.evaluate((el) => getComputedStyle(el).transitionDuration)).toBe("0s");
@@ -293,7 +293,7 @@ const sweepScale = (el: import("@playwright/test").Locator) =>
     return m === "none" ? 1 : Number(m.slice(7).split(",")[0]);
   });
 
-test("button-style controls sweep a fill across on hover (VEL-WEB-landing AC-54)", async ({ page }, info) => {
+test("button-style controls sweep a fill across on hover (CFX-WEB-landing AC-54)", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "Hover is the pointer path.");
   await page.goto("/");
   const main = page.getByRole("main");
@@ -317,7 +317,7 @@ test("button-style controls sweep a fill across on hover (VEL-WEB-landing AC-54)
   }
 });
 
-test("clicking a button presses it in and spreads a ripple from the click point (VEL-WEB-landing AC-55)", async ({ page }) => {
+test("clicking a button presses it in and spreads a ripple from the click point (CFX-WEB-landing AC-55)", async ({ page }) => {
   await page.goto("/pricing");
   const talk = page.getByRole("link", { name: "Talk to us" });
   await talk.evaluate((e) => e.addEventListener("click", (ev) => ev.preventDefault()));
@@ -338,7 +338,7 @@ test("clicking a button presses it in and spreads a ripple from the click point 
 
 test.describe("reduced motion: no sweep or ripple", () => {
   test.use({ reducedMotion: "reduce" });
-  test("hover and click feedback change instantly, without a ripple (VEL-WEB-landing AC-54, VEL-WEB-landing AC-55)", async ({ page }) => {
+  test("hover and click feedback change instantly, without a ripple (CFX-WEB-landing AC-54, CFX-WEB-landing AC-55)", async ({ page }) => {
     await page.goto("/pricing");
     const talk = page.getByRole("link", { name: "Talk to us" });
     await talk.evaluate((e) => e.addEventListener("click", (ev) => ev.preventDefault()));
@@ -354,14 +354,14 @@ test.describe("reduced motion: no sweep or ripple", () => {
   });
 });
 
-test("the cursor effect is on for desktop pointers and off for touch (VEL-WEB-landing AC-38)", async ({ page }, info) => {
+test("the cursor effect is on for desktop pointers and off for touch (CFX-WEB-landing AC-38)", async ({ page }, info) => {
   await settledHero(page);
   await expect(scene(page)).toHaveAttribute("data-cursor-effect", info.project.name === "desktop" ? "on" : "off");
 });
 
 // Revision 4: full-bleed hero, smooth scroll, heading reveals, hover zoom, "Connects to" marquee.
 
-test("the hero is full-bleed with a centred headline; on phones the graph sits below the text (VEL-WEB-landing AC-39)", async ({ page }, info) => {
+test("the hero is full-bleed with a centred headline; on phones the graph sits below the text (CFX-WEB-landing AC-39)", async ({ page }, info) => {
   await page.goto("/");
   const viewport = page.viewportSize()!;
   const box = (await scene(page).boundingBox())!;
@@ -386,7 +386,7 @@ test("the hero is full-bleed with a centred headline; on phones the graph sits b
   }
 });
 
-test("scrolling is smooth on desktop pointers and native on touch (VEL-WEB-landing AC-40)", async ({ page }, info) => {
+test("scrolling is smooth on desktop pointers and native on touch (CFX-WEB-landing AC-40)", async ({ page }, info) => {
   await page.goto("/");
   const lenis = page.locator("html.lenis");
   if (info.project.name === "desktop") {
@@ -406,7 +406,7 @@ test("scrolling is smooth on desktop pointers and native on touch (VEL-WEB-landi
 
 test.describe("reduced motion: native scroll, still headings and marquee", () => {
   test.use({ reducedMotion: "reduce" });
-  test("no smooth scroll, headings shown at once, marquee still and wrapped (VEL-WEB-landing AC-40, VEL-WEB-landing AC-41, VEL-WEB-landing AC-43)", async ({ page }) => {
+  test("no smooth scroll, headings shown at once, marquee still and wrapped (CFX-WEB-landing AC-40, CFX-WEB-landing AC-41, CFX-WEB-landing AC-43)", async ({ page }) => {
     await page.goto("/");
     await expect(page.locator("html.lenis")).toHaveCount(0);
     const heading = page.locator("#lifecycle-title");
@@ -417,7 +417,7 @@ test.describe("reduced motion: native scroll, still headings and marquee", () =>
   });
 });
 
-test("section headings reveal line by line, once, and stay whole for screen readers (VEL-WEB-landing AC-41)", async ({ page }) => {
+test("section headings reveal line by line, once, and stay whole for screen readers (CFX-WEB-landing AC-41)", async ({ page }) => {
   await page.goto("/");
   const heading = page.locator("#lifecycle-title");
   await expect(heading).toHaveAttribute("data-heading-reveal", "armed");
@@ -430,7 +430,7 @@ test("section headings reveal line by line, once, and stay whole for screen read
   await expect.poll(() => inner.evaluate((el) => new DOMMatrix(getComputedStyle(el).transform).m42)).toBe(0);
 });
 
-test("cards respond to hover (VEL-WEB-landing AC-42)", async ({ page }, info) => {
+test("cards respond to hover (CFX-WEB-landing AC-42)", async ({ page }, info) => {
   test.skip(info.project.name !== "desktop", "Hover is a pointer interaction.");
   for (const [path, selector] of [["/", "#lifecycle [data-hover-card]"], ["/pricing", '[data-item="plan"]']]) {
     await page.goto(path);
@@ -442,7 +442,7 @@ test("cards respond to hover (VEL-WEB-landing AC-42)", async ({ page }, info) =>
   }
 });
 
-test("the Connects to marquee moves, pauses, and hides its duplicate row (VEL-WEB-landing AC-43)", async ({ page }) => {
+test("the Connects to marquee moves, pauses, and hides its duplicate row (CFX-WEB-landing AC-43)", async ({ page }) => {
   await page.goto("/");
   const section = page.locator("#connects");
   const track = section.locator("[data-marquee-track]");

@@ -1,6 +1,6 @@
 "use client";
 
-// Click ripple for every `fx` control (VEL-WEB-landing AC-55): one listener for the whole page, so server-rendered links
+// Click ripple for every `fx` control (CFX-WEB-landing AC-55): one listener for the whole page, so server-rendered links
 // need no wiring. The ripple starts at the pointer and fades out (keyframes in globals.css). Reduced motion: none.
 
 import { useEffect } from "react";

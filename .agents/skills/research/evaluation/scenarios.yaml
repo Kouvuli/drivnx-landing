@@ -1,0 +1,32 @@
+scenarios:
+- id: pos-deprecated
+  type: trigger
+  prompt: Is datetime.utcnow() deprecated in the Python version we use, and what should we call instead? Check the docs.
+  expect_trigger: true
+- id: pos-library
+  type: trigger
+  prompt: Look up whether the PostgreSQL version in our README supports adding a NOT NULL column with a default without rewriting the table.
+  expect_trigger: true
+- id: pos-compare
+  type: trigger
+  prompt: Research the options for generating PDFs from Python and compare them for our use case, with sources.
+  expect_trigger: true
+- id: neg-reuse
+  type: trigger
+  prompt: Before you write a new CSV helper, check whether this repo already has one we can reuse.
+  expect_trigger: false
+- id: neg-bug
+  type: trigger
+  prompt: The export endpoint returns a 500 error since yesterday. Find the cause.
+  expect_trigger: false
+- id: pg-default
+  type: behavior
+  prompt: Our orders table is huge. Find out whether adding a NOT NULL column with a constant default rewrites the whole table on the PostgreSQL version this project runs in production, and record what you find.
+  must:
+  - determines the PostgreSQL version from the project (README or migrations) before answering
+  - answers for that version and cites the PostgreSQL documentation or release notes as the source
+  - records the finding in .ai/knowledge/ with status INFERRED and the source
+  must_not:
+  - answers without naming the version the answer applies to
+  - marks the finding as CONFIRMED
+  fixture: eval-python-shop

@@ -1,6 +1,6 @@
 "use client";
 
-// How it works (VEL-WEB-landing AC-25, AC-26, AC-34): the five build stages of the product vision (v2 §3, §16).
+// How it works (CFX-WEB-landing AC-25, AC-26, AC-34): the five build stages of the product vision (v2 §3, §16).
 // Desktop with motion allowed: the section pins while Understand → Publish & serve become active with scroll.
 // Otherwise: all five stages stacked with their illustrations (revealed once).
 
@@ -136,7 +136,7 @@ function ValidateArt() {
   );
 }
 
-// v2 §9: what makes a Trusted Data Product (VEL-WEB-landing AC-34, revision 8).
+// v2 §9: what makes a Trusted Data Product (CFX-WEB-landing AC-34, revision 8).
 const trustedCriteria = [
   "Documented meaning",
   "Explicit expectations",

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildHeroGraph, ease, HUB_SAMPLES, hubLabel, pointProgress, QUALITY, recordSample, repelOffset, SUGGESTED_HUB_LINK } from "./heroGraph";
 
-describe("buildHeroGraph (VEL-WEB-landing AC-20, AC-23)", () => {
+describe("buildHeroGraph (CFX-WEB-landing AC-20, AC-23)", () => {
   it("uses 40 points on the high tier and at most 24 on the light tier", () => {
     expect(buildHeroGraph("high").count).toBe(40);
     expect(buildHeroGraph("low").count).toBeLessThanOrEqual(24);
@@ -41,7 +41,7 @@ describe("buildHeroGraph (VEL-WEB-landing AC-20, AC-23)", () => {
   });
 });
 
-describe("assembly timing (VEL-WEB-landing AC-20)", () => {
+describe("assembly timing (CFX-WEB-landing AC-20)", () => {
   it("eases from 0 to 1", () => {
     expect(ease(0)).toBe(0);
     expect(ease(1)).toBe(1);
@@ -57,7 +57,7 @@ describe("assembly timing (VEL-WEB-landing AC-20)", () => {
   });
 });
 
-describe("hero interaction data (VEL-WEB-landing AC-32, VEL-WEB-landing AC-33)", () => {
+describe("hero interaction data (CFX-WEB-landing AC-32, CFX-WEB-landing AC-33)", () => {
   it("labels hubs with their record counts", () => {
     expect(hubLabel(0)).toBe("Customers, 1,204 records");
     expect(hubLabel(1)).toBe("Orders, 4,812 records");
@@ -77,7 +77,7 @@ describe("hero interaction data (VEL-WEB-landing AC-32, VEL-WEB-landing AC-33)",
   });
 });
 
-describe("cursor push (VEL-WEB-landing AC-38)", () => {
+describe("cursor push (CFX-WEB-landing AC-38)", () => {
   it("pushes points in a ring around the cursor away from it", () => {
     const [dx, dy] = repelOffset(0, 0, 0.55, 0);
     expect(dx).toBeGreaterThan(0.1);

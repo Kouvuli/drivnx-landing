@@ -4,25 +4,25 @@ import { canRunDryRun, canSend, demoReducer, fixedCount, initialDemoState, SUGGE
 const apply = (...actions: Parameters<typeof demoReducer>[1][]) => actions.reduce(demoReducer, initialDemoState);
 const allFixed = (): DemoState => apply({ type: "accept" }, { type: "merge" }, { type: "convert" });
 
-describe("demo issues (VEL-WEB-landing AC-06, VEL-WEB-landing AC-35)", () => {
+describe("demo issues (CFX-WEB-landing AC-06, CFX-WEB-landing AC-35)", () => {
   it("starts with three open issues and no hint", () => {
     expect(initialDemoState).toMatchObject({ linked: false, merged: false, converted: false, dryRun: "idle", hint: null });
     expect(fixedCount(initialDemoState)).toBe(0);
   });
 
-  it("links when the suggestion is accepted (VEL-WEB-landing AC-07)", () => {
+  it("links when the suggestion is accepted (CFX-WEB-landing AC-07)", () => {
     const s = apply({ type: "accept" });
     expect(s.linked).toBe(true);
     expect(fixedCount(s)).toBe(1);
   });
 
-  it("links when the suggested columns are connected by hand (VEL-WEB-landing AC-08)", () => {
+  it("links when the suggested columns are connected by hand (CFX-WEB-landing AC-08)", () => {
     const s = apply({ type: "connect", sourceHandle: SUGGESTED_LINK.sourceHandle, targetHandle: SUGGESTED_LINK.targetHandle });
     expect(s.linked).toBe(true);
     expect(s.hint).toBeNull();
   });
 
-  it("stays unlinked with a hint when other columns are connected (VEL-WEB-landing AC-08)", () => {
+  it("stays unlinked with a hint when other columns are connected (CFX-WEB-landing AC-08)", () => {
     const s = apply({ type: "connect", sourceHandle: "order_id", targetHandle: "customer_id" });
     expect(s.linked).toBe(false);
     expect(s.hint).toBe("Those columns don't match. Try cust_no → customer_id.");
@@ -35,7 +35,7 @@ describe("demo issues (VEL-WEB-landing AC-06, VEL-WEB-landing AC-35)", () => {
   });
 });
 
-describe("dry run gates sending (VEL-WEB-landing AC-36)", () => {
+describe("dry run gates sending (CFX-WEB-landing AC-36)", () => {
   it("cannot run until all three issues are fixed", () => {
     const partial = apply({ type: "accept" }, { type: "merge" });
     expect(canRunDryRun(partial)).toBe(false);
@@ -57,7 +57,7 @@ describe("dry run gates sending (VEL-WEB-landing AC-36)", () => {
     expect(demoReducer(allFixed(), { type: "finishDryRun" }).dryRun).toBe("idle");
   });
 
-  it("returns to the initial state on reset (VEL-WEB-landing AC-09)", () => {
+  it("returns to the initial state on reset (CFX-WEB-landing AC-09)", () => {
     const passed = demoReducer(demoReducer(allFixed(), { type: "startDryRun" }), { type: "finishDryRun" });
     expect(demoReducer(passed, { type: "reset" })).toEqual(initialDemoState);
   });

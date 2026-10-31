@@ -3,14 +3,14 @@ import { E2E_ENDPOINT } from "../playwright.config";
 
 const demoStatus = (page: Page) => page.locator("#demo").getByRole("status");
 
-test("hero headline and call to action are visible without scrolling (VEL-WEB-landing AC-01)", async ({ page }) => {
+test("hero headline and call to action are visible without scrolling (CFX-WEB-landing AC-01)", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Understand your data before you use it.");
   await expect(page.getByRole("heading", { level: 1 })).toBeInViewport();
   await expect(page.getByRole("main").getByRole("link", { name: "Join early access" }).first()).toBeInViewport();
 });
 
-test("sections follow the vision's narrative, and the header links to them (VEL-WEB-landing AC-11)", async ({ page }, info) => {
+test("sections follow the vision's narrative, and the header links to them (CFX-WEB-landing AC-11)", async ({ page }, info) => {
   await page.goto("/");
   const ids = await page.locator("main section[id]").evaluateAll((els) => els.map((e) => e.id));
   expect(ids).toEqual(["connects", "problem", "how-it-works", "demo", "trust", "lifecycle", "ai-privacy", "who", "about", "faq", "early-access"]);
@@ -22,7 +22,7 @@ test("sections follow the vision's narrative, and the header links to them (VEL-
   }
 });
 
-test("pricing is not on the home page; AI & privacy says what was agreed (VEL-WEB-landing AC-12, VEL-WEB-landing AC-13)", async ({ page }) => {
+test("pricing is not on the home page; AI & privacy says what was agreed (CFX-WEB-landing AC-12, CFX-WEB-landing AC-13)", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#pricing")).toHaveCount(0);
   await expect(page.locator("main")).not.toContainText("$");
@@ -41,7 +41,7 @@ test("pricing is not on the home page; AI & privacy says what was agreed (VEL-WE
   await expect(page.locator("body")).not.toContainText(/never leaves/i);
 });
 
-test("trust model and lifecycle follow the vision (VEL-WEB-landing AC-48)", async ({ page }) => {
+test("trust model and lifecycle follow the vision (CFX-WEB-landing AC-48)", async ({ page }) => {
   await page.goto("/");
   const trust = page.locator("#trust");
   for (const state of ["Observed", "Inferred", "Confirmed", "Defined", "Validated"]) await expect(trust).toContainText(state);
@@ -55,7 +55,7 @@ test("trust model and lifecycle follow the vision (VEL-WEB-landing AC-48)", asyn
   }
 });
 
-test("accepting the suggestion links the records, and reset restores it (VEL-WEB-landing AC-06, VEL-WEB-landing AC-07, VEL-WEB-landing AC-09, VEL-WEB-landing AC-10)", async ({ page }) => {
+test("accepting the suggestion links the records, and reset restores it (CFX-WEB-landing AC-06, CFX-WEB-landing AC-07, CFX-WEB-landing AC-09, CFX-WEB-landing AC-10)", async ({ page }) => {
   await page.goto("/");
   await page.locator("#demo").scrollIntoViewIfNeeded();
   const status = demoStatus(page);
@@ -77,7 +77,7 @@ test("accepting the suggestion links the records, and reset restores it (VEL-WEB
   await expect(page.locator('[data-issue="link"]')).toHaveAttribute("data-fixed", "false");
 });
 
-test("three issues, a dry run, then sending (VEL-WEB-landing AC-35, VEL-WEB-landing AC-36)", async ({ page }) => {
+test("three issues, a dry run, then sending (CFX-WEB-landing AC-35, CFX-WEB-landing AC-36)", async ({ page }) => {
   await page.goto("/");
   const demo = page.locator("#demo");
   await demo.scrollIntoViewIfNeeded();
@@ -126,8 +126,8 @@ async function dragHandle(page: Page, from: string, to: string) {
   await page.mouse.up();
 }
 
-test("drawing the link by hand resolves the demo; a wrong link gives a hint (VEL-WEB-landing AC-08)", async ({ page }, info) => {
-  test.skip(info.project.name !== "desktop", "Dragging is the pointer path; phones use Accept suggestion (VEL-WEB-landing AC-07).");
+test("drawing the link by hand resolves the demo; a wrong link gives a hint (CFX-WEB-landing AC-08)", async ({ page }, info) => {
+  test.skip(info.project.name !== "desktop", "Dragging is the pointer path; phones use Accept suggestion (CFX-WEB-landing AC-07).");
   await page.goto("/");
   const status = demoStatus(page);
   await page.locator("#demo").scrollIntoViewIfNeeded();
@@ -141,7 +141,7 @@ test("drawing the link by hand resolves the demo; a wrong link gives a hint (VEL
   await expect(status).toHaveText("Link approved. All 4,812 orders matched to a customer");
 });
 
-test("a visitor joins early access (VEL-WEB-landing AC-02)", async ({ page }) => {
+test("a visitor joins early access (CFX-WEB-landing AC-02)", async ({ page }) => {
   const bodies: unknown[] = [];
   await page.route(E2E_ENDPOINT, async (route) => {
     bodies.push(route.request().postDataJSON());
@@ -157,7 +157,7 @@ test("a visitor joins early access (VEL-WEB-landing AC-02)", async ({ page }) =>
   expect(bodies).toEqual([{ email: "sam@shop.com", segment: "consultant", readinessReport: true, source: "landing" }]);
 });
 
-test("FAQ answers open without JavaScript (VEL-WEB-landing AC-14)", async ({ browser }) => {
+test("FAQ answers open without JavaScript (CFX-WEB-landing AC-14)", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("/");
@@ -169,7 +169,7 @@ test("FAQ answers open without JavaScript (VEL-WEB-landing AC-14)", async ({ bro
   await context.close();
 });
 
-test("who it's for starts with businesses moving onto an ERP, then data teams (VEL-WEB-landing AC-52)", async ({ page }) => {
+test("who it's for starts with businesses moving onto an ERP, then data teams (CFX-WEB-landing AC-52)", async ({ page }) => {
   await page.goto("/");
   const audiences = page.locator('#who [data-item="audience"]');
   await expect(audiences.nth(0)).toContainText("Starting with");
@@ -181,7 +181,7 @@ test("who it's for starts with businesses moving onto an ERP, then data teams (V
 const SUPPORTING_LINE =
   "Profiling, documentation, contracts, transformation, and validation in one workspace — with Claude assistance you can switch off.";
 
-test("the hero carries v2's supporting line under the subhead (VEL-WEB-landing AC-51, VEL-WEB-landing AC-01)", async ({ page }) => {
+test("the hero carries v2's supporting line under the subhead (CFX-WEB-landing AC-51, CFX-WEB-landing AC-01)", async ({ page }) => {
   await page.goto("/");
   const line = page.getByRole("main").getByText(SUPPORTING_LINE);
   await expect(line).toBeVisible();
@@ -190,7 +190,7 @@ test("the hero carries v2's supporting line under the subhead (VEL-WEB-landing A
   await expect(page.getByRole("main").getByRole("link", { name: "Join early access" }).first()).toBeInViewport();
 });
 
-test("the hero shows an example status card, as text, without JavaScript too (VEL-WEB-landing AC-50)", async ({ browser }) => {
+test("the hero shows an example status card, as text, without JavaScript too (CFX-WEB-landing AC-50)", async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto("/");
@@ -204,7 +204,7 @@ test("the hero shows an example status card, as text, without JavaScript too (VE
   await context.close();
 });
 
-test("the status card never covers the hero's text or controls (VEL-WEB-landing AC-50)", async ({ page }, info) => {
+test("the status card never covers the hero's text or controls (CFX-WEB-landing AC-50)", async ({ page }, info) => {
   await page.goto("/");
   const scene = page.locator("[data-hero-scene]");
   await expect(scene).toHaveAttribute("data-phase", "settled", { timeout: 15_000 });
@@ -233,7 +233,7 @@ test("the status card never covers the hero's text or controls (VEL-WEB-landing 
   }
 });
 
-test("privacy page explains the form data and is linked from the footer and the form (VEL-WEB-landing AC-15)", async ({ page }) => {
+test("privacy page explains the form data and is linked from the footer and the form (CFX-WEB-landing AC-15)", async ({ page }) => {
   await page.goto("/");
   await expect(page.locator("#early-access").getByRole("link", { name: "privacy policy" })).toHaveAttribute("href", "/privacy");
   await page.getByRole("contentinfo").getByRole("link", { name: "Privacy policy" }).click();
@@ -244,7 +244,7 @@ test("privacy page explains the form data and is linked from the footer and the 
   }
 });
 
-test("share metadata and image are in place (VEL-WEB-landing AC-18)", async ({ page, request }) => {
+test("share metadata and image are in place (CFX-WEB-landing AC-18)", async ({ page, request }) => {
   await page.goto("/");
   await expect(page).toHaveTitle(/understand your data before you use it/i);
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", /opengraph-image/);
@@ -254,7 +254,7 @@ test("share metadata and image are in place (VEL-WEB-landing AC-18)", async ({ p
   expect([png.readUInt32BE(16), png.readUInt32BE(20)]).toEqual([1200, 630]);
 });
 
-test("no horizontal scrolling at 320px (VEL-WEB-landing non-functional)", async ({ page }) => {
+test("no horizontal scrolling at 320px (CFX-WEB-landing non-functional)", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 700 });
   for (const path of ["/", "/privacy"]) {
     await page.goto(path);

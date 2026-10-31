@@ -6,7 +6,7 @@ import { site } from "@/config/site";
 import { themeScript } from "@/lib/theme";
 import "./globals.css";
 
-// Self-hosted by next/font: no requests to font services from the visitor's browser (VEL-WEB-landing AC-44).
+// Self-hosted by next/font: no requests to font services from the visitor's browser (CFX-WEB-landing AC-44).
 const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 

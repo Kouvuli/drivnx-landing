@@ -1,4 +1,4 @@
-// State of the demo (VEL-WEB-landing AC-06..AC-10, AC-35, AC-36): three issues to fix, then a dry run before sending.
+// State of the demo (CFX-WEB-landing AC-06..AC-10, AC-35, AC-36): three issues to fix, then a dry run before sending.
 // Figures are illustrative.
 
 export const DEMO = { totalOrders: 4812, unmatchedOrders: 312, confidence: 94, customers: 1204, duplicateMatch: 97 };

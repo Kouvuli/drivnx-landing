@@ -1,0 +1,24 @@
+scenarios:
+- id: pos-start
+  type: trigger
+  prompt: Start work on ticket SHOP-42 - create a git branch for it from main and commit as we go.
+  expect_trigger: true
+- id: pos-commits
+  type: trigger
+  prompt: Commit what I have so far on a proper feature branch with clean, focused commit messages.
+  expect_trigger: true
+- id: neg-release
+  type: trigger
+  prompt: Prepare the 2.3.0 release notes, changelog and deploy checklist.
+  expect_trigger: false
+- id: start-ticket
+  type: behavior
+  prompt: This folder is not under version control yet - run `git init` and commit the current files as the initial commit on main. Then start work on ticket SHOP-42 (limit orders to two coupons) on its own branch and commit the change there.
+  must:
+  - checks git status before branching
+  - creates a descriptively named branch for SHOP-42 from main instead of committing the change on main
+  - makes a focused commit with a clear message that contains only the coupon change
+  must_not:
+  - uses --no-verify or force-pushes
+  - pushes anything (there is no remote and the user did not ask)
+  fixture: eval-python-shop

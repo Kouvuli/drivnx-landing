@@ -4,7 +4,7 @@ import { Moon, Sun } from "lucide-react";
 import { useSyncExternalStore } from "react";
 import { currentTheme, setTheme, subscribeTheme } from "@/lib/theme";
 
-// VEL-WEB-landing AC-29. The label names the theme the button switches to; before hydration it is neutral.
+// CFX-WEB-landing AC-29. The label names the theme the button switches to; before hydration it is neutral.
 export function ThemeToggle() {
   const theme = useSyncExternalStore(subscribeTheme, currentTheme, () => null);
   const next = theme === "dark" ? "light" : "dark";

@@ -17,7 +17,7 @@ function sourceFiles(dir: string): string[] {
   });
 }
 
-describe("brand details live only in site config (VEL-WEB-landing AC-16)", () => {
+describe("brand details live only in site config (CFX-WEB-landing AC-16)", () => {
   it("no other source file hard-codes the name, domain or contact email", () => {
     const offenders = sourceFiles(join(root, "src"))
       .filter((file) => file !== siteFile)
@@ -29,7 +29,7 @@ describe("brand details live only in site config (VEL-WEB-landing AC-16)", () =>
   });
 });
 
-describe("launch check (VEL-WEB-landing AC-17)", () => {
+describe("launch check (CFX-WEB-landing AC-17)", () => {
   const run = (...args: string[]) => spawnSync(process.execPath, [join(root, "scripts", "check-launch.mjs"), ...args], { encoding: "utf8" });
 
   it("fails and names each placeholder while .example values remain", () => {
@@ -40,7 +40,7 @@ describe("launch check (VEL-WEB-landing AC-17)", () => {
 
   it("passes once real values are set", () => {
     const real = join(mkdtempSync(join(tmpdir(), "site-")), "site.ts");
-    writeFileSync(real, readFileSync(siteFile, "utf8").replaceAll("velora.example", "velora.com"));
+    writeFileSync(real, readFileSync(siteFile, "utf8").replaceAll("conflux.example", "conflux.com"));
     const result = run(real);
     expect(result.status).toBe(0);
   });

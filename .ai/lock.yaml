@@ -1,7 +1,7 @@
 schema: ai-skill-os/lock/v1
-generated_at: '2026-10-10T15:21:31+00:00'
+generated_at: '2026-10-30T16:27:07+00:00'
 skill_os:
-  commit: b7863149b9bfe1adecb4e9f4d0d603fce01e2e45
+  commit: d978c0118bfba37f8ad325fdb2cb33bc827a1403
 skills:
   acceptance-criteria:
     version: 1.1.0
@@ -45,6 +45,15 @@ skills:
     source:
       type: builtin
     provenance: merged
+    license: MIT
+    trust: trusted
+    requested_by: manifest
+  ci-cd:
+    version: 1.0.0
+    content_hash: sha256:07d7e9accd9dd38c6a7d481dac614d9dea9f72efe592d4e5d93e7a0ded5bfc74
+    source:
+      type: builtin
+    provenance: original
     license: MIT
     trust: trusted
     requested_by: manifest
@@ -114,6 +123,15 @@ skills:
   domain-modeling:
     version: 1.1.0
     content_hash: sha256:decb93afc4ffffac3a2b85864bde6cecbc72e48d96b35ed9d3b192ce10f71973
+    source:
+      type: builtin
+    provenance: inspired
+    license: MIT
+    trust: trusted
+    requested_by: manifest
+  finish-branch:
+    version: 1.0.0
+    content_hash: sha256:fd61eaade4a50a6858570a5b9bd401cf58037d843ea1aae902e425ca717768ff
     source:
       type: builtin
     provenance: inspired
@@ -219,6 +237,37 @@ skills:
     license: MIT
     trust: trusted
     requested_by: manifest
+  refactoring:
+    version: 1.0.1
+    content_hash: sha256:1be33c72d13a79af934f9804a483098aed5da773f6ecfac43dcafa53bc733482
+    source:
+      type: builtin
+    provenance: inspired
+    license: MIT
+    trust: trusted
+    requested_by: manifest
+  research:
+    version: 1.0.0
+    content_hash: sha256:be228621f13ebd38dc897643276a2e6c0195432e717a30e52bce9d8d3749606d
+    source:
+      type: builtin
+    provenance: inspired
+    license: MIT
+    trust: trusted
+    requested_by: manifest
+  resolving-merge-conflicts:
+    version: 1.0.2
+    content_hash: sha256:0ef36a1084f770d2359ec9f3d8a3a73107fe6d9547265c6fa14f35b3c81b53d4
+    source:
+      type: external
+      url: github:mattpocock/skills
+      ref: 3cca18b368ae95cdbdebbff572ccafa662551015
+      commit: 3cca18b368ae95cdbdebbff572ccafa662551015
+      path: skills/engineering/resolving-merge-conflicts
+    provenance: modified
+    license: MIT
+    trust: trusted
+    requested_by: manifest
   retrospective:
     version: 1.0.2
     content_hash: sha256:2e1f094fee0a361a40997f80bdbb73d4d938b56f8257d1a901f7ffc9f3c27bf8
@@ -282,6 +331,15 @@ skills:
     license: MIT
     trust: trusted
     requested_by: manifest
+  work-branch:
+    version: 1.0.0
+    content_hash: sha256:7997bf7e3d54c230955aea76a6b4208df06d6cccc592ecfe5b38d03cc58c178d
+    source:
+      type: builtin
+    provenance: original
+    license: MIT
+    trust: trusted
+    requested_by: manifest
 agents:
   explorer:
     version: 1.0.0
@@ -303,11 +361,13 @@ materialized:
   - architecture
   - architecture-diff
   - brainstorm
+  - ci-cd
   - code-review
   - debugging
   - delivery
   - documentation
   - domain-modeling
+  - finish-branch
   - frontend-design
   - frontend-testing
   - implementation
@@ -318,7 +378,10 @@ materialized:
   - performance
   - planning
   - react
+  - refactoring
   - requirements
+  - research
+  - resolving-merge-conflicts
   - retrospective
   - search-first
   - security
@@ -329,6 +392,7 @@ materialized:
   - verification
   - web-design-guidelines
   - web-motion-3d
+  - work-branch
 hooks:
   runner: sha256:ddb349ad3e8e3e0eae0967f309beaa7b8b22c4079782d7ba0c329111124cc471
   hooks:

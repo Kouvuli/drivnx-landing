@@ -1,6 +1,6 @@
 "use client";
 
-// Smooth, inertial scrolling for desktop pointers (VEL-WEB-landing AC-40). Touch devices and reduced motion keep native
+// Smooth, inertial scrolling for desktop pointers (CFX-WEB-landing AC-40). Touch devices and reduced motion keep native
 // scrolling. Anchor links land below the sticky header through the page's scroll-padding-top (globals.css).
 
 import Lenis from "lenis";

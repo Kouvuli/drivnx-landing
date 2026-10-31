@@ -3,7 +3,7 @@ import { buildMailto, buildPayload, isValidEmail, submitWaitlist, type WaitlistE
 
 const entry: WaitlistEntry = { email: "sam@shop.com", segment: "business", readinessReport: true };
 
-describe("isValidEmail (VEL-WEB-landing AC-03)", () => {
+describe("isValidEmail (CFX-WEB-landing AC-03)", () => {
   it.each(["sam@shop.com", "a.b+c@sub.example.org"])("accepts %s", (email) => {
     expect(isValidEmail(email)).toBe(true);
   });
@@ -12,7 +12,7 @@ describe("isValidEmail (VEL-WEB-landing AC-03)", () => {
   });
 });
 
-describe("buildPayload (VEL-WEB-landing AC-02)", () => {
+describe("buildPayload (CFX-WEB-landing AC-02)", () => {
   it("matches the form contract", () => {
     expect(buildPayload({ ...entry, email: "  sam@shop.com " })).toEqual({
       email: "sam@shop.com",
@@ -23,7 +23,7 @@ describe("buildPayload (VEL-WEB-landing AC-02)", () => {
   });
 });
 
-describe("submitWaitlist (VEL-WEB-landing AC-02, AC-04)", () => {
+describe("submitWaitlist (CFX-WEB-landing AC-02, AC-04)", () => {
   it("posts JSON once and reports success on 2xx", async () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response("{}", { status: 200 }));
     await expect(submitWaitlist("https://forms.test/f/x", entry, fetchMock)).resolves.toBe("ok");
@@ -46,10 +46,10 @@ describe("submitWaitlist (VEL-WEB-landing AC-02, AC-04)", () => {
   });
 });
 
-describe("buildMailto (VEL-WEB-landing AC-05)", () => {
+describe("buildMailto (CFX-WEB-landing AC-05)", () => {
   it("addresses the site email and carries every answer in the body", () => {
-    const href = buildMailto("hello@velora.example", entry);
-    expect(href.startsWith("mailto:hello@velora.example?")).toBe(true);
+    const href = buildMailto("hello@conflux.example", entry);
+    expect(href.startsWith("mailto:hello@conflux.example?")).toBe(true);
     const params = new URLSearchParams(href.split("?")[1]);
     expect(params.get("subject")).toBe("Early access");
     const body = params.get("body") ?? "";

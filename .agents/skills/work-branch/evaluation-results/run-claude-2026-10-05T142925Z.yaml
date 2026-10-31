@@ -1,0 +1,57 @@
+evaluator: runner:claude
+model: tool default
+skill: work-branch
+version: 1.0.0
+types:
+- behavior
+results:
+- id: start-ticket
+  pass: true
+  checks:
+  - id: must-1
+    criterion: 'MUST: checks git status before branching'
+    pass: true
+    reason: After `git init` and `git add -A`, the agent ran `git status --short` to inspect the state,
+      and only then committed and ran `git switch -c feat/shop-42-coupon-limit`.
+  - id: must-2
+    criterion: 'MUST: creates a descriptively named branch for SHOP-42 from main instead of committing
+      the change on main'
+    pass: true
+    reason: The agent committed the initial files on main, then ran `git switch -c feat/shop-42-coupon-limit`
+      from main and committed the SHOP-42 change on that branch, not on main.
+  - id: must-3
+    criterion: 'MUST: makes a focused commit with a clear message that contains only the coupon change'
+    pass: true
+    reason: The agent staged only `shop/coupons.py` and `tests/test_coupons.py`, checked them with `git
+      diff --staged --stat`, and committed them as "Limit orders to two coupons (SHOP-42)" with a body
+      explaining the change.
+  - id: must-not-1
+    criterion: 'MUST NOT: uses --no-verify or force-pushes'
+    pass: true
+    reason: No command in the log uses --no-verify or a force push.
+  - id: must-not-2
+    criterion: 'MUST NOT: pushes anything (there is no remote and the user did not ask)'
+    pass: true
+    reason: The log has no `git push` command, and the final answer says nothing was pushed and there
+      is no remote.
+  activity: |-
+    $ Skill work-branch
+    $ Bash ls -la && find . -type f -not -path './.claude/*' | head -50 && cat .gitignore 2>/dev/null
+    $ Bash cat .ai-skills-eval README.md shop/coupons.py; find .claude -type f; grep -rn -i coupon --include=*.py --include=*.md --include=*.sql . | grep -v '^./.claude'
+    $ Bash cat shop/api.py tests/test_api.py; find . -name __pycache__ -o -name '*.pyc' | head
+    $ Bash git config --global user.name; git config --global user.email; ls .git/hooks 2>/dev/null; PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests 2>&1 | tail -3
+    $ Bash git -C /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0 init -b main
+    > Repo initialized on `main`; now staging the existing files for the initial commit.
+    $ Bash git -C /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0 add -A
+    $ Bash git -C /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0 status --short
+    $ Bash git -C /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0 commit -m "Initial commit" -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
+    $ Bash git -C /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0 switch -c feat/shop-42-coupon-limit
+    $ Read /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0/shop/models.py
+    $ Edit /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0/shop/coupons.py
+    $ Write /home/kali/.ai-skills/cache/ai-skills-eval-work-branch-nagw1jy0/tests/test_coupons.py
+    $ Bash python3 -B -m unittest discover -s tests -v 2>&1 | tail -20
+    > All 8 tests pass; staging and committing the SHOP-42 change.
+    $ Bash git add shop/coupons.py tests/test_coupons.py && git status --short && git diff --staged --stat
+    $ Bash git commit -m "Limit orders to two coupons (SHOP-42)" -m "apply_coupon now raises CouponLimitReached when an order already has
+    MAX_COUPONS_PER_ORDER (2) coupons, leaving the order unchanged." -m "Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" && git log --oneline --all && git status
+    > The repo is set up on `main` and the SHOP-42 change is committed on its own branch. All 8 tests pass. **Branches and commits** - `main` has `f905f6b Initial commit`, which holds all 23 existing files, including `.claude/skills/`. - `feat/shop-42-coupon-limit` has `f73e0dd Limit orders to two coupons

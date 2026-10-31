@@ -1,4 +1,4 @@
-// VEL-WEB-landing: the home page, following Product Vision v2 §16. Section order and ids follow AC-11; icons AC-26;
+// CFX-WEB-landing: the home page, following Product Vision v2 §16. Section order and ids follow AC-11; icons AC-26;
 // word budget AC-27. Pricing lives on /pricing (AC-12).
 import {
   ArrowDown,
@@ -106,7 +106,7 @@ export default function Home() {
     <>
       <Header />
       <main>
-        {/* Hero (VEL-WEB-landing AC-39, AC-50): from 640 px the 3D graph is a full-bleed background behind the text and the
+        {/* Hero (CFX-WEB-landing AC-39, AC-50): from 640 px the 3D graph is a full-bleed background behind the text and the
             status strip, centred together; on phones the text comes first, then the graph with its controls, then the
             status card, so nothing overlaps. */}
         <div className="relative isolate flex flex-col overflow-hidden border-b border-line sm:min-h-[calc(100svh-4rem)] sm:justify-center sm:pb-20">
@@ -122,7 +122,7 @@ export default function Home() {
             <p data-hero-subhead className="mt-6 max-w-2xl text-lg text-balance text-muted sm:text-xl">
               {site.description}
             </p>
-            {/* v2 §15's supporting line (VEL-WEB-landing AC-51). */}
+            {/* v2 §15's supporting line (CFX-WEB-landing AC-51). */}
             <p className="mt-4 max-w-xl text-sm text-balance text-muted">
               Profiling, documentation, contracts, transformation, and validation in one workspace — with Claude assistance
               you can switch off.

@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { WaitlistForm } from "./WaitlistForm";
 
-const contactEmail = "hello@velora.example";
+const contactEmail = "hello@conflux.example";
 
 afterEach(() => vi.unstubAllGlobals());
 
@@ -16,7 +16,7 @@ async function fillAndSubmit(email: string) {
 }
 
 describe("WaitlistForm", () => {
-  it("sends one request, shows a pending state, then confirms (VEL-WEB-landing AC-02)", async () => {
+  it("sends one request, shows a pending state, then confirms (CFX-WEB-landing AC-02)", async () => {
     let resolve: (r: Response) => void = () => {};
     const fetchMock = vi.fn(() => new Promise<Response>((r) => (resolve = r)));
     vi.stubGlobal("fetch", fetchMock);
@@ -38,7 +38,7 @@ describe("WaitlistForm", () => {
     expect(await screen.findByText("You're on the list")).toBeInTheDocument();
   });
 
-  it("blocks an invalid email with an inline, linked error (VEL-WEB-landing AC-03)", async () => {
+  it("blocks an invalid email with an inline, linked error (CFX-WEB-landing AC-03)", async () => {
     const fetchMock = vi.fn();
     vi.stubGlobal("fetch", fetchMock);
     render(<WaitlistForm endpoint="https://forms.test/f/x" contactEmail={contactEmail} />);
@@ -52,7 +52,7 @@ describe("WaitlistForm", () => {
     expect(fetchMock).not.toHaveBeenCalled();
   });
 
-  it("shows a recoverable error and keeps the input when sending fails (VEL-WEB-landing AC-04)", async () => {
+  it("shows a recoverable error and keeps the input when sending fails (CFX-WEB-landing AC-04)", async () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("{}", { status: 500 })));
     render(<WaitlistForm endpoint="https://forms.test/f/x" contactEmail={contactEmail} />);
 
@@ -65,7 +65,7 @@ describe("WaitlistForm", () => {
     expect(screen.getByLabelText("Data team or analyst")).toBeChecked();
   });
 
-  it("falls back to an email draft when no endpoint is configured (VEL-WEB-landing AC-05)", async () => {
+  it("falls back to an email draft when no endpoint is configured (CFX-WEB-landing AC-05)", async () => {
     const fetchMock = vi.fn();
     vi.stubGlobal("fetch", fetchMock);
     const openMailto = vi.fn();

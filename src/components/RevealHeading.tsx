@@ -1,7 +1,7 @@
 "use client";
 
 // Section headings that slide up line by line out of a mask, once, when they first scroll into view
-// (VEL-WEB-landing AC-41). Headings already on screen, and all headings with reduced motion, stay as they are.
+// (CFX-WEB-landing AC-41). Headings already on screen, and all headings with reduced motion, stay as they are.
 
 import { animate, useInView, useReducedMotion } from "motion/react";
 import { Fragment, useEffect, useRef } from "react";

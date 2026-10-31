@@ -1,4 +1,4 @@
-// Plans and capabilities for /pricing (VEL-WEB-landing AC-45, AC-46), from Product Vision v2 §13. No prices yet:
+// Plans and capabilities for /pricing (CFX-WEB-landing AC-45, AC-46), from Product Vision v2 §13. No prices yet:
 // exact pricing and limits follow real usage.
 
 export type CapabilityValue = string | boolean;

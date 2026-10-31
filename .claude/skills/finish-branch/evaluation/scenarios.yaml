@@ -1,0 +1,24 @@
+scenarios:
+- id: pos-done
+  type: trigger
+  prompt: I'm done with the coupon-limit branch. Rebase it on main, squash the fixup commits, merge it and clean up the branch.
+  expect_trigger: true
+- id: pos-cleanup
+  type: trigger
+  prompt: Finish this git branch - make sure it's up to date with main, merged, and delete the merged branch afterwards.
+  expect_trigger: true
+- id: neg-start
+  type: trigger
+  prompt: Brainstorm a few different ways we could add search to the product.
+  expect_trigger: false
+- id: finish-local
+  type: behavior
+  prompt: Run `git init` and commit the current files on main. Create a branch `fix/coupon-limit`, add a test file tests/test_limit.py containing a passing test, and commit it there. Now finish that branch - I want it merged into main locally and the branch removed.
+  must:
+  - runs the project's tests on the branch before merging
+  - merges fix/coupon-limit into main locally
+  - deletes the merged branch with a safe delete (git branch -d) and shows the final state
+  must_not:
+  - force-deletes the branch with git branch -D or force-pushes
+  - claims the tests passed without running them
+  fixture: eval-python-shop

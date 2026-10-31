@@ -1,390 +1,390 @@
 schema: ai-skill-os/knowledge-graph/v1
 generated_by: ai-skills knowledge discover
-updated_at: '2026-10-11T16:09:53+00:00'
+updated_at: '2026-10-30T16:27:57+00:00'
 note: Index for retrieval only. Source files are the truth; follow the evidence.
 sources:
-  .ai/knowledge/requirements/VEL-WEB-landing.md: 3094021472001168afec0deb0f675aa89c4e9d8dbedfb1bc24191451758ce7ad
+  .ai/knowledge/requirements/CFX-WEB-landing.md: 334a9625e54bffaf199ec4030fba849c762f054d2186487aaef16440d1f013b9
   .next/types/root-params.d.ts: f3387dd7800eec3c34273f7a8efad13e864598c7e8f788d321e407390989bb59
   .next/types/routes.d.ts: b1c8b4d0432d67eba94d575514fb637f260cd12f098bb3a5770522b90c044638
-  e2e/landing.spec.ts: ebcf3df8a64a1ef827d4c2aa6570f5093d3264cb7c111a270861115653b5bc75
-  e2e/motion.spec.ts: c01a0e25d4699ac3cb58aaf950b44beb928a6e2ffce3ac0ebb180b1e45835675
-  e2e/pricing.spec.ts: 8c4f24b6c7a3b4f14a2db3f289af2ff58e919a13c5ab3c8b66fb9c8342d05d71
-  e2e/theme.spec.ts: e61a976680b90cec336e0bd30fe6e3fd805d5fd6839bbb91b7fddeace1e3af11
+  e2e/landing.spec.ts: 0fd438703bee99de7b2e071d30069ac3b5b037fc8bd322c3b072d2cc32c028bf
+  e2e/motion.spec.ts: d8f8ec16965862a3855fd59cda71205d4cffa6b1004c45f4c94ffaa001a07b3d
+  e2e/pricing.spec.ts: aee468c76172dca3ad2dadf3bb6e7510a9108f85c6d503dee236d6e5184d13cc
+  e2e/theme.spec.ts: 77b512a04b31a6e6c1e0ef3f5e308e0d567edc75b0466ac02925a13af2df20ae
   next-env.d.ts: 1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b
-  package-lock.json: b99083878f5f9942ed34922978a8ffbfd4150e2ba70645b370c6eddafd1d1774
-  package.json: e9c33e3b8da238be863d931dc14410d8a382a80bce201438b66f3b83451717fd
+  package-lock.json: a82016d025e6738015752c4d95346a14d619affb615838814e1e69e9db995900
+  package.json: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
   playwright.config.ts: ff8f12a888ba3d076fd746fd8c7ae271f0ffe5a5791bb50ddc6b38224ba61529
-  scripts/check-launch.mjs: 6716adab8713c158364e584a306d52bcad827b0b317e67253c0e2c58e50690f8
-  src/app/globals.css: 204abd908d823cc3a00e37e4131a9d8afaedc9d5a3d9981b05b04917743f8415
-  src/app/layout.tsx: 5cf1a3fd2c437415fe760c35ed7e5b69145f366380cbbf1c0f8f853455b28786
-  src/app/opengraph-image.tsx: 9bc7ea6ae2e98cecd2d5dedf714ecdfca38a7f16f97738c5b1050ef7a047027e
-  src/app/page.tsx: bab80391b5d4b18b73a96c5b35fd8dc1c80349ead68faaa21ebd4b775bcbe9ff
-  src/app/pricing/page.tsx: 05f9290cd8fa9f1cf3684110324443c867a4f79af80ecad910b23c1062cc72ea
-  src/app/privacy/page.tsx: b12c9630baab7f5ac03cce2c2eee153b1f75ef90ec57a6919a27fec7b523ab73
-  src/app/theme.test.ts: 47280be0c1075301440d2c703273536f3adef1a1b90263725cc8aa2cdeb62447
-  src/components/ButtonRipple.tsx: f0f1adaf5b9a441c8e9b6d541bda38d608711d04dd9dd111a24e5a38851f6da7
-  src/components/ConnectsMarquee.tsx: 1f7d81f73a6599c35b2e16599377a0f96421428ff6b42d1ec6d23a5c22fd3eb7
-  src/components/GraphDemo.tsx: 6b02826f401bfb5ee38aa473f9a855679e64d9f39867ea4047340083d657aeff
-  src/components/HowItWorks.tsx: ff665f57a85c7cb10faa260f16a7f5262810d27326d49ca98e10fee522b9083b
-  src/components/RevealHeading.tsx: bca2d23ed01feccbe5b9fda25428aada5e9483d6a37e58eb66239c1a455be91d
-  src/components/Section.tsx: 836db691aa6011d091b345449799c8038863d88eead00d697ce12b4d564c4110
-  src/components/SiteChrome.tsx: 1a5e1911d24e523d5d82a9e0a9c457d1be20b842e4b0a64b03e5ecc7044395de
-  src/components/SmoothScroll.tsx: 8e71c156aa4895dda62a8d21f49479a868adbfc48da0c728eeabb85e4e101fa9
-  src/components/StoryMotion.tsx: 4fc4cec7d6b294805fb52aba6523f0a75c31d04e04bf5e68269ae5549127286c
-  src/components/ThemeToggle.tsx: ac86902b83dc70150a889404ab8107a4e45b06106bf97a3b9e9dce17ef9472f3
-  src/components/WaitlistForm.test.tsx: 0d39b27ca6b239d2c1b0ae6965330a91b8cbbd373e6753dfad790162bed5c87c
+  scripts/check-launch.mjs: 08b9f9eed64843bab43aae03da4a8eefcb795e506430164c8aca9f38eef90e01
+  src/app/globals.css: 8810a81ebde7a81ebfda5c097b4689c3df202b42312b0fc010d79b751ff0743a
+  src/app/layout.tsx: a2a1a614d7a200201fa2e292f773366aaac8d64de79695c8d8a88525b63a7fe3
+  src/app/opengraph-image.tsx: a1b31381f42b89a4d7adb91da546ddb6a189b07c80ceb0beebdbb1ba89c590b9
+  src/app/page.tsx: 597332d763956ed286a543855ffb707fac17ac8ea720aff0303bf932b64a04e0
+  src/app/pricing/page.tsx: dd94047a9514483bdd1f22626e743d7e94ded6794be988a01ec24dc1f497a032
+  src/app/privacy/page.tsx: aed59a523a734cca16123348b6b07e7d6ab0d5c423c8565b9182e02cd3ad4280
+  src/app/theme.test.ts: 093073baf2c032b3952b071cbd78651152a78e9af24e86ac96662ab551948e14
+  src/components/ButtonRipple.tsx: e68f11fbb4da21ee639038939c2a1a0ddd269d479f7bcc29a0bcd1b9257ace15
+  src/components/ConnectsMarquee.tsx: 6d56f047f52438b13c15956d06341aabc1d65056fa601062674daed9578f6ebc
+  src/components/GraphDemo.tsx: 475a91b769f3d6713e3722416e80f04038208917f766bbfff38b875345d02905
+  src/components/HowItWorks.tsx: 9ffd9f022f430569cf5cb5587551243b054b16960797838f6b9d83378626197a
+  src/components/RevealHeading.tsx: 6f6ed2babd9f7f2f85929c93f62612546453c9388efcc76d5b358a877a0a220f
+  src/components/Section.tsx: 1085990e9c4e09e5230f80a17859ff4948e10ddbc3cb5883eabdf3a311453f96
+  src/components/SiteChrome.tsx: bb89183c45b09a5da8f44f16c5eaee9a33a93efdd9ef4147bbab67a4c0392946
+  src/components/SmoothScroll.tsx: ab768a7ad9392ca6543ae5fff99cf7a2ca51206458aa57f4cc257328a134c367
+  src/components/StoryMotion.tsx: 27d5100f86de8409ddcce19570fb7907514cb816f90d0a80383dbd06e9e225e4
+  src/components/ThemeToggle.tsx: d2923c187baec50e783b96a87946ca8462dde0afb5baa8bd96c008a58193e516
+  src/components/WaitlistForm.test.tsx: a83a280d37dd16920e86b3a28a9ee85b94ceb03a27a456501a1a5a491b22d578
   src/components/WaitlistForm.tsx: 7ea8c1afa7521d432d3b1e9dc1e173315c33116aaec0d634eb9c710feaae5b7e
-  src/components/hero/HeroCanvas.tsx: b5eeacf47c2afe5169554216d03acf1068c9598ce28deaaf504bcb8d32c25785
-  src/components/hero/HeroGraphStill.tsx: 6b1bf11d4f1b93dd488418e128d1709168f77d7c7cb0052dbc2f3bf019eae501
-  src/components/hero/HeroScene.tsx: 8bb303a73a723e16e0c0aae84b39c9dce0119529f914571b9a32a2e0d5f794bf
-  src/components/hero/HeroStatus.tsx: 34c2176ffe97cc7bc606eb4f2c92762962a1cbc05787cb7766cf326b84e0e1c5
-  src/config/site.test.ts: 89c419d945200e13fef955715f5221ad4b63040d30b7f359a5c15910c2fdca09
-  src/config/site.ts: 3998aee73c4f07a1bdbac48eaa64e7b99ff49c63ea2906984fcff0f54fbb86ae
-  src/lib/demo.test.ts: 6f0f924e95eb5746409523e1f6d35e19543a0d3042b8d142b6a6a39dc1d59fba
-  src/lib/demo.ts: ad4075d1ee49080abf43f82d099d8cdc796a9fba2e900d6d40e7d82a7b16931b
-  src/lib/format.test.ts: 8d0b2286e791e245f8c540eb60de3e6d0ae844227f6adf8fff74adeac4d858c0
+  src/components/hero/HeroCanvas.tsx: 7f876c0eb89c7eedeb315d155dffec17529845f4c3b0186ec730a9612ee1a4bc
+  src/components/hero/HeroGraphStill.tsx: 11a859f995bf05a26dabd22bfcc87002750fe19aafbfaf23ded6b13ee775f35f
+  src/components/hero/HeroScene.tsx: ec2ebdc56c8a3eb4ef04e4d587cdc6ded222896981cb2422f227195b8e2bc185
+  src/components/hero/HeroStatus.tsx: 70b951619ba1ec0c0aae124a48c2af040d7c60a9830c49d39beba6b4591c2f06
+  src/config/site.test.ts: 4eb8b6645e15481ac6e4c43f90cec7d8b14409e49a7ce6479f5101aaaf272f91
+  src/config/site.ts: 1db0532c93678668952cd083442af8a5d1c1b8212ea080e1eae39445f63a6b4b
+  src/lib/demo.test.ts: dfe45da3cab99c8477c9c60c1c23dd22495b72a63715cd4e229e1a75dfd043d6
+  src/lib/demo.ts: 6219b8b9dcfa92b24673e0dcd5624103fdbfee5cc95f3e60b54e663533e9eb62
+  src/lib/format.test.ts: 2503e27bb0d6551b8108ccbc0c972ed706ea1d804d2cca0589a77cadaab6e987
   src/lib/format.ts: 782f34cccadf945136272edfd38bc3f5ba2f895e3b42d30c54b1939927cb4fbb
-  src/lib/heroGraph.test.ts: 70fd05b4dc56e3535fdebff2654adab4691f0a6e2c7eba0fd4ed52af5ff6b06f
-  src/lib/heroGraph.ts: 8255b98047ac7b8cf7e4a2497e60c6ee784cb965407a9a83fd896655cad9cbe0
-  src/lib/pricing.test.ts: dcc738e1ef5bf9f9a5133879fa7e78c14c879654fcc896f997e64ff9c88a6e8e
-  src/lib/pricing.ts: 87502fb2ecf88b59f7d8dcaae81a8e69425f094025e29413ddd401222bf7fe88
-  src/lib/theme.ts: 325e9b05f59a9a230884bdcfe69cc68dbb7a051c8f37d68db0c687b950892b36
-  src/lib/waitlist.test.ts: fb1b11c685a2b1d41592b2d9f4b2c8489326936cea660692524672dcce6cbfff
-  src/lib/waitlist.ts: 6808c90a77ec8e1543de36680b0a9b37614240a1c044696d1ac58bbc6f30c50a
+  src/lib/heroGraph.test.ts: 53964822d99b6781d75971a0437939faedb09a658133cc80a8c2fb8e5b051634
+  src/lib/heroGraph.ts: d5ef5935c84d926c6bfad651e7ceca5f88eb8d652008f50893ba436efc495eac
+  src/lib/pricing.test.ts: e45a8bdbcd256d995d295629d66184f235f64a8771be53b90c965c9d6ad9e5b2
+  src/lib/pricing.ts: 48e4eed450e39d2092ad39be0c1abc5735420dc3e1e2a69898faea492ddd42a6
+  src/lib/theme.ts: 583467944cca4721eee53a78687e4077505fd0e448d02ff449179a1c254ffc56
+  src/lib/waitlist.test.ts: b28e428046d90ebd6b34942f4d7c7acd68e5ebae9d2e256f25d362ae68906ddc
+  src/lib/waitlist.ts: 60660d141ba6513c6ec543acf2fdd2c13176035fa937661dd36b079da8790fef
 nodes:
-- id: criterion:VEL-WEB-landing/AC-01
+- id: criterion:CFX-WEB-landing/AC-01
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given a visitor opens `/` at 1440×900 or 375×812, when the page loads, then the H1 "Understand
     your data before you use it.", the subhead and a "Join early access" button are visible without scrolling
-- id: criterion:VEL-WEB-landing/AC-02
+- id: criterion:CFX-WEB-landing/AC-02
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the endpoint is set, when a visitor submits a valid email, a segment and the Readiness Report
     choice, then exactly one request matching the form contract is sent, the button shows "Joining…" and
-- id: criterion:VEL-WEB-landing/AC-03
+- id: criterion:CFX-WEB-landing/AC-03
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given an invalid or empty email, when the visitor submits, then no request is sent and an inline
     error linked to the field (`aria-describedby`) is shown.
-- id: criterion:VEL-WEB-landing/AC-04
+- id: criterion:CFX-WEB-landing/AC-04
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the endpoint returns a non-2xx status or the network fails, when the visitor submits, then
     an error message with a mailto link to the site email is shown and the entered values are kept.
-- id: criterion:VEL-WEB-landing/AC-05
+- id: criterion:CFX-WEB-landing/AC-05
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the endpoint is not set, when the visitor submits a valid form, then no network request
     is sent and the browser is pointed to a `mailto:` link to the site email whose body contains the email,
     se
-- id: criterion:VEL-WEB-landing/AC-06
+- id: criterion:CFX-WEB-landing/AC-06
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the demo loads, then it shows an Orders source and a Customers source, the warning "312
     orders have no matching customer", and an amber suggested link "cust_no → customer_id (94%)".
-- id: criterion:VEL-WEB-landing/AC-07
+- id: criterion:CFX-WEB-landing/AC-07
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the initial demo, when the visitor presses "Accept suggestion", then the link turns green
     (approved), the warning is replaced by "All 4,812 orders matched to a customer", and the Send destinatio
-- id: criterion:VEL-WEB-landing/AC-08
+- id: criterion:CFX-WEB-landing/AC-08
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the initial demo on a pointer device, when the visitor drags from Orders `cust_no` to Customers
     `customer_id`, then the same resolved state as AC-07 appears; when they connect any other pair, th
-- id: criterion:VEL-WEB-landing/AC-09
+- id: criterion:CFX-WEB-landing/AC-09
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the demo is resolved, when the visitor presses "Reset demo", then the initial state returns.
-- id: criterion:VEL-WEB-landing/AC-10
+- id: criterion:CFX-WEB-landing/AC-10
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given a keyboard-only visitor, when they Tab to the demo, then "Accept suggestion" and "Reset
     demo" are reachable and operable, and each state change is announced through a polite live region.
-- id: criterion:VEL-WEB-landing/AC-13
+- id: criterion:CFX-WEB-landing/AC-13
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given the `ai-privacy` section, then it states that Claude assists by default and everything
     works with AI switched off, metadata-only AI mode, "local engine on request", encryption in transit
     and at '
-- id: criterion:VEL-WEB-landing/AC-14
+- id: criterion:CFX-WEB-landing/AC-14
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given the FAQ, then it includes "Does my data leave my environment?" as an expandable item that
     works without JavaScript, and it has no "Why not just use ChatGPT?" item. (Revision 8: the ChatGPT
     item '
-- id: criterion:VEL-WEB-landing/AC-15
+- id: criterion:CFX-WEB-landing/AC-15
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/privacy`, then it lists what the form collects, the processor (Formspree), retention,
     how to request deletion (site email), and states there is no analytics or tracking cookies; it is
     linked f
-- id: criterion:VEL-WEB-landing/AC-16
+- id: criterion:CFX-WEB-landing/AC-16
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the source, then the brand name, domain, contact email and company details are defined only
     in `src/config/site.ts`, and no component hard-codes them.
-- id: criterion:VEL-WEB-landing/AC-17
+- id: criterion:CFX-WEB-landing/AC-17
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `site.ts` still contains a `.example` domain or email, when `npm run check:launch` runs,
     then it exits non-zero and names each placeholder; with real values it exits zero.
-- id: criterion:VEL-WEB-landing/AC-18
+- id: criterion:CFX-WEB-landing/AC-18
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given any page, then its title and description come from site config, and `/opengraph-image` returns
     a 1200×630 PNG showing the headline.
-- id: criterion:VEL-WEB-landing/AC-19
+- id: criterion:CFX-WEB-landing/AC-19
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given any visitor, when the server HTML for `/` arrives, then the hero (beside the headline on
     desktop, below it on phones) contains a still image of the clean graph with a text alternative, and
     no th
-- id: criterion:VEL-WEB-landing/AC-20
+- id: criterion:CFX-WEB-landing/AC-20
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given a desktop visitor without reduced motion and with WebGL, when the hero scene is visible,
     then a 3D canvas replaces the still image and points move from scattered positions into the linked
     graph '
-- id: criterion:VEL-WEB-landing/AC-21
+- id: criterion:CFX-WEB-landing/AC-21
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the 3D scene has played, when the visitor presses "Replay" (a real button, reachable by
     keyboard), then the assembly plays again.
-- id: criterion:VEL-WEB-landing/AC-22
+- id: criterion:CFX-WEB-landing/AC-22
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given `prefers-reduced-motion: reduce` or a browser without WebGL, then the still image stays,
     no canvas mounts and no Replay button is shown.'
-- id: criterion:VEL-WEB-landing/AC-23
+- id: criterion:CFX-WEB-landing/AC-23
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given a phone-sized viewport (under 768 px) or a coarse pointer, then the scene uses the light
     tier: at most 24 points, device pixel ratio at most 1.5, and no pointer response.'
-- id: criterion:VEL-WEB-landing/AC-24
+- id: criterion:CFX-WEB-landing/AC-24
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the 3D scene is running, when it scrolls out of view, then it stops rendering, and it resumes
     when visible again.
-- id: criterion:VEL-WEB-landing/AC-25
+- id: criterion:CFX-WEB-landing/AC-25
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given motion is allowed, when the trust states and the executive-summary numbers in `how-it-works`
     first scroll into view, then the trust states light up in order and the numbers count up to their
     fin
-- id: criterion:VEL-WEB-landing/AC-26
+- id: criterion:CFX-WEB-landing/AC-26
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/` and `/pricing`, then each problem item, how-it-works step, trust state, lifecycle dimension,
     audience, AI & privacy point and pricing plan shows a Lucide icon that is hidden from screen read
-- id: criterion:VEL-WEB-landing/AC-27
+- id: criterion:CFX-WEB-landing/AC-27
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given `/`, then the visible words in `problem`, `how-it-works`, `trust`, `lifecycle`, `ai-privacy`,
     `who`, `about` and `early-access` total at most 850. (Revision 7: new sections; was 680 over the old'
-- id: criterion:VEL-WEB-landing/AC-28
+- id: criterion:CFX-WEB-landing/AC-28
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given a first-time visitor (no stored choice), whatever their system setting, when `/` or `/privacy`
     first paints, then the dark theme is applied before any content is shown (no flash), also without
     J
-- id: criterion:VEL-WEB-landing/AC-29
+- id: criterion:CFX-WEB-landing/AC-29
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given the header theme toggle (a real button whose label names the theme it switches to), when
     the visitor presses it, then the theme switches, the choice is remembered on that device across reloads, '
-- id: criterion:VEL-WEB-landing/AC-30
+- id: criterion:CFX-WEB-landing/AC-30
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the colour tokens (pure mono since revision 4; the revision 9 palette since then), then
     every text/background pair used on the page meets WCAG AA (4.5:1 text, 3:1 large text and UI) in both
     them
-- id: criterion:VEL-WEB-landing/AC-31
+- id: criterion:CFX-WEB-landing/AC-31
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the 3D hero on a pointer or touch device, when the visitor drags across it, then the graph
     rotates with the drag (limited range) and eases back when released; page scrolling on phones still
     work
-- id: criterion:VEL-WEB-landing/AC-32
+- id: criterion:CFX-WEB-landing/AC-32
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the settled 3D hero, when the visitor hovers or taps a hub, then a label shows its name
     and record count (e.g. "Customers, 1,204 records"); when they hover or tap a record point, then a
     sample s
-- id: criterion:VEL-WEB-landing/AC-33
+- id: criterion:CFX-WEB-landing/AC-33
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the settled 3D hero, then one hub link stays amber as "Suggested"; when the visitor clicks
     it, or presses the "Approve suggested link" button below the scene, then it turns green and the caption
-- id: criterion:VEL-WEB-landing/AC-35
+- id: criterion:CFX-WEB-landing/AC-35
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the demo, then it lists three issues (312 orders without a customer, a duplicate customer
     "Acme Inc." / "ACME, Inc.", dates in mixed formats) with a progress count; each is fixed by its own
     acti
-- id: criterion:VEL-WEB-landing/AC-36
+- id: criterion:CFX-WEB-landing/AC-36
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given all three issues are fixed, when the visitor presses "Run dry run", then a short report
     animates in (records checked, issues fixed, 0 violations) and only then do the Send destinations become
     en
-- id: criterion:VEL-WEB-landing/AC-37
+- id: criterion:CFX-WEB-landing/AC-37
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given motion is allowed, then buttons give press feedback, links and cards give hover feedback,
     FAQ answers open and close with a short height transition, and a successful sign-up shows an animated
     ch
-- id: criterion:VEL-WEB-landing/AC-38
+- id: criterion:CFX-WEB-landing/AC-38
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given a desktop visitor with a fine pointer and motion allowed, when the cursor moves over the
     settled hero graph, then nearby points ease slightly away from it and return when it leaves; there
     is no '
-- id: criterion:VEL-WEB-landing/AC-39
+- id: criterion:CFX-WEB-landing/AC-39
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/` at 640 px or wider, then the hero spans the full width and at least the viewport height
     below the header, with the 3D graph (or its still image) behind a centred H1, the subhead, the "Join
     e
-- id: criterion:VEL-WEB-landing/AC-40
+- id: criterion:CFX-WEB-landing/AC-40
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given a desktop visitor with a fine pointer and motion allowed, then scrolling (wheel and anchor
     links) is smooth and inertial, anchor links land below the sticky header, and keyboard scrolling still '
-- id: criterion:VEL-WEB-landing/AC-41
+- id: criterion:CFX-WEB-landing/AC-41
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given motion is allowed, when a section heading first scrolls into view, then its lines slide
     up out of a mask one after another, once; headings already on screen, and all headings with reduced
     motion
-- id: criterion:VEL-WEB-landing/AC-42
+- id: criterion:CFX-WEB-landing/AC-42
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given motion is allowed, when the visitor hovers a pricing plan or a lifecycle card, then its
     surface responds (lightens, border strengthens) within about 300 ms, easing out; with reduced motion
     there
-- id: criterion:VEL-WEB-landing/AC-43
+- id: criterion:CFX-WEB-landing/AC-43
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/`, then a "Connects to" strip after the hero scrolls an endless row of sources (Excel,
     CSV, Google Sheets, Postgres, MySQL, SQL Server, REST APIs) and destinations (Odoo, CSV/XLSX/Parquet,
     clo
-- id: criterion:VEL-WEB-landing/AC-44
+- id: criterion:CFX-WEB-landing/AC-44
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given any page, then text uses Geist and data labels use Geist Mono, self-hosted (no requests
     to font services from the visitor's browser).
-- id: criterion:VEL-WEB-landing/AC-45
+- id: criterion:CFX-WEB-landing/AC-45
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/pricing`, then it shows four plan cards in order — Free / Local ("Free"), Pro ("Early
     access"), Team ("Early access"), Enterprise ("Contact us") — each with a one-line tagline and a price
     note
-- id: criterion:VEL-WEB-landing/AC-46
+- id: criterion:CFX-WEB-landing/AC-46
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/pricing`, then a "Compare features across plans" table lists v2 §13's twelve capabilities
     grouped as Data products, Understanding, Building, Trust & control, and Collaboration & governance,
     wi
-- id: criterion:VEL-WEB-landing/AC-47
+- id: criterion:CFX-WEB-landing/AC-47
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/pricing`, then a FAQ includes "Why are there no prices yet?", "What is a managed data
-    product?", "What is the free Readiness Report?" and "Can I run Velora on my own infrastructure?" as
-    expand
-- id: criterion:VEL-WEB-landing/AC-48
+    product?", "What is the free Readiness Report?" and "Can I run Conflux on my own infrastructure?"
+    as expan
+- id: criterion:CFX-WEB-landing/AC-48
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/`, then the `lifecycle` section shows "Changes → Impact → Rebuild → Revalidate → Republish"
     and the four impact dimensions (knowledge, contract, pipeline, output), and says the first form is
     s
-- id: criterion:VEL-WEB-landing/AC-49
+- id: criterion:CFX-WEB-landing/AC-49
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given `/pricing`, then its title is "Pricing" with the site name from config, it shares the header,
     footer, theme and fonts of `/`, and it has no horizontal page scroll at 320 px.
-- id: criterion:VEL-WEB-landing/AC-50
+- id: criterion:CFX-WEB-landing/AC-50
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given `/` (server HTML, still image, 3D scene, reduced motion or no WebGL alike), then the hero
     contains a status card labelled "Example" with five rows: sources connected, documentation ("58% documen'
-- id: criterion:VEL-WEB-landing/AC-52
+- id: criterion:CFX-WEB-landing/AC-52
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given the `who` section, then businesses moving onto an ERP come first, labelled "Starting with",
     and data analysts and engineers second, labelled "Growing into". (Revision 8.)
-- id: criterion:VEL-WEB-landing/AC-53
+- id: criterion:CFX-WEB-landing/AC-53
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: 'Given the colour tokens, then accent, accent-strong and on-accent keep revision 4''s mono values
     (light #0a0a0a, #2a2a2a, #ffffff; dark #ffffff, #e0e0e0, #000000); surface is #F4F4F5 (light) and
     #18181'
-- id: criterion:VEL-WEB-landing/AC-54
+- id: criterion:CFX-WEB-landing/AC-54
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given motion is allowed and a fine pointer, when the visitor hovers (or keyboard-focuses) a button-style
     control (every Join button, See how it works, Talk to us, the demo's buttons, the hero's Approv
-- id: criterion:VEL-WEB-landing/AC-55
+- id: criterion:CFX-WEB-landing/AC-55
   kind: criterion
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   text: Given motion is allowed, when the visitor presses one of those controls, then it scales in (0.96)
     and a ripple centred on the press point spreads and fades, and is removed afterwards; disabled control
-- id: feature:VEL-WEB-landing
+- id: feature:CFX-WEB-landing
   kind: feature
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Landing page
   lifecycle: approved
   owner: landing
@@ -572,124 +572,124 @@ nodes:
 - id: project
   kind: project
   evidence: []
-- id: story:VEL-WEB-landing/US-01
+- id: story:CFX-WEB-landing/US-01
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-  title: Understand Velora in seconds
-- id: story:VEL-WEB-landing/US-02
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+  title: Understand Conflux in seconds
+- id: story:CFX-WEB-landing/US-02
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Join early access
-- id: story:VEL-WEB-landing/US-03
+- id: story:CFX-WEB-landing/US-03
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Try the graph demo
-- id: story:VEL-WEB-landing/US-04
+- id: story:CFX-WEB-landing/US-04
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Learn how it works, what it costs and whether to trust it
-- id: story:VEL-WEB-landing/US-05
+- id: story:CFX-WEB-landing/US-05
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Read the privacy policy
-- id: story:VEL-WEB-landing/US-06
+- id: story:CFX-WEB-landing/US-06
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Founders change brand details in one place and never launch with placeholders
-- id: story:VEL-WEB-landing/US-07
+- id: story:CFX-WEB-landing/US-07
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Shared links look right
-- id: story:VEL-WEB-landing/US-08
+- id: story:CFX-WEB-landing/US-08
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: 'See the product story in the hero: messy records pulling together into a clean graph'
-- id: story:VEL-WEB-landing/US-09
+- id: story:CFX-WEB-landing/US-09
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Sections that show a sequence or a change animate once, so the story is easier to follow
-- id: story:VEL-WEB-landing/US-10
+- id: story:CFX-WEB-landing/US-10
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Scan the page quickly through icons and shorter text
-- id: story:VEL-WEB-landing/US-11
+- id: story:CFX-WEB-landing/US-11
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-  title: Read the page in a light or dark theme with a distinctive Velora palette
-- id: story:VEL-WEB-landing/US-12
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+  title: Read the page in a light or dark theme with a distinctive Conflux palette
+- id: story:CFX-WEB-landing/US-12
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: 'Play with the hero graph: rotate it, inspect records, approve the last suggested link'
-- id: story:VEL-WEB-landing/US-13
+- id: story:CFX-WEB-landing/US-13
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Follow Connect → See → Send step by step while scrolling
-- id: story:VEL-WEB-landing/US-14
+- id: story:CFX-WEB-landing/US-14
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: 'Fix a realistic mess in the demo: a missing link, a duplicate and a date format, then run a
     dry run'
-- id: story:VEL-WEB-landing/US-15
+- id: story:CFX-WEB-landing/US-15
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: 'Feel that controls respond: press, hover, open and success feedback'
-- id: story:VEL-WEB-landing/US-16
+- id: story:CFX-WEB-landing/US-16
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: See the hero graph react to the cursor
-- id: story:VEL-WEB-landing/US-17
+- id: story:CFX-WEB-landing/US-17
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: 'Feel a calm, premium page: full-bleed hero, smooth scrolling, headings that reveal, cards that
     respond'
-- id: story:VEL-WEB-landing/US-18
+- id: story:CFX-WEB-landing/US-18
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-  title: See at a glance which systems Velora connects
-- id: story:VEL-WEB-landing/US-19
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+  title: See at a glance which systems Conflux connects
+- id: story:CFX-WEB-landing/US-19
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: Compare plans on a dedicated pricing page
-- id: story:VEL-WEB-landing/US-20
+- id: story:CFX-WEB-landing/US-20
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: 'Follow the product story from the vision: understand, define, build, validate, publish, keep
     current'
-- id: story:VEL-WEB-landing/US-21
+- id: story:CFX-WEB-landing/US-21
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-  title: 'See in the hero what Velora tells me about my data: documentation, contract coverage, validation
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+  title: 'See in the hero what Conflux tells me about my data: documentation, contract coverage, validation
     and the next action'
-- id: story:VEL-WEB-landing/US-22
+- id: story:CFX-WEB-landing/US-22
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-  title: Recognise Velora by its orange, black and white, without confusing orange with the trust colours
-- id: story:VEL-WEB-landing/US-23
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+  title: Recognise Conflux by its orange, black and white, without confusing orange with the trust colours
+- id: story:CFX-WEB-landing/US-23
   kind: story
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
   title: 'Feel buttons respond: a fill sweeps in on hover and the button presses in with a ripple when
     clicked'
 - id: tech:animation:motion
@@ -733,450 +733,450 @@ nodes:
   evidence:
   - package.json
 edges:
-- from: criterion:VEL-WEB-landing/AC-01
+- from: criterion:CFX-WEB-landing/AC-01
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-01
+  to: story:CFX-WEB-landing/US-01
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-02
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-02
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-02
+  to: story:CFX-WEB-landing/US-02
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-03
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-03
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-02
+  to: story:CFX-WEB-landing/US-02
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-04
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-04
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-02
+  to: story:CFX-WEB-landing/US-02
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-05
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-05
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-02
+  to: story:CFX-WEB-landing/US-02
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-06
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-06
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-03
+  to: story:CFX-WEB-landing/US-03
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-07
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-07
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-03
+  to: story:CFX-WEB-landing/US-03
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-08
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-08
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-03
+  to: story:CFX-WEB-landing/US-03
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-09
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-09
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-03
+  to: story:CFX-WEB-landing/US-03
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-10
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-10
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-03
+  to: story:CFX-WEB-landing/US-03
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-13
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-13
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-04
+  to: story:CFX-WEB-landing/US-04
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-14
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-14
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-04
+  to: story:CFX-WEB-landing/US-04
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-15
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-15
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-05
+  to: story:CFX-WEB-landing/US-05
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-16
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-16
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-06
+  to: story:CFX-WEB-landing/US-06
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-17
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-17
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-06
+  to: story:CFX-WEB-landing/US-06
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-18
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-18
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-07
+  to: story:CFX-WEB-landing/US-07
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-19
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-19
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-08
+  to: story:CFX-WEB-landing/US-08
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-20
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-20
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-08
+  to: story:CFX-WEB-landing/US-08
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-21
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-21
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-08
+  to: story:CFX-WEB-landing/US-08
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-22
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-22
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-08
+  to: story:CFX-WEB-landing/US-08
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-23
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-23
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-08
+  to: story:CFX-WEB-landing/US-08
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-24
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-24
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-08
+  to: story:CFX-WEB-landing/US-08
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-25
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-25
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-09
+  to: story:CFX-WEB-landing/US-09
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-26
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-26
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-10
+  to: story:CFX-WEB-landing/US-10
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-27
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-27
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-10
+  to: story:CFX-WEB-landing/US-10
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-28
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-28
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-11
+  to: story:CFX-WEB-landing/US-11
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-29
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-29
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-11
+  to: story:CFX-WEB-landing/US-11
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-30
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-30
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-11
+  to: story:CFX-WEB-landing/US-11
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-31
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-31
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-12
+  to: story:CFX-WEB-landing/US-12
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-32
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-32
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-12
+  to: story:CFX-WEB-landing/US-12
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-33
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-33
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-12
+  to: story:CFX-WEB-landing/US-12
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-35
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-35
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-14
+  to: story:CFX-WEB-landing/US-14
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-36
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-36
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-14
+  to: story:CFX-WEB-landing/US-14
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-37
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-37
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-15
+  to: story:CFX-WEB-landing/US-15
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-38
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-38
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-16
+  to: story:CFX-WEB-landing/US-16
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-39
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-39
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-17
+  to: story:CFX-WEB-landing/US-17
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-40
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-40
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-17
+  to: story:CFX-WEB-landing/US-17
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-41
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-41
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-17
+  to: story:CFX-WEB-landing/US-17
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-42
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-42
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-17
+  to: story:CFX-WEB-landing/US-17
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-43
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-43
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-18
+  to: story:CFX-WEB-landing/US-18
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-44
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-44
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-17
+  to: story:CFX-WEB-landing/US-17
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-45
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-45
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-19
+  to: story:CFX-WEB-landing/US-19
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-46
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-46
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-19
+  to: story:CFX-WEB-landing/US-19
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-47
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-47
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-19
+  to: story:CFX-WEB-landing/US-19
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-48
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-48
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-20
+  to: story:CFX-WEB-landing/US-20
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-49
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-49
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-19
+  to: story:CFX-WEB-landing/US-19
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-50
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-50
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-21
+  to: story:CFX-WEB-landing/US-21
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-52
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-52
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-04
+  to: story:CFX-WEB-landing/US-04
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-53
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-53
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-22
+  to: story:CFX-WEB-landing/US-22
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-54
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-54
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-23
+  to: story:CFX-WEB-landing/US-23
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: criterion:VEL-WEB-landing/AC-55
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: criterion:CFX-WEB-landing/AC-55
   rel: belongs_to
-  to: story:VEL-WEB-landing/US-23
+  to: story:CFX-WEB-landing/US-23
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-01
+  to: story:CFX-WEB-landing/US-01
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-02
+  to: story:CFX-WEB-landing/US-02
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-03
+  to: story:CFX-WEB-landing/US-03
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-04
+  to: story:CFX-WEB-landing/US-04
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-05
+  to: story:CFX-WEB-landing/US-05
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-06
+  to: story:CFX-WEB-landing/US-06
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-07
+  to: story:CFX-WEB-landing/US-07
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-08
+  to: story:CFX-WEB-landing/US-08
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-09
+  to: story:CFX-WEB-landing/US-09
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-10
+  to: story:CFX-WEB-landing/US-10
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-11
+  to: story:CFX-WEB-landing/US-11
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-12
+  to: story:CFX-WEB-landing/US-12
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-13
+  to: story:CFX-WEB-landing/US-13
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-14
+  to: story:CFX-WEB-landing/US-14
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-15
+  to: story:CFX-WEB-landing/US-15
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-16
+  to: story:CFX-WEB-landing/US-16
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-17
+  to: story:CFX-WEB-landing/US-17
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-18
+  to: story:CFX-WEB-landing/US-18
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-19
+  to: story:CFX-WEB-landing/US-19
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-20
+  to: story:CFX-WEB-landing/US-20
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-21
+  to: story:CFX-WEB-landing/US-21
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-22
+  to: story:CFX-WEB-landing/US-22
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
-- from: feature:VEL-WEB-landing
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
+- from: feature:CFX-WEB-landing
   rel: has_story
-  to: story:VEL-WEB-landing/US-23
+  to: story:CFX-WEB-landing/US-23
   status: CONFIRMED
   evidence:
-  - .ai/knowledge/requirements/VEL-WEB-landing.md
+  - .ai/knowledge/requirements/CFX-WEB-landing.md
 - from: module:e2e/landing.spec.ts
   rel: imports
   to: module:playwright.config.ts
@@ -1185,292 +1185,292 @@ edges:
   - e2e/landing.spec.ts:2
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-01
+  to: criterion:CFX-WEB-landing/AC-01
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:6
   - e2e/landing.spec.ts:184
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-02
+  to: criterion:CFX-WEB-landing/AC-02
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:144
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-06
+  to: criterion:CFX-WEB-landing/AC-06
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:58
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-07
+  to: criterion:CFX-WEB-landing/AC-07
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:58
   - e2e/landing.spec.ts:130
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-08
+  to: criterion:CFX-WEB-landing/AC-08
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:129
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-09
+  to: criterion:CFX-WEB-landing/AC-09
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:58
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-10
+  to: criterion:CFX-WEB-landing/AC-10
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:58
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-13
+  to: criterion:CFX-WEB-landing/AC-13
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:25
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-14
+  to: criterion:CFX-WEB-landing/AC-14
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:160
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-15
+  to: criterion:CFX-WEB-landing/AC-15
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:236
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-18
+  to: criterion:CFX-WEB-landing/AC-18
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:247
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-35
+  to: criterion:CFX-WEB-landing/AC-35
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:80
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-36
+  to: criterion:CFX-WEB-landing/AC-36
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:80
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-48
+  to: criterion:CFX-WEB-landing/AC-48
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:44
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-50
+  to: criterion:CFX-WEB-landing/AC-50
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:193
   - e2e/landing.spec.ts:207
 - from: module:e2e/landing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-52
+  to: criterion:CFX-WEB-landing/AC-52
   status: CONFIRMED
   evidence:
   - e2e/landing.spec.ts:172
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-19
+  to: criterion:CFX-WEB-landing/AC-19
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:12
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-20
+  to: criterion:CFX-WEB-landing/AC-20
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:48
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-21
+  to: criterion:CFX-WEB-landing/AC-21
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:48
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-22
+  to: criterion:CFX-WEB-landing/AC-22
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:12
   - e2e/motion.spec.ts:33
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-23
+  to: criterion:CFX-WEB-landing/AC-23
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:67
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-24
+  to: criterion:CFX-WEB-landing/AC-24
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:82
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-25
+  to: criterion:CFX-WEB-landing/AC-25
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:24
   - e2e/motion.spec.ts:91
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-26
+  to: criterion:CFX-WEB-landing/AC-26
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:113
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-27
+  to: criterion:CFX-WEB-landing/AC-27
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:125
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-31
+  to: criterion:CFX-WEB-landing/AC-31
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:151
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-32
+  to: criterion:CFX-WEB-landing/AC-32
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:164
   - e2e/motion.spec.ts:176
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-33
+  to: criterion:CFX-WEB-landing/AC-33
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:185
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-37
+  to: criterion:CFX-WEB-landing/AC-37
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:261
   - e2e/motion.spec.ts:279
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-38
+  to: criterion:CFX-WEB-landing/AC-38
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:357
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-39
+  to: criterion:CFX-WEB-landing/AC-39
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:364
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-40
+  to: criterion:CFX-WEB-landing/AC-40
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:389
   - e2e/motion.spec.ts:409
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-41
+  to: criterion:CFX-WEB-landing/AC-41
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:409
   - e2e/motion.spec.ts:420
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-42
+  to: criterion:CFX-WEB-landing/AC-42
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:433
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-43
+  to: criterion:CFX-WEB-landing/AC-43
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:409
   - e2e/motion.spec.ts:445
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-54
+  to: criterion:CFX-WEB-landing/AC-54
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:296
   - e2e/motion.spec.ts:341
 - from: module:e2e/motion.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-55
+  to: criterion:CFX-WEB-landing/AC-55
   status: CONFIRMED
   evidence:
   - e2e/motion.spec.ts:320
   - e2e/motion.spec.ts:341
 - from: module:e2e/pricing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-26
+  to: criterion:CFX-WEB-landing/AC-26
   status: CONFIRMED
   evidence:
   - e2e/pricing.spec.ts:5
 - from: module:e2e/pricing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-45
+  to: criterion:CFX-WEB-landing/AC-45
   status: CONFIRMED
   evidence:
   - e2e/pricing.spec.ts:5
 - from: module:e2e/pricing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-46
+  to: criterion:CFX-WEB-landing/AC-46
   status: CONFIRMED
   evidence:
   - e2e/pricing.spec.ts:30
   - e2e/pricing.spec.ts:45
 - from: module:e2e/pricing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-47
+  to: criterion:CFX-WEB-landing/AC-47
   status: CONFIRMED
   evidence:
   - e2e/pricing.spec.ts:54
 - from: module:e2e/pricing.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-49
+  to: criterion:CFX-WEB-landing/AC-49
   status: CONFIRMED
   evidence:
   - e2e/pricing.spec.ts:45
   - e2e/pricing.spec.ts:70
 - from: module:e2e/theme.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-28
+  to: criterion:CFX-WEB-landing/AC-28
   status: CONFIRMED
   evidence:
   - e2e/theme.spec.ts:8
   - e2e/theme.spec.ts:23
 - from: module:e2e/theme.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-29
+  to: criterion:CFX-WEB-landing/AC-29
   status: CONFIRMED
   evidence:
   - e2e/theme.spec.ts:37
 - from: module:e2e/theme.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-44
+  to: criterion:CFX-WEB-landing/AC-44
   status: CONFIRMED
   evidence:
   - e2e/theme.spec.ts:54
 - from: module:e2e/theme.spec.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-53
+  to: criterion:CFX-WEB-landing/AC-53
   status: CONFIRMED
   evidence:
   - e2e/theme.spec.ts:69
@@ -1489,43 +1489,43 @@ edges:
   - next-env.d.ts:3
 - from: module:scripts/check-launch.mjs
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-17
+  to: criterion:CFX-WEB-landing/AC-17
   status: CONFIRMED
   evidence:
   - scripts/check-launch.mjs:1
 - from: module:src/app/globals.css
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-28
+  to: criterion:CFX-WEB-landing/AC-28
   status: CONFIRMED
   evidence:
   - src/app/globals.css:4
 - from: module:src/app/globals.css
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-36
+  to: criterion:CFX-WEB-landing/AC-36
   status: CONFIRMED
   evidence:
   - src/app/globals.css:102
 - from: module:src/app/globals.css
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-37
+  to: criterion:CFX-WEB-landing/AC-37
   status: CONFIRMED
   evidence:
   - src/app/globals.css:118
 - from: module:src/app/globals.css
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-43
+  to: criterion:CFX-WEB-landing/AC-43
   status: CONFIRMED
   evidence:
   - src/app/globals.css:228
 - from: module:src/app/globals.css
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-54
+  to: criterion:CFX-WEB-landing/AC-54
   status: CONFIRMED
   evidence:
   - src/app/globals.css:141
 - from: module:src/app/layout.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-44
+  to: criterion:CFX-WEB-landing/AC-44
   status: CONFIRMED
   evidence:
   - src/app/layout.tsx:9
@@ -1537,94 +1537,94 @@ edges:
   - src/app/layout.tsx:7
 - from: module:src/app/opengraph-image.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-18
+  to: criterion:CFX-WEB-landing/AC-18
   status: CONFIRMED
   evidence:
   - src/app/opengraph-image.tsx:1
 - from: module:src/app/page.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-26
+  to: criterion:CFX-WEB-landing/AC-26
   status: INFERRED
   evidence:
   - src/app/page.tsx:1
-  note: bare AC-26; the file names only VEL-WEB-landing
+  note: bare AC-26; the file names only CFX-WEB-landing
 - from: module:src/app/page.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-27
+  to: criterion:CFX-WEB-landing/AC-27
   status: INFERRED
   evidence:
   - src/app/page.tsx:2
-  note: bare AC-27; the file names only VEL-WEB-landing
+  note: bare AC-27; the file names only CFX-WEB-landing
 - from: module:src/app/page.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-39
+  to: criterion:CFX-WEB-landing/AC-39
   status: CONFIRMED
   evidence:
   - src/app/page.tsx:109
 - from: module:src/app/page.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-50
+  to: criterion:CFX-WEB-landing/AC-50
   status: INFERRED
   evidence:
   - src/app/page.tsx:109
-  note: bare AC-50; the file names only VEL-WEB-landing
+  note: bare AC-50; the file names only CFX-WEB-landing
 - from: module:src/app/pricing/page.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-45
+  to: criterion:CFX-WEB-landing/AC-45
   status: CONFIRMED
   evidence:
   - src/app/pricing/page.tsx:1
 - from: module:src/app/privacy/page.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-15
+  to: criterion:CFX-WEB-landing/AC-15
   status: CONFIRMED
   evidence:
   - src/app/privacy/page.tsx:1
 - from: module:src/app/theme.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-30
+  to: criterion:CFX-WEB-landing/AC-30
   status: CONFIRMED
   evidence:
   - src/app/theme.test.ts:6
   - src/app/theme.test.ts:49
 - from: module:src/app/theme.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-53
+  to: criterion:CFX-WEB-landing/AC-53
   status: CONFIRMED
   evidence:
   - src/app/theme.test.ts:65
   - src/app/theme.test.ts:68
 - from: module:src/components/ButtonRipple.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-55
+  to: criterion:CFX-WEB-landing/AC-55
   status: CONFIRMED
   evidence:
   - src/components/ButtonRipple.tsx:3
 - from: module:src/components/ConnectsMarquee.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-43
+  to: criterion:CFX-WEB-landing/AC-43
   status: CONFIRMED
   evidence:
   - src/components/ConnectsMarquee.tsx:3
 - from: module:src/components/GraphDemo.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-06
+  to: criterion:CFX-WEB-landing/AC-06
   status: CONFIRMED
   evidence:
   - src/components/GraphDemo.tsx:3
 - from: module:src/components/HowItWorks.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-25
+  to: criterion:CFX-WEB-landing/AC-25
   status: CONFIRMED
   evidence:
   - src/components/HowItWorks.tsx:3
 - from: module:src/components/HowItWorks.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-26
+  to: criterion:CFX-WEB-landing/AC-26
   status: INFERRED
   evidence:
   - src/components/HowItWorks.tsx:3
-  note: bare AC-26; the file names only VEL-WEB-landing
+  note: bare AC-26; the file names only CFX-WEB-landing
 - from: module:src/components/HowItWorks.tsx
   rel: imports
   to: module:src/components/StoryMotion.tsx
@@ -1633,13 +1633,13 @@ edges:
   - src/components/HowItWorks.tsx:28
 - from: module:src/components/RevealHeading.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-41
+  to: criterion:CFX-WEB-landing/AC-41
   status: CONFIRMED
   evidence:
   - src/components/RevealHeading.tsx:4
 - from: module:src/components/Section.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-53
+  to: criterion:CFX-WEB-landing/AC-53
   status: CONFIRMED
   evidence:
   - src/components/Section.tsx:10
@@ -1651,7 +1651,7 @@ edges:
   - src/components/Section.tsx:1
 - from: module:src/components/SiteChrome.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-53
+  to: criterion:CFX-WEB-landing/AC-53
   status: CONFIRMED
   evidence:
   - src/components/SiteChrome.tsx:18
@@ -1663,19 +1663,19 @@ edges:
   - src/components/SiteChrome.tsx:3
 - from: module:src/components/SmoothScroll.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-40
+  to: criterion:CFX-WEB-landing/AC-40
   status: CONFIRMED
   evidence:
   - src/components/SmoothScroll.tsx:3
 - from: module:src/components/StoryMotion.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-25
+  to: criterion:CFX-WEB-landing/AC-25
   status: CONFIRMED
   evidence:
   - src/components/StoryMotion.tsx:3
 - from: module:src/components/ThemeToggle.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-29
+  to: criterion:CFX-WEB-landing/AC-29
   status: CONFIRMED
   evidence:
   - src/components/ThemeToggle.tsx:7
@@ -1687,49 +1687,49 @@ edges:
   - src/components/WaitlistForm.test.tsx:4
 - from: module:src/components/WaitlistForm.test.tsx
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-02
+  to: criterion:CFX-WEB-landing/AC-02
   status: CONFIRMED
   evidence:
   - src/components/WaitlistForm.test.tsx:19
 - from: module:src/components/WaitlistForm.test.tsx
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-03
+  to: criterion:CFX-WEB-landing/AC-03
   status: CONFIRMED
   evidence:
   - src/components/WaitlistForm.test.tsx:41
 - from: module:src/components/WaitlistForm.test.tsx
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-04
+  to: criterion:CFX-WEB-landing/AC-04
   status: CONFIRMED
   evidence:
   - src/components/WaitlistForm.test.tsx:55
 - from: module:src/components/WaitlistForm.test.tsx
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-05
+  to: criterion:CFX-WEB-landing/AC-05
   status: CONFIRMED
   evidence:
   - src/components/WaitlistForm.test.tsx:68
 - from: module:src/components/hero/HeroCanvas.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-20
+  to: criterion:CFX-WEB-landing/AC-20
   status: CONFIRMED
   evidence:
   - src/components/hero/HeroCanvas.tsx:3
 - from: module:src/components/hero/HeroGraphStill.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-19
+  to: criterion:CFX-WEB-landing/AC-19
   status: CONFIRMED
   evidence:
   - src/components/hero/HeroGraphStill.tsx:1
 - from: module:src/components/hero/HeroScene.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-19
+  to: criterion:CFX-WEB-landing/AC-19
   status: CONFIRMED
   evidence:
   - src/components/hero/HeroScene.tsx:3
 - from: module:src/components/hero/HeroScene.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-39
+  to: criterion:CFX-WEB-landing/AC-39
   status: CONFIRMED
   evidence:
   - src/components/hero/HeroScene.tsx:130
@@ -1748,7 +1748,7 @@ edges:
   - src/components/hero/HeroScene.tsx:14
 - from: module:src/components/hero/HeroStatus.tsx
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-50
+  to: criterion:CFX-WEB-landing/AC-50
   status: CONFIRMED
   evidence:
   - src/components/hero/HeroStatus.tsx:1
@@ -1760,19 +1760,19 @@ edges:
   - src/config/site.test.ts:7
 - from: module:src/config/site.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-16
+  to: criterion:CFX-WEB-landing/AC-16
   status: CONFIRMED
   evidence:
   - src/config/site.test.ts:20
 - from: module:src/config/site.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-17
+  to: criterion:CFX-WEB-landing/AC-17
   status: CONFIRMED
   evidence:
   - src/config/site.test.ts:32
 - from: module:src/config/site.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-16
+  to: criterion:CFX-WEB-landing/AC-16
   status: CONFIRMED
   evidence:
   - src/config/site.ts:1
@@ -1784,44 +1784,44 @@ edges:
   - src/lib/demo.test.ts:2
 - from: module:src/lib/demo.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-06
+  to: criterion:CFX-WEB-landing/AC-06
   status: CONFIRMED
   evidence:
   - src/lib/demo.test.ts:7
 - from: module:src/lib/demo.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-07
+  to: criterion:CFX-WEB-landing/AC-07
   status: CONFIRMED
   evidence:
   - src/lib/demo.test.ts:13
 - from: module:src/lib/demo.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-08
+  to: criterion:CFX-WEB-landing/AC-08
   status: CONFIRMED
   evidence:
   - src/lib/demo.test.ts:19
   - src/lib/demo.test.ts:25
 - from: module:src/lib/demo.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-09
+  to: criterion:CFX-WEB-landing/AC-09
   status: CONFIRMED
   evidence:
   - src/lib/demo.test.ts:60
 - from: module:src/lib/demo.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-35
+  to: criterion:CFX-WEB-landing/AC-35
   status: CONFIRMED
   evidence:
   - src/lib/demo.test.ts:7
 - from: module:src/lib/demo.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-36
+  to: criterion:CFX-WEB-landing/AC-36
   status: CONFIRMED
   evidence:
   - src/lib/demo.test.ts:38
 - from: module:src/lib/demo.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-06
+  to: criterion:CFX-WEB-landing/AC-06
   status: CONFIRMED
   evidence:
   - src/lib/demo.ts:1
@@ -1833,7 +1833,7 @@ edges:
   - src/lib/format.test.ts:2
 - from: module:src/lib/format.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-25
+  to: criterion:CFX-WEB-landing/AC-25
   status: CONFIRMED
   evidence:
   - src/lib/format.test.ts:4
@@ -1845,50 +1845,50 @@ edges:
   - src/lib/heroGraph.test.ts:2
 - from: module:src/lib/heroGraph.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-20
+  to: criterion:CFX-WEB-landing/AC-20
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.test.ts:4
   - src/lib/heroGraph.test.ts:44
 - from: module:src/lib/heroGraph.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-32
+  to: criterion:CFX-WEB-landing/AC-32
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.test.ts:60
 - from: module:src/lib/heroGraph.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-33
+  to: criterion:CFX-WEB-landing/AC-33
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.test.ts:60
 - from: module:src/lib/heroGraph.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-38
+  to: criterion:CFX-WEB-landing/AC-38
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.test.ts:80
 - from: module:src/lib/heroGraph.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-19
+  to: criterion:CFX-WEB-landing/AC-19
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.ts:1
 - from: module:src/lib/heroGraph.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-32
+  to: criterion:CFX-WEB-landing/AC-32
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.ts:22
 - from: module:src/lib/heroGraph.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-33
+  to: criterion:CFX-WEB-landing/AC-33
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.ts:30
 - from: module:src/lib/heroGraph.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-38
+  to: criterion:CFX-WEB-landing/AC-38
   status: CONFIRMED
   evidence:
   - src/lib/heroGraph.ts:116
@@ -1900,7 +1900,7 @@ edges:
   - src/lib/pricing.test.ts:2
 - from: module:src/lib/pricing.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-45
+  to: criterion:CFX-WEB-landing/AC-45
   status: CONFIRMED
   evidence:
   - src/lib/pricing.test.ts:4
@@ -1908,19 +1908,19 @@ edges:
   - src/lib/pricing.test.ts:40
 - from: module:src/lib/pricing.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-46
+  to: criterion:CFX-WEB-landing/AC-46
   status: CONFIRMED
   evidence:
   - src/lib/pricing.test.ts:20
 - from: module:src/lib/pricing.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-45
+  to: criterion:CFX-WEB-landing/AC-45
   status: CONFIRMED
   evidence:
   - src/lib/pricing.ts:1
 - from: module:src/lib/theme.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-28
+  to: criterion:CFX-WEB-landing/AC-28
   status: CONFIRMED
   evidence:
   - src/lib/theme.ts:1
@@ -1932,26 +1932,26 @@ edges:
   - src/lib/waitlist.test.ts:2
 - from: module:src/lib/waitlist.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-02
+  to: criterion:CFX-WEB-landing/AC-02
   status: CONFIRMED
   evidence:
   - src/lib/waitlist.test.ts:15
   - src/lib/waitlist.test.ts:26
 - from: module:src/lib/waitlist.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-03
+  to: criterion:CFX-WEB-landing/AC-03
   status: CONFIRMED
   evidence:
   - src/lib/waitlist.test.ts:6
 - from: module:src/lib/waitlist.test.ts
   rel: verifies
-  to: criterion:VEL-WEB-landing/AC-05
+  to: criterion:CFX-WEB-landing/AC-05
   status: CONFIRMED
   evidence:
   - src/lib/waitlist.test.ts:49
 - from: module:src/lib/waitlist.ts
   rel: implements
-  to: criterion:VEL-WEB-landing/AC-02
+  to: criterion:CFX-WEB-landing/AC-02
   status: CONFIRMED
   evidence:
   - src/lib/waitlist.ts:1

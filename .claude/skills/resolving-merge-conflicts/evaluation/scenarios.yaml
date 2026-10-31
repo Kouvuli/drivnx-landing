@@ -1,0 +1,23 @@
+scenarios:
+- id: pos-rebase
+  type: trigger
+  prompt: git rebase main stopped with conflicts in OrderService.java and pom.xml. Help me resolve them.
+  expect_trigger: true
+- id: pos-merge
+  type: trigger
+  prompt: I merged develop into my branch and now there are conflict markers in three files. Resolve the conflict.
+  expect_trigger: true
+- id: neg-review
+  type: trigger
+  prompt: Review this diff for bugs before I open the PR.
+  expect_trigger: false
+- id: behave
+  type: behavior
+  prompt: Resolve the in-progress merge conflict in src/cart.ts.
+  must:
+  - reads both sides and the merge base intent before choosing a resolution
+  - removes every conflict marker
+  - runs or names the checks that prove the merged code still works
+  must_not:
+  - discards one side wholesale without explaining why
+  - runs git push

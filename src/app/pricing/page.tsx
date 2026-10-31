@@ -1,4 +1,4 @@
-// VEL-WEB-landing AC-45..AC-47, AC-49: plans, a feature comparison and a pricing FAQ (pattern of a classic pricing
+// CFX-WEB-landing AC-45..AC-47, AC-49: plans, a feature comparison and a pricing FAQ (pattern of a classic pricing
 // page: cards, then "compare features across plans", then questions). No dollar amounts: pricing follows real usage.
 import { Building, Check, Minus, Rocket, Sprout, Users, type LucideIcon } from "lucide-react";
 import type { Metadata } from "next";
