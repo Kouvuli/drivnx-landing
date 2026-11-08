@@ -29,6 +29,10 @@ You also need python3 for the guard hooks, and Chromium for the Playwright tests
 
 The ID `CFX-WEB-landing` never changes, even if the product is renamed.
 
+**Plane.** The site's work is mirrored in [Plane](https://app.plane.so/drivnx/), project DRIVN: `CFX-WEB-landing` is
+`DRIVN-10`, and the launch steps from the README are `DRIVN-33` to `DRIVN-36`. The requirement file stays the source
+of truth; move the Plane item when a revision ships or a launch step is done.
+
 ## 3. Making a change
 
 The site has no tickets. Each change is a **revision** of `CFX-WEB-landing`:

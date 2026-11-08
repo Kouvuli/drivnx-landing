@@ -65,3 +65,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Plane (this repo's notes, outside the managed block)
+
+Work is mirrored in Plane: workspace `drivnx`, project DRIVN (<https://app.plane.so/drivnx/>), label `drivnx-landing`.
+`CFX-WEB-landing` is Plane item `DRIVN-10` (its `external_key`); the launch steps are its children `DRIVN-33` to
+`DRIVN-36`. The requirement file stays the source of truth and keeps its CFX ID. When a revision is approved or
+shipped, or a launch step is done, update the matching Plane item if the Plane MCP server is connected; otherwise say
+the Plane update is NOT RUN. Ask before deleting Plane items.

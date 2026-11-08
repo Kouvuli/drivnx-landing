@@ -1,5 +1,5 @@
 schema: ai-skill-os/knowledge-facts/v1
-updated_at: '2026-11-08T00:11:47+00:00'
+updated_at: '2026-11-08T14:17:37+00:00'
 facts:
 - id: animation:motion
   status: CONFIRMED

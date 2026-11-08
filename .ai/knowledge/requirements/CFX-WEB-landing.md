@@ -1,5 +1,6 @@
 ---
 id: CFX-WEB-landing
+external_key: DRIVN-10
 kind: feature
 title: "Landing page"
 summary: "Public company website that explains the DrivnX Phase 1 product (connect, profile and understand, document and define) with a 3D hero, an interactive review demo and a free early-access page, and collects early-access sign-ups"

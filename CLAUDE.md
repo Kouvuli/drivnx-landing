@@ -55,3 +55,11 @@ Agent roles (instructions in `.ai/agents/<name>.md`; delegate to a subagent if y
 - `knowledge-curator`: Keeps the project's knowledge base in .ai/knowledge/ accurate after code, schema, API or requirement changes. Use after a significant change is merged, when `ai...
 - `reviewer`: Independent code reviewer. Use after a change is implemented and before it is delivered, to check it against the requirements and acceptance criteria, find corr...
 <!-- ai-skills:end -->
+
+## Plane (this repo's notes, outside the managed block)
+
+Work is mirrored in Plane: workspace `drivnx`, project DRIVN (<https://app.plane.so/drivnx/>), label `drivnx-landing`.
+`CFX-WEB-landing` is Plane item `DRIVN-10` (its `external_key`); the launch steps are its children `DRIVN-33` to
+`DRIVN-36`. The requirement file stays the source of truth and keeps its CFX ID. When a revision is approved or
+shipped, or a launch step is done, update the matching Plane item if the Plane MCP server is connected; otherwise say
+the Plane update is NOT RUN. Ask before deleting Plane items.
