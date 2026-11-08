@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { WaitlistForm } from "./WaitlistForm";
 
-const contactEmail = "hello@conflux.example";
+const contactEmail = "hello@drivnx.example";
 
 afterEach(() => vi.unstubAllGlobals());
 

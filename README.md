@@ -1,9 +1,9 @@
-# Conflux landing page
+# DrivnX landing page
 
 The public company website: explains the product, runs an interactive graph demo and collects early-access sign-ups.
 
 - **Requirements:** [.ai/knowledge/requirements/CFX-WEB-landing.md](.ai/knowledge/requirements/CFX-WEB-landing.md) (approved, revision 12)
-- **Product source of truth:** `../docs/Conflux_Phase1_Development_Direction.md` (approved); the copy follows it since revision 12
+- **Product source of truth:** `../docs/DrivnX_Phase1_Development_Direction.md` (approved); the copy follows it since revision 12
 - **Pages:** `/` (Phase 1 story), `/pricing` ("Early access is free": now, coming next, FAQ), `/privacy`
 - **Stack:** Next.js 16.4 (App Router), React 19.3, Tailwind CSS 4, React Flow 12 (demo), React Three Fiber 9 + three.js
   (hero, lazy-loaded), Motion 14 (story moments), Lucide icons

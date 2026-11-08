@@ -40,7 +40,7 @@ describe("launch check (CFX-WEB-landing AC-17)", () => {
 
   it("passes once real values are set", () => {
     const real = join(mkdtempSync(join(tmpdir(), "site-")), "site.ts");
-    writeFileSync(real, readFileSync(siteFile, "utf8").replaceAll("conflux.example", "conflux.com"));
+    writeFileSync(real, readFileSync(siteFile, "utf8").replaceAll("drivnx.example", "drivnx.com"));
     const result = run(real);
     expect(result.status).toBe(0);
   });

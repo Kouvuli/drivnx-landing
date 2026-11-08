@@ -47,8 +47,8 @@ describe("submitWaitlist (CFX-WEB-landing AC-02, AC-04)", () => {
 
 describe("buildMailto (CFX-WEB-landing AC-05)", () => {
   it("addresses the site email and carries every answer in the body", () => {
-    const href = buildMailto("hello@conflux.example", entry);
-    expect(href.startsWith("mailto:hello@conflux.example?")).toBe(true);
+    const href = buildMailto("hello@drivnx.example", entry);
+    expect(href.startsWith("mailto:hello@drivnx.example?")).toBe(true);
     const params = new URLSearchParams(href.split("?")[1]);
     expect(params.get("subject")).toBe("Early access");
     const body = params.get("body") ?? "";

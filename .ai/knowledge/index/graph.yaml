@@ -1,9 +1,9 @@
 schema: ai-skill-os/knowledge-graph/v1
 generated_by: ai-skills knowledge discover
-updated_at: '2026-10-31T13:56:43+00:00'
+updated_at: '2026-11-08T00:11:48+00:00'
 note: Index for retrieval only. Source files are the truth; follow the evidence.
 sources:
-  .ai/knowledge/requirements/CFX-WEB-landing.md: 678a16467d129b8cda63493291456acb321c500f4e59d90e0f45f7a40da29e90
+  .ai/knowledge/requirements/CFX-WEB-landing.md: 768d0bbfe16be225767e2561a745da1d2b9514981f2e48d661495d9dd11d84a0
   .next/types/root-params.d.ts: f3387dd7800eec3c34273f7a8efad13e864598c7e8f788d321e407390989bb59
   .next/types/routes.d.ts: b1c8b4d0432d67eba94d575514fb637f260cd12f098bb3a5770522b90c044638
   e2e/landing.spec.ts: 828e6443d5f892c4c7f0f582f197cc015c14aea7a2168604a2b642ddedcd5a1d
@@ -11,8 +11,8 @@ sources:
   e2e/pricing.spec.ts: 13c0f365b8cd03d0fc449ce307676ad5b983db6025e51529eefc2dd0a084d28b
   e2e/theme.spec.ts: e555ceaac6082e1eb9c515404d5b6aa99bca2b17814e296c95b7f0464bffc97e
   next-env.d.ts: 1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b
-  package-lock.json: a82016d025e6738015752c4d95346a14d619affb615838814e1e69e9db995900
-  package.json: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  package-lock.json: c9255596e2cae784ddd6285615d9ee36968a4b0648dcc62eee9d093e88e68d3b
+  package.json: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   playwright.config.ts: ff8f12a888ba3d076fd746fd8c7ae271f0ffe5a5791bb50ddc6b38224ba61529
   scripts/check-launch.mjs: 08b9f9eed64843bab43aae03da4a8eefcb795e506430164c8aca9f38eef90e01
   src/app/globals.css: 8810a81ebde7a81ebfda5c097b4689c3df202b42312b0fc010d79b751ff0743a
@@ -32,14 +32,14 @@ sources:
   src/components/SmoothScroll.tsx: ab768a7ad9392ca6543ae5fff99cf7a2ca51206458aa57f4cc257328a134c367
   src/components/StoryMotion.tsx: 27d5100f86de8409ddcce19570fb7907514cb816f90d0a80383dbd06e9e225e4
   src/components/ThemeToggle.tsx: d2923c187baec50e783b96a87946ca8462dde0afb5baa8bd96c008a58193e516
-  src/components/WaitlistForm.test.tsx: 70ab4db6ce036e5312567ec889615d3c1208dc7324423666dae32efac3964121
+  src/components/WaitlistForm.test.tsx: 4c3a3368d8177d76c30fb32d653d41d7c1e8eff1ad9436706f453703f59e5c13
   src/components/WaitlistForm.tsx: 729421969bfc2da8ac8ab4d8353159c77b4532576d51b7a88bdfd19a55d48d4e
   src/components/hero/HeroCanvas.tsx: 7f876c0eb89c7eedeb315d155dffec17529845f4c3b0186ec730a9612ee1a4bc
   src/components/hero/HeroGraphStill.tsx: 11a859f995bf05a26dabd22bfcc87002750fe19aafbfaf23ded6b13ee775f35f
   src/components/hero/HeroScene.tsx: 4221a3d5c78f7d38643cd572a349d5821152215b44ed54c369dee7a8b5569350
   src/components/hero/HeroStatus.tsx: 1899638b24514ea4fe7310cfed7b29e1ea68db16a0d8afd2771f4b3ae43beb5b
-  src/config/site.test.ts: 4eb8b6645e15481ac6e4c43f90cec7d8b14409e49a7ce6479f5101aaaf272f91
-  src/config/site.ts: 4c758cd64094a30bb405ca569923a29271cc57025c51f66a396ede380ea9191d
+  src/config/site.test.ts: 960f3c67295dc7421ce8763925e193694b328b3307306929d1b16ce4087ec697
+  src/config/site.ts: 44c6b2dabf171e680f72cf1eff726bd103519b9d39c68cb150d51cbde6d63f44
   src/lib/demo.test.ts: ea55b86e276a7c481c96bce20a998dd5d13075b771aab20d93d7d6a53bee1509
   src/lib/demo.ts: d0ae3bbd65f0fa6cd05b023fe53e8db8634063ca28914b8ffc5d83bff95e0917
   src/lib/format.test.ts: 2503e27bb0d6551b8108ccbc0c972ed706ea1d804d2cca0589a77cadaab6e987
@@ -47,7 +47,7 @@ sources:
   src/lib/heroGraph.test.ts: a380ac4571b3c9596ed062956d158f5fbb6cd97becc509f98f2c585143ea718b
   src/lib/heroGraph.ts: 2d2b0d7d3f917dc7f3cb59ea5ebc67a9ac1d45b676c99e6850acb2f0963ff8b3
   src/lib/theme.ts: 583467944cca4721eee53a78687e4077505fd0e448d02ff449179a1c254ffc56
-  src/lib/waitlist.test.ts: a27a5823bf4dbfa9e961afb28604590fbb14eac9c7ac72eb4a406fa407263b83
+  src/lib/waitlist.test.ts: b7ac16bbd0f1f9d903f05f3caa5804f949d6abe9d0a4007526a58844703e3b24
   src/lib/waitlist.ts: 6c8548d381047ded2e1732d0768cd7a8436d1e972026c1b4c877cdefc067ba12
 nodes:
 - id: criterion:CFX-WEB-landing/AC-01
@@ -565,7 +565,7 @@ nodes:
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: Understand Conflux in seconds
+  title: Understand DrivnX in seconds
 - id: story:CFX-WEB-landing/US-02
   kind: story
   evidence:
@@ -615,7 +615,7 @@ nodes:
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: Read the page in a light or dark theme with a distinctive Conflux palette
+  title: Read the page in a light or dark theme with a distinctive DrivnX palette
 - id: story:CFX-WEB-landing/US-12
   kind: story
   evidence:
@@ -652,7 +652,7 @@ nodes:
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: See at a glance which sources Conflux reads now and which come next
+  title: See at a glance which sources DrivnX reads now and which come next
 - id: story:CFX-WEB-landing/US-19
   kind: story
   evidence:
@@ -668,13 +668,13 @@ nodes:
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: 'See in the hero what Conflux tells me about my data: sources, findings, identifiers, contract
+  title: 'See in the hero what DrivnX tells me about my data: sources, findings, identifiers, contract
     coverage and the next action'
 - id: story:CFX-WEB-landing/US-22
   kind: story
   evidence:
   - .ai/knowledge/requirements/CFX-WEB-landing.md
-  title: Recognise Conflux by its orange, black and white, without confusing orange with the trust colours
+  title: Recognise DrivnX by its orange, black and white, without confusing orange with the trust colours
 - id: story:CFX-WEB-landing/US-23
   kind: story
   evidence:

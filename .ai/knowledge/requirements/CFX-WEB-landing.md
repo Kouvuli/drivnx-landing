@@ -2,13 +2,13 @@
 id: CFX-WEB-landing
 kind: feature
 title: "Landing page"
-summary: "Public company website that explains the Conflux Phase 1 product (connect, profile and understand, document and define) with a 3D hero, an interactive review demo and a free early-access page, and collects early-access sign-ups"
+summary: "Public company website that explains the DrivnX Phase 1 product (connect, profile and understand, document and define) with a 3D hero, an interactive review demo and a free early-access page, and collects early-access sign-ups"
 owner: landing
 lifecycle: approved
-revision: 12
-approved_revision: 12
-approval_evidence: "user chose Phase 1 + coming next, data analysts and engineers, provider-neutral AI, a free early-access page instead of plans, the reworked demo, the Phase 1 markdown for the offer (no Readiness Report), Conflux as company and Trison Labs as team, and approved all proposed copy, in chat, 2026-10-31 (revision 12)"
-updated: "2026-10-31"
+revision: 13
+approved_revision: 13
+approval_evidence: "user renamed the product and company to DrivnX (Trison Labs stays the team) and approved the rename plan in chat, 2026-11-07 (revision 13)"
+updated: "2026-11-07"
 related: []
 status: CONFIRMED
 ---
@@ -16,12 +16,12 @@ status: CONFIRMED
 # Landing page
 
 ## Problem
-Conflux needs a live company website on its own domain, with a same-domain contact email, to apply to Anthropic's
+DrivnX needs a live company website on its own domain, with a same-domain contact email, to apply to Anthropic's
 Claude Startups program and to start collecting early users. The page must explain the product in seconds and turn
 visitors (small businesses, data teams, consultants) into early-access sign-ups.
-Source of truth for content: `../docs/Conflux_Phase1_Development_Direction.md` (approved; since revision 12 the copy
+Source of truth for content: `../docs/DrivnX_Phase1_Development_Direction.md` (approved; since revision 12 the copy
 follows it). Up to revision 11 the copy followed `../docs/archive/Velora — Product Vision v2.md`, and up to revision 5 the
-retired "Strategy & Plan". Conflux is the company; Trison Labs is the team building it. Since revision 7 the page follows v2: §1 vision and first wedge, §5 executive understanding,
+retired "Strategy & Plan". DrivnX is the company; Trison Labs is the team building it. Since revision 7 the page follows v2: §1 vision and first wedge, §5 executive understanding,
 §6 trust model, §7 AI, §10 living data products, §11 data processing, §13 packaging, §14–16 website brief. Revision 8
 closes the remaining gaps: §15 hero visual and supporting line, §9 trusted data product, §13 wording on /pricing, and
 §18's first user in "Who it's for".
@@ -46,12 +46,12 @@ trust states, a review-and-export demo, Phase 1 §7's claims only, no lifecycle 
 
 ## Assumptions
 - ASSUMPTION: English only.
-- ASSUMPTION: no legal entity yet; the privacy page names the operator from site config ("Conflux, company registration in progress") until one exists.
+- ASSUMPTION: no legal entity yet; the privacy page names the operator from site config ("DrivnX, company registration in progress") until one exists.
 - ASSUMPTION: hosting on Vercel; form processor is Formspree (free tier).
 - ASSUMPTION: demo and overview figures (4,812 orders, 1,204 customers, 94% match, 99.8% unique, 12 tables, 184 columns, 2.4M rows) are illustrative and labelled as a demo or an example.
 
 ## User Stories
-### US-01 — Understand Conflux in seconds
+### US-01 — Understand DrivnX in seconds
 ### US-02 — Join early access
 ### US-03 — Try the graph demo
 ### US-04 — Learn how it works, that early access is free, and whether to trust it
@@ -61,18 +61,18 @@ trust states, a review-and-export demo, Phase 1 §7's claims only, no lifecycle 
 ### US-08 — See the product story in the hero: messy records pulling together into a clean graph
 ### US-09 — Sections that show a sequence or a change animate once, so the story is easier to follow
 ### US-10 — Scan the page quickly through icons and shorter text
-### US-11 — Read the page in a light or dark theme with a distinctive Conflux palette
+### US-11 — Read the page in a light or dark theme with a distinctive DrivnX palette
 ### US-12 — Play with the hero graph: rotate it, inspect records, approve the last suggested link
 ### US-13 — Follow Connect → Profile & understand → Document & define step by step while scrolling
 ### US-14 — Review what profiling inferred in the demo: confirm a relationship and an identifier, define a rule, then export the contract
 ### US-15 — Feel that controls respond: press, hover, open and success feedback
 ### US-16 — See the hero graph react to the cursor
 ### US-17 — Feel a calm, premium page: full-bleed hero, smooth scrolling, headings that reveal, cards that respond
-### US-18 — See at a glance which sources Conflux reads now and which come next
+### US-18 — See at a glance which sources DrivnX reads now and which come next
 ### US-19 — See on its own page that early access is free, what it includes and what comes next
 ### US-20 — Follow the Phase 1 story, and see that transformation, validation, publishing and monitoring come later
-### US-21 — See in the hero what Conflux tells me about my data: sources, findings, identifiers, contract coverage and the next action
-### US-22 — Recognise Conflux by its orange, black and white, without confusing orange with the trust colours
+### US-21 — See in the hero what DrivnX tells me about my data: sources, findings, identifiers, contract coverage and the next action
+### US-22 — Recognise DrivnX by its orange, black and white, without confusing orange with the trust colours
 ### US-23 — Feel buttons respond: a fill sweeps in on hover and the button presses in with a ripple when clicked
 
 ## Decisions and Contracts
@@ -81,7 +81,7 @@ Decided with the user in chat, 2026-10-10:
 - Form: POST to `NEXT_PUBLIC_WAITLIST_ENDPOINT` (Formspree); `mailto:` fallback when unset.
 - About: founder **roles, no names** yet.
 - Look: **light & calm**; trust colours on the graph (grey observed, amber suggested, green approved).
-- Domain and email: **placeholders** (`conflux.example`, `hello@conflux.example`) until real ones exist.
+- Domain and email: **placeholders** (`drivnx.example`, `hello@drivnx.example`) until real ones exist.
 - Pricing: **"from" prices**, labelled early-access.
 - Demo on phones: **tap to accept**; dragging optional.
 - **No analytics**, no cookies. Tests: Vitest + Testing Library, plus one Playwright journey.
@@ -185,7 +185,7 @@ Added for revision 10, decided with the user in chat, 2026-10-11:
 - **Reduced motion:** the fill appears instantly, no press, no ripple (as AC-37).
 - The header's "Join early access" becomes black (light) / white (dark), recorded under revision 9's colours.
 
-Added for revision 12, decided with the user in chat, 2026-10-31 (source: the approved Conflux Phase 1 direction):
+Added for revision 12, decided with the user in chat, 2026-10-31 (source: the approved DrivnX Phase 1 direction):
 - Scope: **Phase 1 plus a "Coming next" strip**. The story is Connect → Profile & understand → Document & define;
   Transform, Validate, Publish & serve and Monitor & improve are named only as "Coming next". The lifecycle section and
   v2's Trusted Data Product checklist are removed.
@@ -202,7 +202,7 @@ Added for revision 12, decided with the user in chat, 2026-10-31 (source: the ap
 - Demo: **review and define**. Three items: accept (or draw) the inferred relationship `cust_no → customer_id`, confirm
   `customer_id` as the identifier, then add "customer_id must be non-null and unique" to the contract (only after the
   identifier is confirmed); "Export contract" then shows a short YAML preview. No dry run, no destinations.
-- Company and team: **Conflux is the company** (operator stays "Conflux (company registration in progress)");
+- Company and team: **DrivnX is the company** (operator stays "DrivnX (company registration in progress)");
   **Trison Labs is the team**, named in About from site config.
 - Hero: the status card shows the Phase 1 overview example; the hero graph's samples are field observations, not
   record matches; the supporting line says it runs locally and AI is optional.
@@ -313,3 +313,4 @@ None blocking.
 - Revision 10: Fill-sweep hover and press + ripple click on every button-style control (US-23, AC-54, AC-55 added); the header's Join button becomes black/white (AC-53 adjusted). From the user's answers on 2026-10-11; approved by the user in chat, 2026-10-11.
 - Revision 11: Reference-only change: the product is renamed Conflux (id VEL-WEB-landing → CFX-WEB-landing, `velora.example` → `conflux.example`), v2 moves to `../docs/archive/`, and the source of truth becomes `../docs/Conflux_Phase1_Development_Direction.md`; no criteria changed, the copy rewrite is an open question. Approved by the user's "Everywhere" and "Phase 1 doc replaces v2" choices in chat, 2026-10-30.
 - Revision 12: Content follows the approved Conflux Phase 1 direction (US-04, US-13, US-14, US-18..US-21 reworded; AC-02, AC-05..AC-07, AC-11..AC-14, AC-26, AC-27, AC-32, AC-34..AC-36, AC-42, AC-43, AC-45..AC-52 changed): three stages plus "Coming next", four trust states, a review-and-export demo, Phase 1 §7 claims only, provider-neutral AI, no lifecycle, no Readiness Report, and a free early-access page instead of plans; Trison Labs named as the team. From the user's answers on 2026-10-31; approved by the user in chat, 2026-10-31.
+- Revision 13: Reference-only change: the product and company are renamed DrivnX (`conflux.example` → `drivnx.example`, operator "DrivnX (company registration in progress)", source of truth `../docs/DrivnX_Phase1_Development_Direction.md`); requirement IDs keep the `CFX-` prefix; no criteria changed. Approved by the user's rename plan in chat, 2026-11-07.

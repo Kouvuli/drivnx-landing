@@ -1,120 +1,121 @@
 schema: ai-skill-os/knowledge-facts/v1
-updated_at: '2026-10-31T13:56:43+00:00'
+updated_at: '2026-11-08T00:11:47+00:00'
 facts:
 - id: animation:motion
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'motion'
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
 - id: api:openapi
   status: INFERRED
   source: requirements
-  evidence: ../docs/Conflux_Phase1_Development_Direction.md
-  line: 619
-  detail: 'mentioned: | Shared types (Proposed) | Generate TypeScript types from the API''s OpenAPI schema (built
-    from Pydantic models) so UI a'
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  line: 629
+  detail: 'mentioned: | Shared types (Proposed) | Generate TypeScript types from the API''s OpenAPI schema
+    (built from Pydantic models) so UI a'
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
 - id: cloud:aws
   status: INFERRED
   source: requirements
-  evidence: ../docs/Conflux_Phase1_Development_Direction.md
-  line: 670
-  detail: 'mentioned: | Databricks AI-generated comments | docs.databricks.com/aws/en/comments/ai-comments |'
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  line: 680
+  detail: 'mentioned: | Databricks AI-generated comments | docs.databricks.com/aws/en/comments/ai-comments
+    |'
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
 - id: database:mysql
   status: UNKNOWN
   source: requirements
-  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
   line: 213
-  detail: 'mentioned: PostgreSQL gives the best implementation fit: DuckDB can attach it directly in read-only mode,
-    so there is no second ana'
+  detail: 'mentioned: PostgreSQL gives the best implementation fit: DuckDB can attach it directly in read-only
+    mode, so there is no second ana'
   note: mentioned with a negation; confirm with the client whether it is in scope
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
 - id: database:postgres
   status: INFERRED
   source: requirements
-  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
   line: 52
-  detail: 'mentioned: | **First database connector** | PostgreSQL, read-only, using the same DuckDB-based analysis
-    path as local files (CSV, X'
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+  detail: 'mentioned: | **First database connector** | PostgreSQL, read-only, using the same DuckDB-based
+    analysis path as local files (CSV, X'
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
 - id: framework:fastapi
   status: INFERRED
   source: requirements
-  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
   line: 155
   detail: 'mentioned: - Browser UI (React + TypeScript) ⇄ Local Runtime API (FastAPI) over HTTP/JSON.'
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
 - id: framework:nextjs
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'next'
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
 - id: framework:react
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'react'
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
-  planned_in: ../docs/Conflux_Phase1_Development_Direction.md:155
+  planned_in: ../docs/DrivnX_Phase1_Development_Direction.md:155
 - id: graphics:three
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'three'
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
 - id: language:javascript
   status: CONFIRMED
   evidence: package.json
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
 - id: language:python
   status: INFERRED
   source: requirements
-  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
   line: 51
-  detail: 'mentioned: | **Architecture** | Local Python runtime + browser UI. Deterministic profiling and artifacts
-    stay on the user''s machine'
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+  detail: 'mentioned: | **Architecture** | Local Python runtime + browser UI. Deterministic profiling
+    and artifacts stay on the user''s machine'
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
 - id: language:typescript
   status: CONFIRMED
   evidence: next-env.d.ts
   sha256: 1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b
   source: detector
-  planned_in: ../docs/Conflux_Phase1_Development_Direction.md:155
+  planned_in: ../docs/DrivnX_Phase1_Development_Direction.md:155
 - id: pm:npm
   status: CONFIRMED
   evidence: package-lock.json
-  sha256: a82016d025e6738015752c4d95346a14d619affb615838814e1e69e9db995900
+  sha256: c9255596e2cae784ddd6285615d9ee36968a4b0648dcc62eee9d093e88e68d3b
   source: detector
 - id: styling:tailwind
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'tailwindcss'
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
 - id: testing:playwright
   status: CONFIRMED
   evidence: package.json
   detail: dependency '@playwright/test'
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
 - id: testing:vitest
   status: CONFIRMED
   evidence: package.json
   detail: dependency 'vitest'
-  sha256: 9407e5ec9e9a27d6a6c5bfd510f04b420a02d4dc5347545b474d746cf9817c5a
+  sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
 - id: tool:docker
   status: INFERRED
   source: requirements
-  evidence: ../docs/Conflux_Phase1_Development_Direction.md
+  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
   line: 201
   detail: 'mentioned: | Testing | pytest, Vitest, Playwright; Docker Compose PostgreSQL fixture |'
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
 requirements:
-- path: ../docs/Conflux_Phase1_Development_Direction.md
-  sha256: 3dbd69f46c7ee565e564774866fc06b6efc9bdec29f3936fb820661bd8ac5365
+- path: ../docs/DrivnX_Phase1_Development_Direction.md
+  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
   readable: true

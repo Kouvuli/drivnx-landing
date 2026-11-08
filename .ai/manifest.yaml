@@ -1,6 +1,6 @@
 schema: ai-skill-os/manifest/v1
 project:
-  name: conflux-landing
+  name: drivnx-landing
 mode: portable
 adapters:
 - agents
@@ -100,7 +100,7 @@ commands:
     evidence: package.json scripts.test
 requirements:
   paths:
-  - ../docs/Conflux_Phase1_Development_Direction.md
+  - ../docs/DrivnX_Phase1_Development_Direction.md
 checks:
   'on':
   - pre-delivery
