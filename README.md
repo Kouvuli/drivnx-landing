@@ -15,6 +15,8 @@ The public company website: explains the product, runs an interactive graph demo
 - **Motion (scale.com-inspired patterns, no code taken):** full-bleed 3D hero (stacked on phones), Lenis smooth scroll
   on desktop (`SmoothScroll`), line-by-line heading reveals (`RevealHeading`), hover zoom, "Connects to" marquee
 
+How to make a change and how to use the AI skills: [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Run it
 
 ```bash
