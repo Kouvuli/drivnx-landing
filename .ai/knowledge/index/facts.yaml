@@ -1,5 +1,5 @@
 schema: ai-skill-os/knowledge-facts/v1
-updated_at: '2026-11-08T14:17:37+00:00'
+updated_at: '2026-11-09T15:57:12+00:00'
 facts:
 - id: animation:motion
   status: CONFIRMED
@@ -10,43 +10,43 @@ facts:
 - id: api:openapi
   status: INFERRED
   source: requirements
-  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  evidence: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
   line: 629
   detail: 'mentioned: | Shared types (Proposed) | Generate TypeScript types from the API''s OpenAPI schema
     (built from Pydantic models) so UI a'
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
 - id: cloud:aws
   status: INFERRED
   source: requirements
-  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  evidence: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
   line: 680
   detail: 'mentioned: | Databricks AI-generated comments | docs.databricks.com/aws/en/comments/ai-comments
     |'
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
 - id: database:mysql
   status: UNKNOWN
   source: requirements
-  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  evidence: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
   line: 213
   detail: 'mentioned: PostgreSQL gives the best implementation fit: DuckDB can attach it directly in read-only
     mode, so there is no second ana'
   note: mentioned with a negation; confirm with the client whether it is in scope
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
 - id: database:postgres
   status: INFERRED
   source: requirements
-  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  evidence: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
   line: 52
   detail: 'mentioned: | **First database connector** | PostgreSQL, read-only, using the same DuckDB-based
     analysis path as local files (CSV, X'
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
 - id: framework:fastapi
   status: INFERRED
   source: requirements
-  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  evidence: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
   line: 155
   detail: 'mentioned: - Browser UI (React + TypeScript) ⇄ Local Runtime API (FastAPI) over HTTP/JSON.'
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
 - id: framework:nextjs
   status: CONFIRMED
   evidence: package.json
@@ -59,7 +59,7 @@ facts:
   detail: dependency 'react'
   sha256: 0c1936163c6b4bdfdd6554174bf4e3e8720cad0fff971dbc1c948d2dd6725393
   source: detector
-  planned_in: ../docs/DrivnX_Phase1_Development_Direction.md:155
+  planned_in: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md:155
 - id: graphics:three
   status: CONFIRMED
   evidence: package.json
@@ -74,17 +74,17 @@ facts:
 - id: language:python
   status: INFERRED
   source: requirements
-  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  evidence: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
   line: 51
   detail: 'mentioned: | **Architecture** | Local Python runtime + browser UI. Deterministic profiling
     and artifacts stay on the user''s machine'
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
 - id: language:typescript
   status: CONFIRMED
   evidence: next-env.d.ts
   sha256: 1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b
   source: detector
-  planned_in: ../docs/DrivnX_Phase1_Development_Direction.md:155
+  planned_in: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md:155
 - id: pm:npm
   status: CONFIRMED
   evidence: package-lock.json
@@ -111,11 +111,11 @@ facts:
 - id: tool:docker
   status: INFERRED
   source: requirements
-  evidence: ../docs/DrivnX_Phase1_Development_Direction.md
+  evidence: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
   line: 201
   detail: 'mentioned: | Testing | pytest, Vitest, Playwright; Docker Compose PostgreSQL fixture |'
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
 requirements:
-- path: ../docs/DrivnX_Phase1_Development_Direction.md
-  sha256: 9e6644734fa75009fbe9ebe9b71ee98bd0630d415d18256d0d156705bd3ca36c
+- path: ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
+  sha256: eeeb66937f4b18fd05956a9f0eae99ab2854a0a407cd7b3357ebf849a8e1d471
   readable: true

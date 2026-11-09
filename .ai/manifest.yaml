@@ -100,7 +100,7 @@ commands:
     evidence: package.json scripts.test
 requirements:
   paths:
-  - ../docs/DrivnX_Phase1_Development_Direction.md
+  - ../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md
 checks:
   'on':
   - pre-delivery

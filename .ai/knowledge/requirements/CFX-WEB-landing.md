@@ -6,10 +6,10 @@ title: "Landing page"
 summary: "Public company website that explains the DrivnX Phase 1 product (connect, profile and understand, document and define) with a 3D hero, an interactive review demo and a free early-access page, and collects early-access sign-ups"
 owner: landing
 lifecycle: approved
-revision: 13
-approved_revision: 13
-approval_evidence: "user renamed the product and company to DrivnX (Trison Labs stays the team) and approved the rename plan in chat, 2026-11-07 (revision 13)"
-updated: "2026-11-07"
+revision: 14
+approved_revision: 14
+approval_evidence: "user approved the workspace restructure in chat, 2026-11-09 (revision 14, reference-only)"
+updated: "2026-11-09"
 related: []
 status: CONFIRMED
 ---
@@ -20,8 +20,8 @@ status: CONFIRMED
 DrivnX needs a live company website on its own domain, with a same-domain contact email, to apply to Anthropic's
 Claude Startups program and to start collecting early users. The page must explain the product in seconds and turn
 visitors (small businesses, data teams, consultants) into early-access sign-ups.
-Source of truth for content: `../docs/DrivnX_Phase1_Development_Direction.md` (approved; since revision 12 the copy
-follows it). Up to revision 11 the copy followed `../docs/archive/Velora — Product Vision v2.md`, and up to revision 5 the
+Source of truth for content: `../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md` (approved; since revision 12 the copy
+follows it). Up to revision 11 the copy followed `../drivnx-docs/docs/archive/Velora — Product Vision v2.md`, and up to revision 5 the
 retired "Strategy & Plan". DrivnX is the company; Trison Labs is the team building it. Since revision 7 the page follows v2: §1 vision and first wedge, §5 executive understanding,
 §6 trust model, §7 AI, §10 living data products, §11 data processing, §13 packaging, §14–16 website brief. Revision 8
 closes the remaining gaps: §15 hero visual and supporting line, §9 trusted data product, §13 wording on /pricing, and
@@ -161,7 +161,7 @@ Added for revision 8, decided with the user in chat, 2026-10-11 (closing the gap
 
 Added for revision 9, decided with the user in chat, 2026-10-11 (orange from colorhunt.co/palette/000000233d4dfe7f2deaecf0;
 earlier the same day a sky-blue accent, the palette's slate and an indigo accent were built and reviewed but never
-shipped, see `../docs/design-mocks/rev9-orange-*.png`):
+shipped, see `../drivnx-docs/docs/design-mocks/rev9-orange-*.png`):
 - **Orange, black and white only.** Orange with black text is the hero's, pricing's and form's "Join early access"
   buttons (the header's is black/white so it does not compete with the hero): #FE7F2D in dark (8.3:1) and, a little dimmer and darker at the user's request, #E77123 in light
   (6.8:1). Orange also marks the dot after the wordmark, the favicon's V, the share image's bar, the active how-it-works
@@ -315,3 +315,4 @@ None blocking.
 - Revision 11: Reference-only change: the product is renamed Conflux (id VEL-WEB-landing → CFX-WEB-landing, `velora.example` → `conflux.example`), v2 moves to `../docs/archive/`, and the source of truth becomes `../docs/Conflux_Phase1_Development_Direction.md`; no criteria changed, the copy rewrite is an open question. Approved by the user's "Everywhere" and "Phase 1 doc replaces v2" choices in chat, 2026-10-30.
 - Revision 12: Content follows the approved Conflux Phase 1 direction (US-04, US-13, US-14, US-18..US-21 reworded; AC-02, AC-05..AC-07, AC-11..AC-14, AC-26, AC-27, AC-32, AC-34..AC-36, AC-42, AC-43, AC-45..AC-52 changed): three stages plus "Coming next", four trust states, a review-and-export demo, Phase 1 §7 claims only, provider-neutral AI, no lifecycle, no Readiness Report, and a free early-access page instead of plans; Trison Labs named as the team. From the user's answers on 2026-10-31; approved by the user in chat, 2026-10-31.
 - Revision 13: Reference-only change: the product and company are renamed DrivnX (`conflux.example` → `drivnx.example`, operator "DrivnX (company registration in progress)", source of truth `../docs/DrivnX_Phase1_Development_Direction.md`); requirement IDs keep the `CFX-` prefix; no criteria changed. Approved by the user's rename plan in chat, 2026-11-07.
+- Revision 14: Reference-only change: the workspace is now a plain `DrivnX/` folder with drivnx-docs next to this repo, so `../docs/` becomes `../drivnx-docs/docs/`. No change to behaviour.

@@ -1,9 +1,9 @@
 schema: ai-skill-os/knowledge-graph/v1
 generated_by: ai-skills knowledge discover
-updated_at: '2026-11-08T14:17:37+00:00'
+updated_at: '2026-11-09T15:57:12+00:00'
 note: Index for retrieval only. Source files are the truth; follow the evidence.
 sources:
-  .ai/knowledge/requirements/CFX-WEB-landing.md: 6864929421f438137fe78835263fba396f458a02bae584bce404f2f3afa792d5
+  .ai/knowledge/requirements/CFX-WEB-landing.md: ee1d9d2e0caad89f28c764084de0a2bc48fcee609c4863b7733ee3ec8dea2610
   .next/types/root-params.d.ts: f3387dd7800eec3c34273f7a8efad13e864598c7e8f788d321e407390989bb59
   .next/types/routes.d.ts: b1c8b4d0432d67eba94d575514fb637f260cd12f098bb3a5770522b90c044638
   e2e/landing.spec.ts: 828e6443d5f892c4c7f0f582f197cc015c14aea7a2168604a2b642ddedcd5a1d

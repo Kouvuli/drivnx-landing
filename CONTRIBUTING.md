@@ -5,14 +5,15 @@ site are in the [README](README.md); this guide is about the workflow around the
 
 ## 1. Set up
 
-This repo lives inside the DrivnX workspace, because its copy follows `../docs/` (the Phase 1 direction and the design
-mocks) and its skill setup comes from `../ai-skills/`. Clone the workspace first, then this repo into it:
+This repo sits in a `DrivnX/` workspace folder next to drivnx-docs, because its copy follows `../drivnx-docs/docs/`
+(the Phase 1 direction and the design mocks) and its skill setup comes from `../drivnx-docs/ai-skills/`. The `drivnx`
+command sets it all up: it clones this repo next to drivnx-docs, runs `npm ci` and connects Claude Code to Plane and
+Pumble (see [drivnx-docs/CONTRIBUTING.md](../drivnx-docs/CONTRIBUTING.md)):
 
 ```bash
-git clone git@github.com:trisonlab/drivnx-docs.git DrivnX
-cd DrivnX
-git clone git@github.com:trisonlab/drivnx-landing.git    # stays its own repo; drivnx-docs ignores it
-cd drivnx-landing && npm install
+mkdir DrivnX && cd DrivnX
+git clone https://github.com/trisonlab/drivnx-docs.git
+python3 drivnx-docs/bin/drivnx install        # Windows: py drivnx-docs\bin\drivnx install
 ```
 
 You also need python3 for the guard hooks, and Chromium for the Playwright tests (see
@@ -22,10 +23,10 @@ You also need python3 for the guard hooks, and Chromium for the Playwright tests
 
 | What | Where |
 |---|---|
-| What DrivnX is | `../docs/DrivnX_Phase1_Development_Direction.md`: approved and canonical; the site's copy must not promise more than it does |
+| What DrivnX is | `../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md`: approved and canonical; the site's copy must not promise more than it does |
 | What the site must do | `.ai/knowledge/requirements/CFX-WEB-landing.md`: one feature with numbered revisions, each approved before it's built |
 | Brand, domain, contact | `src/config/site.ts`, the only place they're set |
-| Colours and theme | `src/app/globals.css` tokens, contrast-tested in `src/app/theme.test.ts`; mocks in `../docs/design-mocks/` |
+| Colours and theme | `src/app/globals.css` tokens, contrast-tested in `src/app/theme.test.ts`; mocks in `../drivnx-docs/docs/design-mocks/` |
 
 The ID `CFX-WEB-landing` never changes, even if the product is renamed.
 
@@ -171,5 +172,5 @@ Without the CLI, the skills read the requirement file directly.
   overwrite local edits.
 - Don't edit inside the `ai-skills:begin … ai-skills:end` block of `CLAUDE.md` / `AGENTS.md`, for the same reason.
   Put notes for this repo outside the block.
-- To add a skill to every DrivnX repo, add it to `../ai-skills/baseline.txt` and run `../ai-skills/drivnx-skills.sh
+- To add a skill to every DrivnX repo, add it to `../drivnx-docs/ai-skills/baseline.txt` and run `../drivnx-docs/ai-skills/drivnx-skills.sh
   sync`. To add one to this repo only, run `ai-skills add <skill>`. Both need the CLI.

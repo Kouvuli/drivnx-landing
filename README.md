@@ -3,7 +3,7 @@
 The public company website: explains the product, runs an interactive graph demo and collects early-access sign-ups.
 
 - **Requirements:** [.ai/knowledge/requirements/CFX-WEB-landing.md](.ai/knowledge/requirements/CFX-WEB-landing.md) (approved, revision 12)
-- **Product source of truth:** `../docs/DrivnX_Phase1_Development_Direction.md` (approved); the copy follows it since revision 12
+- **Product source of truth:** `../drivnx-docs/docs/DrivnX_Phase1_Development_Direction.md` (approved); the copy follows it since revision 12
 - **Pages:** `/` (Phase 1 story), `/pricing` ("Early access is free": now, coming next, FAQ), `/privacy`
 - **Stack:** Next.js 16.4 (App Router), React 19.3, Tailwind CSS 4, React Flow 12 (demo), React Three Fiber 9 + three.js
   (hero, lazy-loaded), Motion 14 (story moments), Lucide icons
@@ -11,7 +11,7 @@ The public company website: explains the product, runs an interactive graph demo
   and when visible, light tier on phones, nothing animated for reduced-motion visitors
 - **Theme:** pure mono (black and white) in orange, black and white: orange #FE7F2D Join buttons and highlights (never graphs), black/white controls, grey/graphite cards, dark by default (`src/app/globals.css`, one `light-dark()` token per colour;
   contrast tested in `src/app/theme.test.ts`). The header toggle stores `theme` in localStorage and an inline script in
-  `layout.tsx` applies it before first paint. Type: Geist and Geist Mono. Palette mocks: `../docs/design-mocks/`
+  `layout.tsx` applies it before first paint. Type: Geist and Geist Mono. Palette mocks: `../drivnx-docs/docs/design-mocks/`
 - **Motion (scale.com-inspired patterns, no code taken):** full-bleed 3D hero (stacked on phones), Lenis smooth scroll
   on desktop (`SmoothScroll`), line-by-line heading reveals (`RevealHeading`), hover zoom, "Connects to" marquee
 
