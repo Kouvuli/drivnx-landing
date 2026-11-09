@@ -5,15 +5,14 @@ site are in the [README](README.md); this guide is about the workflow around the
 
 ## 1. Set up
 
-This repo sits in a `DrivnX/` workspace folder next to drivnx-docs, because its copy follows `../drivnx-docs/docs/`
-(the Phase 1 direction and the design mocks) and its skill setup comes from `../drivnx-docs/ai-skills/`. The `drivnx`
-command sets it all up: it clones this repo next to drivnx-docs, runs `npm ci` and connects Claude Code to Plane and
-Pumble (see [drivnx-docs/CONTRIBUTING.md](../drivnx-docs/CONTRIBUTING.md)):
+This repo sits in a `DrivnX/` workspace folder next to drivnx-docs, because its copy follows `../drivnx-docs/docs/` (the
+Phase 1 direction and the design mocks) and its skill setup comes from `../drivnx-docs/ai-skills/`. The `drivnx` command
+from [drivnx-cli](https://github.com/trisonlab/drivnx-cli) sets it all up: it clones this repo next to drivnx-docs, runs
+`npm ci` and connects Claude Code to Plane and Pumble (its README is the team guide):
 
 ```bash
-mkdir DrivnX && cd DrivnX
-git clone https://github.com/trisonlab/drivnx-docs.git
-python3 drivnx-docs/bin/drivnx install        # Windows: py drivnx-docs\bin\drivnx install
+curl -fsSL https://raw.githubusercontent.com/trisonlab/drivnx-cli/main/get.sh | sh                # macOS / Linux
+irm https://raw.githubusercontent.com/trisonlab/drivnx-cli/main/get.ps1 | iex                     # Windows PowerShell
 ```
 
 You also need python3 for the guard hooks, and Chromium for the Playwright tests (see
